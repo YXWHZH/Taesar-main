@@ -1,0 +1,241 @@
+wandb_version: 1
+
+gpu_id:
+  desc: null
+  value: 0
+seed:
+  desc: null
+  value: 2025
+model_name:
+  desc: null
+  value: SASRec
+dataset:
+  desc: null
+  value: BEST
+data_path:
+  desc: null
+  value: dataset
+item_path:
+  desc: null
+  value: dataset/BEST/BEST.item
+checkpoint_dir:
+  desc: null
+  value: checkpoint
+stage:
+  desc: null
+  value: run
+domains:
+  desc: null
+  value: 4
+target_dom:
+  desc: null
+  value: None
+train_type:
+  desc: null
+  value: None
+new_inter_path:
+  desc: null
+  value: dataset/BEST/BEST.2025.None.train.inter
+ckpt_para:
+  desc: null
+  value: checkpoint/SASRec-BEST-2025
+full_ckpt:
+  desc: null
+  value: checkpoint/SASRec-BEST-2025.full.ckpt
+dom1_ckpt:
+  desc: null
+  value: checkpoint/SASRec-BEST-2025.dom1.ckpt
+dom2_ckpt:
+  desc: null
+  value: checkpoint/SASRec-BEST-2025.dom2.ckpt
+dom3_ckpt:
+  desc: null
+  value: checkpoint/SASRec-BEST-2025.dom3.ckpt
+dom4_ckpt:
+  desc: null
+  value: checkpoint/SASRec-BEST-2025.dom4.ckpt
+tune_ckpt:
+  desc: null
+  value: checkpoint/SASRec-BEST-2025.tune.ckpt
+epochs:
+  desc: null
+  value: 300
+train_batch_size:
+  desc: null
+  value: 128
+learner:
+  desc: null
+  value: adam
+learning_rate:
+  desc: null
+  value: 0.0003
+train_neg_sample_args:
+  desc: null
+  value: null
+eval_step:
+  desc: null
+  value: 1
+stopping_step:
+  desc: null
+  value: 10
+clip_grad_norm:
+  desc: null
+  value: null
+weight_decay:
+  desc: null
+  value: 0.0
+loss_decimal_place:
+  desc: null
+  value: 4
+require_pow:
+  desc: null
+  value: false
+enable_amp:
+  desc: null
+  value: false
+enable_scaler:
+  desc: null
+  value: false
+transform:
+  desc: null
+  value: null
+eval_args:
+  desc: null
+  value:
+    split:
+      LS: valid_and_test
+    order: TO
+    group_by: user
+    mode:
+      valid: full
+      test: full
+metrics:
+  desc: null
+  value:
+  - HIT
+  - NDCG
+  - MRR
+  - Precision
+topk:
+  desc: null
+  value:
+  - 5
+  - 10
+  - 20
+  - 50
+  - 100
+valid_metric:
+  desc: null
+  value: NDCG@10
+eval_batch_size:
+  desc: null
+  value: 4096
+metric_decimal_place:
+  desc: null
+  value: 4
+MAX_ITEM_LIST_LENGTH:
+  desc: null
+  value: 128
+benchmark_filename:
+  desc: null
+  value:
+  - full.train
+  - full.valid
+  - full.test
+  - dom1.train
+  - dom1.valid
+  - dom1.test
+  - dom2.train
+  - dom2.valid
+  - dom2.test
+  - dom3.train
+  - dom3.valid
+  - dom3.test
+  - dom4.train
+  - dom4.valid
+  - dom4.test
+alias_of_item_id:
+  desc: null
+  value:
+  - item_id_list
+load_col:
+  desc: null
+  value:
+    inter:
+    - user_id
+    - item_id_list
+    - item_id
+base:
+  desc: null
+  value:
+    experiment_name: v9-Taesar.SASRec.BEST
+    method: run.None.None.seed_2025
+    run_name: run.None.None.seed_2025.2026-07-27.21-51-55
+    data_dir_root: dataset
+    save_dir_root: ./save
+    save_method_dir: ./save/v9-Taesar.SASRec.BEST/run.None.None.seed_2025
+    save_dir: ./save/v9-Taesar.SASRec.BEST/run.None.None.seed_2025/2026-07-27.21-51-55
+n_layers:
+  desc: null
+  value: 2
+n_heads:
+  desc: null
+  value: 2
+hidden_size:
+  desc: null
+  value: 128
+inner_size:
+  desc: null
+  value: 128
+hidden_dropout_prob:
+  desc: null
+  value: 0.2
+attn_dropout_prob:
+  desc: null
+  value: 0.2
+hidden_act:
+  desc: null
+  value: gelu
+layer_norm_eps:
+  desc: null
+  value: 1.0e-12
+initializer_range:
+  desc: null
+  value: 0.02
+loss_type:
+  desc: null
+  value: CE
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.8
+    cli_version: 0.15.12
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1785160317.02771
+    t:
+      1:
+      - 1
+      - 5
+      - 36
+      - 50
+      - 53
+      - 55
+      2:
+      - 1
+      - 5
+      - 36
+      - 50
+      - 53
+      - 55
+      3:
+      - 3
+      - 13
+      - 16
+      - 23
+      4: 3.10.8
+      5: 0.15.12
+      8:
+      - 5
+      13: linux-x86_64

@@ -1,0 +1,74 @@
+_wandb:
+    value:
+        cli_version: 0.25.1
+        e:
+            gdorhfr8ne0qasp8luoe3ul1a2qiazkn:
+                args:
+                    - --target_dom
+                    - dom1
+                    - --gpu
+                    - "0"
+                codePath: verify_utility_signal.py
+                codePathLocal: verify_utility_signal.py
+                cpu_count: 104
+                cpu_count_logical: 208
+                cudaVersion: "13.2"
+                disk:
+                    /:
+                        total: "32212254720"
+                        used: "21438349312"
+                email: 3126362407@qq.com
+                executable: /root/miniconda3/envs/Taesar/bin/python
+                gpu: NVIDIA GeForce RTX 5090
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Blackwell
+                      cudaCores: 21760
+                      memoryTotal: "34190917632"
+                      name: NVIDIA GeForce RTX 5090
+                      uuid: GPU-761bf381-b177-c211-ba95-a8d5bcbfa123
+                host: autodl-container-v07skcjs40-ba72e3ac
+                memory:
+                    total: "810159058944"
+                os: Linux-5.15.0-78-generic-x86_64-with-glibc2.35
+                program: /root/autodl-tmp/Taesar-main/verify_utility_signal.py
+                python: CPython 3.11.15
+                root: /root/autodl-tmp/Taesar-main
+                startedAt: "2026-07-26T16:20:46.559839Z"
+                writerId: gdorhfr8ne0qasp8luoe3ul1a2qiazkn
+        m: []
+        python_version: 3.11.15
+        t:
+            "1":
+                - 1
+                - 5
+                - 36
+                - 50
+                - 53
+            "2":
+                - 1
+                - 5
+                - 36
+                - 50
+                - 53
+            "3":
+                - 2
+                - 13
+                - 15
+                - 16
+            "4": 3.11.15
+            "5": 0.25.1
+            "12": 0.25.1
+            "13": linux-x86_64
+dataset:
+    value: BEST
+experiment:
+    value: verify_utility_signal
+gpu_id:
+    value: 0
+model:
+    value: SASRec
+seed:
+    value: 2025
+target_domain:
+    value: dom1

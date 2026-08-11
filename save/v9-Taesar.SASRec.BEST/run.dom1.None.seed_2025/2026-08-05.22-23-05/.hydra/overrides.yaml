@@ -1,0 +1,3 @@
+- target_dom=dom1
+- gpu_id=0
+- train_batch_size=16

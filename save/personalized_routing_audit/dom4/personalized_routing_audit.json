@@ -1,0 +1,72 @@
+{
+  "target_domain": "dom4",
+  "n_test_users": 14491,
+  "protocol": {
+    "fixed_masks_selected_on": "validation only",
+    "permutation": "test selected masks shuffled across users; exact mask counts preserved",
+    "permutations": 1000,
+    "permutation_seed": 3407
+  },
+  "predicted_router": {
+    "ce": 9.965258598327637,
+    "ranking": {
+      "Recall@10": 0.03360706645504106,
+      "NDCG@10": 0.0238464921245715,
+      "MRR": 0.022710689990755265
+    }
+  },
+  "fixed_best_mask": {
+    "mask": "dom1+dom3",
+    "ce": 9.966552734375,
+    "ranking": {
+      "Recall@10": 0.033193016354978955,
+      "NDCG@10": 0.02372769244487276,
+      "MRR": 0.02272058021395921
+    }
+  },
+  "fixed_best_single_source": {
+    "mask": "dom1",
+    "ce": 9.970032691955566,
+    "ranking": {
+      "Recall@10": 0.0329859913049479,
+      "NDCG@10": 0.023534063133213646,
+      "MRR": 0.02253399462135479
+    }
+  },
+  "target_only": {
+    "ce": 9.974488258361816,
+    "ranking": {
+      "Recall@10": 0.0331240080049686,
+      "NDCG@10": 0.023575642303447598,
+      "MRR": 0.022519905442628354
+    }
+  },
+  "dense": {
+    "ce": 9.962244033813477,
+    "ranking": {
+      "Recall@10": 0.03346904975502036,
+      "NDCG@10": 0.023870793941341995,
+      "MRR": 0.022790590661037093
+    }
+  },
+  "permuted_router": {
+    "ce_mean": 9.964900720596313,
+    "ce_std": 0.0003466201595549714,
+    "ce_p05": 9.964337348937988,
+    "ce_p95": 9.965458106994628,
+    "recall10_mean": 0.03349575598647436,
+    "recall10_std": 0.0002047354939408625,
+    "personalized_ce_advantage": -0.00035787773132334166,
+    "one_sided_p_permuted_ce_le_predicted": 0.8441558441558441
+  },
+  "selection": {
+    "target_only": 55,
+    "dom1": 104,
+    "dom2": 608,
+    "dom1+dom2": 4606,
+    "dom3": 268,
+    "dom1+dom3": 2383,
+    "dom2+dom3": 6467,
+    "dom1+dom2+dom3": 0
+  }
+}

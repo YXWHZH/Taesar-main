@@ -1,0 +1,206 @@
+_wandb:
+    value:
+        cli_version: 0.25.1
+        code_path: source-v9-Taesar.SASRec.BEST-finetune.py
+        e:
+            p2t4nyzj1g7ud3fyo2wn5efafy3aobur:
+                args:
+                    - -m
+                    - stage=tun
+                    - gpu_id=0
+                    - seed=2025
+                    - train_type=full
+                    - target_dom=dom1
+                codePath: finetune.py
+                codePathLocal: finetune.py
+                cpu_count: 128
+                cpu_count_logical: 256
+                disk:
+                    /:
+                        total: "32212254720"
+                        used: "16791961600"
+                email: 3126362407@qq.com
+                executable: /root/miniconda3/envs/Taesar/bin/python
+                host: autodl-container-ce11498eee-c79efdbf
+                memory:
+                    total: "810854170624"
+                os: Linux-5.15.0-78-generic-x86_64-with-glibc2.35
+                program: /root/autodl-tmp/Taesar-main/finetune.py
+                python: CPython 3.11.15
+                root: /root/autodl-tmp/Taesar-main
+                startedAt: "2026-03-24T08:03:48.492757Z"
+                writerId: p2t4nyzj1g7ud3fyo2wn5efafy3aobur
+        m: []
+        python_version: 3.11.15
+        t:
+            "1":
+                - 1
+                - 5
+                - 36
+                - 50
+                - 53
+            "2":
+                - 1
+                - 5
+                - 36
+                - 50
+                - 53
+            "3":
+                - 3
+                - 13
+                - 16
+            "4": 3.11.15
+            "5": 0.25.1
+            "12": 0.25.1
+            "13": linux-x86_64
+MAX_ITEM_LIST_LENGTH:
+    value: 128
+alias_of_item_id:
+    value:
+        - item_id_list
+attn_dropout_prob:
+    value: 0.2
+base:
+    value:
+        data_dir_root: dataset
+        experiment_name: v9-Taesar.SASRec.BEST
+        method: tun.dom1.full.seed_2025
+        run_name: tun.dom1.full.seed_2025.2026-03-24.16-03-47
+        save_dir: ./save/v9-Taesar.SASRec.BEST/tun.dom1.full.seed_2025/2026-03-24.16-03-47
+        save_dir_root: ./save
+        save_method_dir: ./save/v9-Taesar.SASRec.BEST/tun.dom1.full.seed_2025
+benchmark_filename:
+    value:
+        - full.train
+        - full.valid
+        - full.test
+        - dom1.train
+        - dom1.valid
+        - dom1.test
+        - dom2.train
+        - dom2.valid
+        - dom2.test
+        - dom3.train
+        - dom3.valid
+        - dom3.test
+        - dom4.train
+        - dom4.valid
+        - dom4.test
+checkpoint_dir:
+    value: checkpoint
+ckpt_para:
+    value: checkpoint/SASRec-BEST-2025
+clip_grad_norm:
+    value: null
+data_path:
+    value: dataset
+dataset:
+    value: BEST
+dom1_ckpt:
+    value: checkpoint/SASRec-BEST-2025.dom1.ckpt
+dom2_ckpt:
+    value: checkpoint/SASRec-BEST-2025.dom2.ckpt
+dom3_ckpt:
+    value: checkpoint/SASRec-BEST-2025.dom3.ckpt
+dom4_ckpt:
+    value: checkpoint/SASRec-BEST-2025.dom4.ckpt
+domains:
+    value: 4
+enable_amp:
+    value: false
+enable_scaler:
+    value: false
+epochs:
+    value: 300
+eval_args:
+    value:
+        group_by: user
+        mode:
+            test: full
+            valid: full
+        order: TO
+        split:
+            LS: valid_and_test
+eval_batch_size:
+    value: 4096
+eval_step:
+    value: 1
+full_ckpt:
+    value: checkpoint/SASRec-BEST-2025.full.ckpt
+gpu_id:
+    value: 0
+hidden_act:
+    value: gelu
+hidden_dropout_prob:
+    value: 0.2
+hidden_size:
+    value: 128
+initializer_range:
+    value: 0.02
+inner_size:
+    value: 128
+item_path:
+    value: dataset/BEST/BEST.item
+layer_norm_eps:
+    value: 1e-12
+learner:
+    value: adam
+learning_rate:
+    value: 0.0003
+load_col:
+    value:
+        inter:
+            - user_id
+            - item_id_list
+            - item_id
+loss_decimal_place:
+    value: 4
+loss_type:
+    value: CE
+metric_decimal_place:
+    value: 4
+metrics:
+    value:
+        - HIT
+        - NDCG
+        - MRR
+        - Precision
+model_name:
+    value: SASRec
+n_heads:
+    value: 2
+n_layers:
+    value: 2
+new_inter_path:
+    value: dataset/BEST/BEST.2025.dom1.train.inter
+require_pow:
+    value: false
+seed:
+    value: 2025
+stage:
+    value: tun
+stopping_step:
+    value: 10
+target_dom:
+    value: dom1
+topk:
+    value:
+        - 5
+        - 10
+        - 20
+        - 50
+        - 100
+train_batch_size:
+    value: 128
+train_neg_sample_args:
+    value: null
+train_type:
+    value: full
+transform:
+    value: null
+tune_ckpt:
+    value: checkpoint/SASRec-BEST-2025.tune.ckpt
+valid_metric:
+    value: NDCG@10
+weight_decay:
+    value: 0

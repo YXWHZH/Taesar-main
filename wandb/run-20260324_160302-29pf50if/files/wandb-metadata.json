@@ -1,0 +1,32 @@
+{
+  "os": "Linux-5.15.0-78-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.11.15",
+  "startedAt": "2026-03-24T08:03:02.940015Z",
+  "args": [
+    "-m",
+    "stage=tun",
+    "gpu_id=0",
+    "seed=2025",
+    "train_type=new",
+    "target_dom=dom1"
+  ],
+  "program": "/root/autodl-tmp/Taesar-main/finetune.py",
+  "codePath": "finetune.py",
+  "codePathLocal": "finetune.py",
+  "email": "3126362407@qq.com",
+  "root": "/root/autodl-tmp/Taesar-main",
+  "host": "autodl-container-ce11498eee-c79efdbf",
+  "executable": "/root/miniconda3/envs/Taesar/bin/python",
+  "cpu_count": 128,
+  "cpu_count_logical": 256,
+  "disk": {
+    "/": {
+      "total": "32212254720",
+      "used": "16791912448"
+    }
+  },
+  "memory": {
+    "total": "810854170624"
+  },
+  "writerId": "6rsx8a8a1dheggctusjt41lgsa767mug"
+}

@@ -1,0 +1,214 @@
+#!/usr/bin/env python3
+"""Cheap A/B/C audit of candidate-conditioned utility predictability.
+
+All variants share the same frozen Stage-1 probe, train/valid/test users,
+normalization, MLP capacity, optimizer, and early stopping.  The only changed
+variable is whether the realized target item embedding is visible.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import random
+from pathlib import Path
+from typing import Dict, Sequence
+
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.utils.data import DataLoader, TensorDataset
+
+from audit_multisource_utility import DOMAINS
+from audit_ranking_utility import utility_arrays
+from stage2_train_utility_router import (
+    auroc, compute_probe_labels, load_stage1, save_json, spearman, subset,
+)
+
+
+VARIANTS = ("A_history", "B_candidate", "C_candidate_interactions",
+            "P0_domain", "P1_candidate_prior", "P2_target_candidate",
+            "P3_source_candidate", "P4_full_history", "P5_interactions")
+
+
+def parse_args() -> argparse.Namespace:
+    p = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    p.add_argument("--target-dom", choices=DOMAINS, default="dom1")
+    p.add_argument("--variants", nargs="+", choices=VARIANTS, default=list(VARIANTS))
+    p.add_argument("--stage1-dir", default=None)
+    p.add_argument("--output-dir", default=None)
+    p.add_argument("--device", default="cuda:0" if torch.cuda.is_available() else "cpu")
+    p.add_argument("--seed", type=int, default=2025)
+    p.add_argument("--epochs", type=int, default=40)
+    p.add_argument("--patience", type=int, default=6)
+    p.add_argument("--batch-size", type=int, default=512)
+    p.add_argument("--eval-batch-size", type=int, default=1024)
+    p.add_argument("--hidden", type=int, default=128)
+    p.add_argument("--dropout", type=float, default=0.1)
+    p.add_argument("--lr", type=float, default=1e-3)
+    p.add_argument("--weight-decay", type=float, default=1e-4)
+    p.add_argument("--max-train-users", type=int, default=20000)
+    p.add_argument("--max-valid-users", type=int, default=5000)
+    p.add_argument("--max-test-users", type=int, default=0)
+    return p.parse_args()
+
+
+def seed_all(seed: int) -> None:
+    random.seed(seed); np.random.seed(seed); torch.manual_seed(seed)
+    if torch.cuda.is_available(): torch.cuda.manual_seed_all(seed)
+
+
+def features(data, item_embeddings: np.ndarray, variant: str,
+             ht_override: np.ndarray | None = None,
+             hs_override: np.ndarray | None = None) -> np.ndarray:
+    """Return [N,S,D] pair features; domain identity is common to A/B/C."""
+    n, s, _ = data.h_sources.shape
+    ht0 = data.h_target if ht_override is None else ht_override
+    hs0 = data.h_sources if hs_override is None else hs_override
+    ht = np.repeat(ht0[:, None, :], s, axis=1).astype(np.float32)
+    hs = hs0.astype(np.float32)
+    domain = np.repeat(np.eye(s, dtype=np.float32)[None], n, axis=0)
+    ey0 = item_embeddings[data.y_class].astype(np.float32)
+    ey = np.repeat(ey0[:, None, :], s, axis=1)
+    if variant == "P0_domain": parts = []
+    elif variant == "P1_candidate_prior": parts = [ey]
+    elif variant == "P2_target_candidate": parts = [ht, ey]
+    elif variant == "P3_source_candidate": parts = [hs, ey]
+    elif variant in ("B_candidate", "P4_full_history"): parts = [ht, hs, ey]
+    elif variant in ("C_candidate_interactions", "P5_interactions"):
+        parts = [ht, hs, ey, ht * ey, hs * ey]
+    elif variant == "A_history": parts = [ht, hs]
+    else: raise ValueError(variant)
+    parts.append(domain)
+    return np.concatenate(parts, axis=2).astype(np.float32)
+
+
+class MLP(nn.Module):
+    def __init__(self, dim: int, hidden: int, dropout: float):
+        super().__init__()
+        self.body = nn.Sequential(nn.Linear(dim, hidden), nn.ReLU(), nn.Dropout(dropout),
+                                  nn.Linear(hidden, hidden), nn.ReLU(), nn.Dropout(dropout))
+        self.ce = nn.Linear(hidden, 1)
+        self.rank = nn.Linear(hidden, 1)
+
+    def forward(self, x):
+        h = self.body(x)
+        return self.ce(h).squeeze(1), self.rank(h).squeeze(1)
+
+
+@torch.no_grad()
+def predict(model: MLP, x: np.ndarray, device: torch.device, batch: int) -> tuple[np.ndarray, np.ndarray]:
+    model.eval(); flat = torch.from_numpy(x.reshape(-1, x.shape[-1])); ce, rank = [], []
+    for start in range(0, len(flat), batch):
+        a, b = model(flat[start:start + batch].to(device))
+        ce.append(a.cpu().numpy()); rank.append(b.cpu().numpy())
+    shape = x.shape[:2]
+    return np.concatenate(ce).reshape(shape), np.concatenate(rank).reshape(shape)
+
+
+def metrics(pred: np.ndarray, true: np.ndarray) -> Dict[str, float]:
+    return {"spearman": spearman(pred, true), "sign_auroc": auroc(pred, true > 0),
+            "best_source_accuracy": float((pred.argmax(1) == true.argmax(1)).mean())}
+
+
+def train_variant(args, variant: str, x: Dict[str, np.ndarray], utilities, device, output: Path,
+                  shuffled_test: Dict[str, np.ndarray] | None = None):
+    # Train-only feature statistics.  Each variant has its own dimensionality.
+    mean = x["train"].reshape(-1, x["train"].shape[-1]).mean(0)
+    std = x["train"].reshape(-1, x["train"].shape[-1]).std(0); std[std < 1e-6] = 1.0
+    z = {sp: ((v - mean) / std).astype(np.float32) for sp, v in x.items()}
+    tx = torch.from_numpy(z["train"].reshape(-1, z["train"].shape[-1]))
+    tc = torch.from_numpy(utilities["train"]["ce"].astype(np.float32).reshape(-1))
+    tr = torch.from_numpy(utilities["train"]["rank"].astype(np.float32).reshape(-1))
+    loader = DataLoader(TensorDataset(tx, tc, tr), batch_size=args.batch_size, shuffle=True)
+    seed_all(args.seed); model = MLP(tx.shape[1], args.hidden, args.dropout).to(device)
+    opt = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+    best, bad, history = float("inf"), 0, []
+    checkpoint = output / f"{variant}_best.pt"
+    for epoch in range(1, args.epochs + 1):
+        model.train(); total = count = 0
+        for bx, bc, br in loader:
+            bx, bc, br = bx.to(device), bc.to(device), br.to(device)
+            opt.zero_grad(set_to_none=True); pc, pr = model(bx)
+            loss = F.huber_loss(pc, bc) + F.huber_loss(pr, br)
+            loss.backward(); nn.utils.clip_grad_norm_(model.parameters(), 5.0); opt.step()
+            total += loss.item() * len(bx); count += len(bx)
+        vc, vr = predict(model, z["valid"], device, args.eval_batch_size)
+        val = float(F.huber_loss(torch.from_numpy(vc), torch.from_numpy(utilities["valid"]["ce"].astype(np.float32))) +
+                    F.huber_loss(torch.from_numpy(vr), torch.from_numpy(utilities["valid"]["rank"].astype(np.float32))))
+        history.append({"epoch": epoch, "train_joint_huber": total / count, "valid_joint_huber": val})
+        print(f"[{args.target_dom} {variant} {epoch:02d}] train={total/count:.6f} valid={val:.6f}")
+        if val < best - 1e-7:
+            best, bad = val, 0
+            torch.save({"state_dict": model.state_dict(), "mean": mean, "std": std}, checkpoint)
+        else:
+            bad += 1
+            if bad >= args.patience: break
+    state = torch.load(checkpoint, map_location=device, weights_only=False)
+    model.load_state_dict(state["state_dict"])
+    pc, pr = predict(model, z["test"], device, args.eval_batch_size)
+    result = {"input_dim": int(tx.shape[1]), "parameters": sum(p.numel() for p in model.parameters()),
+            "best_valid_joint_huber": best, "history": history,
+            "ce_utility": metrics(pc, utilities["test"]["ce"]),
+            "rank_utility": metrics(pr, utilities["test"]["rank"])}
+    if shuffled_test:
+        result["shuffle_test"] = {}
+        for name, raw in shuffled_test.items():
+            zz = ((raw - mean) / std).astype(np.float32)
+            sc, sr = predict(model, zz, device, args.eval_batch_size)
+            result["shuffle_test"][name] = {
+                "ce_utility": metrics(sc, utilities["test"]["ce"]),
+                "rank_utility": metrics(sr, utilities["test"]["rank"]),
+            }
+    return result
+
+
+def main() -> int:
+    args = parse_args(); seed_all(args.seed); root = Path(__file__).resolve().parent
+    device = torch.device(args.device)
+    stage1 = Path(args.stage1_dir).resolve() if args.stage1_dir else root / "save/multisource_utility" / args.target_dom
+    output = Path(args.output_dir).resolve() if args.output_dir else root / "save/candidate_conditioned_audit" / args.target_dom
+    output.mkdir(parents=True, exist_ok=True)
+    probe, splits, sources = load_stage1(stage1, args.target_dom, device)
+    splits["train"] = subset(splits["train"], args.max_train_users, args.seed)
+    splits["valid"] = subset(splits["valid"], args.max_valid_users, args.seed + 1)
+    splits["test"] = subset(splits["test"], args.max_test_users, args.seed + 2)
+    item_embeddings = probe.target_item_embeddings.detach().cpu().numpy()
+    labels, utilities = {}, {}
+    for sp in ("train", "valid", "test"):
+        print(f"[LABEL] {args.target_dom}/{sp}: {len(splits[sp].users)}")
+        labels[sp] = compute_probe_labels(probe, splits[sp], device, args.eval_batch_size, 0)
+        utilities[sp], _, _ = utility_arrays(labels[sp], len(sources))
+    report = {"protocol": {
+        "comparison": "same MLP/training/splits; only candidate features differ",
+        "A": "h_target, h_source, source-domain one-hot",
+        "B": "A plus frozen target candidate embedding e_y",
+        "C": "B plus h_target*e_y and h_source*e_y",
+        "P0-P5": "domain; candidate prior; target+candidate; source+candidate; full history; interactions",
+        "leakage_control": "normalization=train only; early stopping=valid only; test=evaluation only; e_y frozen",
+        "warning": "Stage-1 teacher is not OOF; replicate a positive result with OOF labels before a final claim.",
+    }, "args": vars(args), "sources": sources, "variants": {}}
+    for variant in args.variants:
+        x = {sp: features(splits[sp], item_embeddings, variant) for sp in splits}
+        shuffled = None
+        if variant == "P5_interactions":
+            test = splits["test"]; rng = np.random.default_rng(args.seed + 991)
+            pt = rng.permutation(len(test.users)); ps = rng.permutation(len(test.users))
+            shuffled = {
+                "target_history": features(test, item_embeddings, variant,
+                                           ht_override=test.h_target[pt]),
+                "source_history": features(test, item_embeddings, variant,
+                                           hs_override=test.h_sources[ps]),
+                "both_histories": features(test, item_embeddings, variant,
+                                            ht_override=test.h_target[pt], hs_override=test.h_sources[ps]),
+            }
+        report["variants"][variant] = train_variant(args, variant, x, utilities, device, output, shuffled)
+        m = report["variants"][variant]["ce_utility"]
+        print(f"[DONE] {args.target_dom}/{variant}: CE rho={m['spearman']:.4f}, AUROC={m['sign_auroc']:.4f}")
+    save_json(output / "candidate_conditioned_report.json", report)
+    print(f"[REPORT] {output / 'candidate_conditioned_report.json'}")
+    return 0
+
+if __name__ == "__main__":
+    raise SystemExit(main())

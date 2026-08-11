@@ -1,0 +1,5 @@
+- stage=dec
+- gpu_id=0
+- seed=2025
+- target_dom=dom2
+- train_batch_size=32

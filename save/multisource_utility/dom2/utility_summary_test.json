@@ -1,0 +1,135 @@
+{
+  "target_domain": "dom2",
+  "audit_split": "test",
+  "n_users": 9416,
+  "source_domains": [
+    "dom1",
+    "dom3",
+    "dom4"
+  ],
+  "definition": {
+    "utility": "CE_loss(target_only) - CE_loss(target + one source)",
+    "positive": "source lowers CE loss",
+    "negative": "source raises CE loss",
+    "note": "Utility is an instantaneous fixed-probe quantity, not a claim about full retraining gain."
+  },
+  "loss": {
+    "target_only_mean": 10.566823959350586,
+    "dense_all_mean": 10.561230659484863,
+    "oracle_top1_source_mean": 10.473950386047363,
+    "oracle_top2_exact_mean": 10.496132850646973,
+    "safe_top1_mean": 10.461380958557129,
+    "safe_top2_mean": 10.44706916809082,
+    "oracle_any_mask_mean": 10.44554328918457,
+    "dense_minus_oracle_top1": 0.08727992326021194,
+    "dense_minus_safe_top1": 0.0998493954539299,
+    "dense_minus_safe_top2": 0.11416121572256088,
+    "target_only_minus_dense": 0.005593522917479277
+  },
+  "utility_by_source": {
+    "dom1": {
+      "mean": 0.0017434385372325778,
+      "median": -0.0022068023681640625,
+      "negative_rate": 0.5095581988105352,
+      "positive_rate": 0.49044180118946473,
+      "p10": -0.14291715621948242,
+      "p25": -0.07230997085571289,
+      "p75": 0.06992912292480469,
+      "p90": 0.14882326126098633
+    },
+    "dom3": {
+      "mean": 0.004889950156211853,
+      "median": 0.0024428367614746094,
+      "negative_rate": 0.49330926083262533,
+      "positive_rate": 0.5066907391673747,
+      "p10": -0.1638174057006836,
+      "p25": -0.08240151405334473,
+      "p75": 0.08415341377258301,
+      "p90": 0.17513036727905273
+    },
+    "dom4": {
+      "mean": 0.006608800496906042,
+      "median": -0.00033473968505859375,
+      "negative_rate": 0.5011682242990654,
+      "positive_rate": 0.49883177570093457,
+      "p10": -0.17093324661254883,
+      "p25": -0.08528017997741699,
+      "p75": 0.09111642837524414,
+      "p90": 0.19234037399291992
+    }
+  },
+  "best_source_distribution": {
+    "dom1": {
+      "count": 2996,
+      "fraction": 0.3181818181818182
+    },
+    "dom3": {
+      "count": 3215,
+      "fraction": 0.34144010195412067
+    },
+    "dom4": {
+      "count": 3205,
+      "fraction": 0.34037807986406116
+    }
+  },
+  "heterogeneity": {
+    "mean_within_user_utility_std": 0.07590702921152115,
+    "median_within_user_utility_range": 0.15281200408935547,
+    "no_source_beats_all_single_sources_rate": 0.20592608326253187,
+    "best_source_not_global_majority_rate": 0.6585598980458793,
+    "global_majority_best_source": "dom3"
+  },
+  "selection_advantage": {
+    "oracle_top1_beats_dense_rate": 0.8243415463041631,
+    "safe_top1_beats_dense_rate": 0.824447748513169,
+    "safe_top2_beats_dense_rate": 0.9226847918436704,
+    "dense_beats_target_only_rate": 0.49076040781648256
+  },
+  "ranking_metrics": {
+    "target_only": {
+      "Recall@10": 0.0031860662701784196,
+      "NDCG@10": 0.0015501998951676984,
+      "MRR": 0.0016087222545257834
+    },
+    "dense_all": {
+      "Recall@10": 0.0020178419711129993,
+      "NDCG@10": 0.0010460454581676666,
+      "MRR": 0.0013756409543973036
+    },
+    "oracle_top1_source_by_CE": {
+      "Recall@10": 0.0030798640611724723,
+      "NDCG@10": 0.0015628176680295034,
+      "MRR": 0.001766266742132299
+    },
+    "oracle_top2_exact_by_CE": {
+      "Recall@10": 0.0027612574341546302,
+      "NDCG@10": 0.0013534754845025525,
+      "MRR": 0.001581752774507823
+    },
+    "safe_top1_by_CE": {
+      "Recall@10": 0.0031860662701784196,
+      "NDCG@10": 0.0016530037276544828,
+      "MRR": 0.0018585037697334626
+    },
+    "safe_top2_by_CE": {
+      "Recall@10": 0.002973661852166525,
+      "NDCG@10": 0.0015956320562012015,
+      "MRR": 0.0018723226758734454
+    },
+    "oracle_any_mask_by_CE": {
+      "Recall@10": 0.002973661852166525,
+      "NDCG@10": 0.0015762532717181871,
+      "MRR": 0.001852938063084935
+    }
+  },
+  "mask_mean_losses": {
+    "target_only": 10.566823959350586,
+    "dom1": 10.565080642700195,
+    "dom3": 10.561934471130371,
+    "dom1+dom3": 10.562653541564941,
+    "dom4": 10.56021499633789,
+    "dom1+dom4": 10.561532974243164,
+    "dom3+dom4": 10.559746742248535,
+    "dom1+dom3+dom4": 10.561230659484863
+  }
+}

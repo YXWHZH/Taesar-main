@@ -1,0 +1,114 @@
+{
+  "args": {
+    "project_root": null,
+    "dataset_dir": null,
+    "dataset_name": "BEST",
+    "target_dom": "dom4",
+    "domains": [
+      "dom1",
+      "dom2",
+      "dom3",
+      "dom4"
+    ],
+    "seed": 2026,
+    "gpu_id": 0,
+    "device": "auto",
+    "checkpoint_template": "checkpoint/SASRec-BEST-2025.tune.ckpt-{domain}-sim",
+    "non_strict": false,
+    "epochs": 10,
+    "patience": 3,
+    "batch_size": 512,
+    "encode_batch_size": 1024,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "dropout": 0.1,
+    "masks_per_sample": 2,
+    "temperature": 1.0,
+    "max_train_users": 20000,
+    "max_valid_users": 5000,
+    "max_audit_users": 0,
+    "audit_split": "test",
+    "allow_missing_sources": false,
+    "cache_dir": "save/multisource_utility/dom4/cache",
+    "reuse_cache": true,
+    "output_dir": "save/multisource_utility_stability/seed_2026/dom4",
+    "num_workers": 0,
+    "dry_run": false,
+    "progress_every": 20
+  },
+  "project_root": "/root/autodl-tmp/Taesar-main",
+  "dataset_dir": "/root/autodl-tmp/Taesar-main/dataset/BEST",
+  "target_domain": "dom4",
+  "source_domains": [
+    "dom1",
+    "dom2",
+    "dom3"
+  ],
+  "input_files": {
+    "dom1": {
+      "train": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom1.train.inter"
+    },
+    "dom2": {
+      "train": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom2.train.inter"
+    },
+    "dom3": {
+      "train": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom3.train.inter"
+    },
+    "dom4": {
+      "test": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom4.test.inter",
+      "train": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom4.train.inter",
+      "valid": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom4.valid.inter"
+    }
+  },
+  "checkpoints": {
+    "dom1": "/root/autodl-tmp/Taesar-main/checkpoint/SASRec-BEST-2025.tune.ckpt-dom1-sim",
+    "dom2": "/root/autodl-tmp/Taesar-main/checkpoint/SASRec-BEST-2025.tune.ckpt-dom2-sim",
+    "dom3": "/root/autodl-tmp/Taesar-main/checkpoint/SASRec-BEST-2025.tune.ckpt-dom3-sim",
+    "dom4": "/root/autodl-tmp/Taesar-main/checkpoint/SASRec-BEST-2025.tune.ckpt-dom4-sim"
+  },
+  "pre_embedding_alignment": {
+    "train": {
+      "target_users": 39403,
+      "with_all_sources": 38918,
+      "with_ge2_sources": 39403,
+      "with_ge1_source": 39403,
+      "fraction_all_sources": 0.987691292541177
+    },
+    "valid": {
+      "target_users": 12970,
+      "with_all_sources": 12970,
+      "with_ge2_sources": 12970,
+      "with_ge1_source": 12970,
+      "fraction_all_sources": 1.0
+    },
+    "test": {
+      "target_users": 14491,
+      "with_all_sources": 14491,
+      "with_ge2_sources": 14491,
+      "with_ge1_source": 14491,
+      "fraction_all_sources": 1.0
+    }
+  },
+  "raw_ambiguous_users": {
+    "dom1": {
+      "train": 0
+    },
+    "dom2": {
+      "train": 0
+    },
+    "dom3": {
+      "train": 0
+    },
+    "dom4": {
+      "test": 0,
+      "train": 0,
+      "valid": 0
+    }
+  },
+  "limitations": [
+    "Processed BEST .inter files have no timestamp.",
+    "This script audits user-level source utility only.",
+    "Source train histories cannot be proven temporally prior to target samples.",
+    "Utility is a fixed-probe instantaneous CE quantity, not full-retraining gain."
+  ]
+}

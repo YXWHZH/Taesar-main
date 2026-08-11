@@ -1,0 +1,418 @@
+{
+  "dom1": {
+    "target": "dom1",
+    "n_users": 6073,
+    "sources": [
+      "dom2",
+      "dom3",
+      "dom4"
+    ],
+    "definitions": {
+      "ce": "CE(target_only)-CE(single_source)",
+      "rank": "log(1+rank_target_only)-log(1+rank_single_source)",
+      "margin": "full-negative logit margin(single_source)-margin(target_only), derived exactly from full-softmax CE"
+    },
+    "seed_stability": {
+      "ce": {
+        "2025-2026": {
+          "spearman": 0.7835664282057571,
+          "sign_agreement": 0.7859926450408914,
+          "best_source_agreement": 0.5452000658653054
+        },
+        "2025-2027": {
+          "spearman": 0.8173542920261292,
+          "sign_agreement": 0.8070146550304627,
+          "best_source_agreement": 0.5374608924748888
+        },
+        "2026-2027": {
+          "spearman": 0.7786572143831333,
+          "sign_agreement": 0.7845655634228004,
+          "best_source_agreement": 0.5140787090400132
+        }
+      },
+      "rank": {
+        "2025-2026": {
+          "spearman": 0.7133406670320476,
+          "sign_agreement": 0.7740820023052857,
+          "best_source_agreement": 0.5374608924748888
+        },
+        "2025-2027": {
+          "spearman": 0.7548989530532092,
+          "sign_agreement": 0.7910972062132938,
+          "best_source_agreement": 0.5219825456940557
+        },
+        "2026-2027": {
+          "spearman": 0.7199249292335793,
+          "sign_agreement": 0.7756188594324607,
+          "best_source_agreement": 0.5117734233492508
+        }
+      },
+      "margin": {
+        "2025-2026": {
+          "spearman": 0.7835666524291129,
+          "sign_agreement": 0.7859926450408914,
+          "best_source_agreement": 0.5452000658653054
+        },
+        "2025-2027": {
+          "spearman": 0.8173545811487465,
+          "sign_agreement": 0.8070146550304627,
+          "best_source_agreement": 0.5374608924748888
+        },
+        "2026-2027": {
+          "spearman": 0.7786574068039657,
+          "sign_agreement": 0.7845655634228004,
+          "best_source_agreement": 0.5140787090400132
+        }
+      }
+    },
+    "alignment_with_ranking_2025": {
+      "ce": {
+        "spearman_with_rank_utility": 0.8682131335443652,
+        "sign_agreement_with_rank_utility": 0.8502662056095285,
+        "auroc_rank_improves": 0.9255635883602652,
+        "mean_on_top10_entry": 0.6728795170783997,
+        "mean_on_top10_exit": -0.35261473059654236
+      },
+      "margin": {
+        "spearman_with_rank_utility": 0.8682131740193304,
+        "sign_agreement_with_rank_utility": 0.8502662056095285,
+        "auroc_rank_improves": 0.92556369345925,
+        "mean_on_top10_entry": 0.6729988974187177,
+        "mean_on_top10_exit": -0.3527086792539408
+      }
+    },
+    "existing_router_predictability_2025": {
+      "ce": {
+        "spearman": 0.055427241159858295,
+        "sign_auroc": 0.5266371404296023,
+        "best_source_accuracy": 0.34348756792359625
+      },
+      "rank": {
+        "spearman": 0.08453368734714256,
+        "sign_auroc": 0.5283810349599037,
+        "best_source_accuracy": 0.3548493331137823
+      },
+      "margin": {
+        "spearman": 0.055426984912589336,
+        "sign_auroc": 0.5266371404296023,
+        "best_source_accuracy": 0.34348756792359625
+      }
+    },
+    "top10_events": {
+      "entries": 15,
+      "exits": 15
+    }
+  },
+  "dom2": {
+    "target": "dom2",
+    "n_users": 9416,
+    "sources": [
+      "dom1",
+      "dom3",
+      "dom4"
+    ],
+    "definitions": {
+      "ce": "CE(target_only)-CE(single_source)",
+      "rank": "log(1+rank_target_only)-log(1+rank_single_source)",
+      "margin": "full-negative logit margin(single_source)-margin(target_only), derived exactly from full-softmax CE"
+    },
+    "seed_stability": {
+      "ce": {
+        "2025-2026": {
+          "spearman": 0.6292445914685313,
+          "sign_agreement": 0.722989238176154,
+          "best_source_agreement": 0.5238954970263382
+        },
+        "2025-2027": {
+          "spearman": 0.6455387277849232,
+          "sign_agreement": 0.7253610875106202,
+          "best_source_agreement": 0.5360025488530161
+        },
+        "2026-2027": {
+          "spearman": 0.6494433200928116,
+          "sign_agreement": 0.7284409515717927,
+          "best_source_agreement": 0.5358963466440102
+        }
+      },
+      "rank": {
+        "2025-2026": {
+          "spearman": 0.5743903649704563,
+          "sign_agreement": 0.7084749362786746,
+          "best_source_agreement": 0.5230458793542906
+        },
+        "2025-2027": {
+          "spearman": 0.5983837063817593,
+          "sign_agreement": 0.7152718776550552,
+          "best_source_agreement": 0.5249575191163977
+        },
+        "2026-2027": {
+          "spearman": 0.5943132127681534,
+          "sign_agreement": 0.7173605210988389,
+          "best_source_agreement": 0.5269753610875106
+        }
+      },
+      "margin": {
+        "2025-2026": {
+          "spearman": 0.6292452094861402,
+          "sign_agreement": 0.722989238176154,
+          "best_source_agreement": 0.5238954970263382
+        },
+        "2025-2027": {
+          "spearman": 0.6455392480534347,
+          "sign_agreement": 0.7253610875106202,
+          "best_source_agreement": 0.5360025488530161
+        },
+        "2026-2027": {
+          "spearman": 0.6494440500512987,
+          "sign_agreement": 0.7284409515717927,
+          "best_source_agreement": 0.5358963466440102
+        }
+      }
+    },
+    "alignment_with_ranking_2025": {
+      "ce": {
+        "spearman_with_rank_utility": 0.8487938759410641,
+        "sign_agreement_with_rank_utility": 0.8576536391956953,
+        "auroc_rank_improves": 0.9238974116944704,
+        "mean_on_top10_entry": 0.5498713850975037,
+        "mean_on_top10_exit": -0.10927589982748032
+      },
+      "margin": {
+        "spearman_with_rank_utility": 0.8487933832147181,
+        "sign_agreement_with_rank_utility": 0.8576536391956953,
+        "auroc_rank_improves": 0.923896709255952,
+        "mean_on_top10_entry": 0.5500221082296147,
+        "mean_on_top10_exit": -0.10930951903107644
+      }
+    },
+    "existing_router_predictability_2025": {
+      "ce": {
+        "spearman": 0.05985196695295474,
+        "sign_auroc": 0.527255586123236,
+        "best_source_accuracy": 0.34367034834324556
+      },
+      "rank": {
+        "spearman": 0.06523091534979972,
+        "sign_auroc": 0.5240595097422841,
+        "best_source_accuracy": 0.3429269328802039
+      },
+      "margin": {
+        "spearman": 0.05985128226202247,
+        "sign_auroc": 0.527255586123236,
+        "best_source_accuracy": 0.34367034834324556
+      }
+    },
+    "top10_events": {
+      "entries": 6,
+      "exits": 18
+    }
+  },
+  "dom3": {
+    "target": "dom3",
+    "n_users": 10185,
+    "sources": [
+      "dom1",
+      "dom2",
+      "dom4"
+    ],
+    "definitions": {
+      "ce": "CE(target_only)-CE(single_source)",
+      "rank": "log(1+rank_target_only)-log(1+rank_single_source)",
+      "margin": "full-negative logit margin(single_source)-margin(target_only), derived exactly from full-softmax CE"
+    },
+    "seed_stability": {
+      "ce": {
+        "2025-2026": {
+          "spearman": 0.6155302991087164,
+          "sign_agreement": 0.7140566192112584,
+          "best_source_agreement": 0.5165439371624939
+        },
+        "2025-2027": {
+          "spearman": 0.603601464078683,
+          "sign_agreement": 0.7084274259531992,
+          "best_source_agreement": 0.5140893470790378
+        },
+        "2026-2027": {
+          "spearman": 0.6356748602711964,
+          "sign_agreement": 0.7166421207658321,
+          "best_source_agreement": 0.521845851742759
+        }
+      },
+      "rank": {
+        "2025-2026": {
+          "spearman": 0.5657562081237817,
+          "sign_agreement": 0.7123220422189495,
+          "best_source_agreement": 0.5041728031418753
+        },
+        "2025-2027": {
+          "spearman": 0.551329081925734,
+          "sign_agreement": 0.7048928162330225,
+          "best_source_agreement": 0.505252822778596
+        },
+        "2026-2027": {
+          "spearman": 0.5862999126675837,
+          "sign_agreement": 0.7173948617247586,
+          "best_source_agreement": 0.5098674521354933
+        }
+      },
+      "margin": {
+        "2025-2026": {
+          "spearman": 0.6155308212028138,
+          "sign_agreement": 0.7140566192112584,
+          "best_source_agreement": 0.5165439371624939
+        },
+        "2025-2027": {
+          "spearman": 0.6036014388060837,
+          "sign_agreement": 0.7084274259531992,
+          "best_source_agreement": 0.5140893470790378
+        },
+        "2026-2027": {
+          "spearman": 0.6356746021676444,
+          "sign_agreement": 0.7166421207658321,
+          "best_source_agreement": 0.521845851742759
+        }
+      }
+    },
+    "alignment_with_ranking_2025": {
+      "ce": {
+        "spearman_with_rank_utility": 0.8972057541710371,
+        "sign_agreement_with_rank_utility": 0.9049255441008018,
+        "auroc_rank_improves": 0.9675638593324061,
+        "mean_on_top10_entry": 0.4094615876674652,
+        "mean_on_top10_exit": -0.22364754974842072
+      },
+      "margin": {
+        "spearman_with_rank_utility": 0.897206662373316,
+        "sign_agreement_with_rank_utility": 0.9049255441008018,
+        "auroc_rank_improves": 0.9675633835775004,
+        "mean_on_top10_entry": 0.4095434524647377,
+        "mean_on_top10_exit": -0.22368866513380767
+      }
+    },
+    "existing_router_predictability_2025": {
+      "ce": {
+        "spearman": 0.019105479493505086,
+        "sign_auroc": 0.508247830448669,
+        "best_source_accuracy": 0.33627884143348064
+      },
+      "rank": {
+        "spearman": 0.021494315208382325,
+        "sign_auroc": 0.5060899448016672,
+        "best_source_accuracy": 0.3370643102601866
+      },
+      "margin": {
+        "spearman": 0.019105369671068448,
+        "sign_auroc": 0.508247830448669,
+        "best_source_accuracy": 0.33627884143348064
+      }
+    },
+    "top10_events": {
+      "entries": 10,
+      "exits": 31
+    }
+  },
+  "dom4": {
+    "target": "dom4",
+    "n_users": 14491,
+    "sources": [
+      "dom1",
+      "dom2",
+      "dom3"
+    ],
+    "definitions": {
+      "ce": "CE(target_only)-CE(single_source)",
+      "rank": "log(1+rank_target_only)-log(1+rank_single_source)",
+      "margin": "full-negative logit margin(single_source)-margin(target_only), derived exactly from full-softmax CE"
+    },
+    "seed_stability": {
+      "ce": {
+        "2025-2026": {
+          "spearman": 0.4000578919453841,
+          "sign_agreement": 0.6295631771444344,
+          "best_source_agreement": 0.441653440066248
+        },
+        "2025-2027": {
+          "spearman": 0.435961957457252,
+          "sign_agreement": 0.6395463851125986,
+          "best_source_agreement": 0.46511627906976744
+        },
+        "2026-2027": {
+          "spearman": 0.41145747109747444,
+          "sign_agreement": 0.6337036781450556,
+          "best_source_agreement": 0.4335794631150369
+        }
+      },
+      "rank": {
+        "2025-2026": {
+          "spearman": 0.3156503917314595,
+          "sign_agreement": 0.6182918133094104,
+          "best_source_agreement": 0.43834103926575113
+        },
+        "2025-2027": {
+          "spearman": 0.33519360817203464,
+          "sign_agreement": 0.6246405815103627,
+          "best_source_agreement": 0.44841625836726245
+        },
+        "2026-2027": {
+          "spearman": 0.31792097075761244,
+          "sign_agreement": 0.619717985876291,
+          "best_source_agreement": 0.4218480436132772
+        }
+      },
+      "margin": {
+        "2025-2026": {
+          "spearman": 0.4000356083721238,
+          "sign_agreement": 0.6295631771444344,
+          "best_source_agreement": 0.441653440066248
+        },
+        "2025-2027": {
+          "spearman": 0.43597597278993205,
+          "sign_agreement": 0.6395463851125986,
+          "best_source_agreement": 0.46511627906976744
+        },
+        "2026-2027": {
+          "spearman": 0.41146834204243654,
+          "sign_agreement": 0.6337036781450556,
+          "best_source_agreement": 0.4335794631150369
+        }
+      }
+    },
+    "alignment_with_ranking_2025": {
+      "ce": {
+        "spearman_with_rank_utility": 0.7805735630823394,
+        "sign_agreement_with_rank_utility": 0.8536792951947185,
+        "auroc_rank_improves": 0.9098489860581676,
+        "mean_on_top10_entry": 0.02453121729195118,
+        "mean_on_top10_exit": -0.10840753465890884
+      },
+      "margin": {
+        "spearman_with_rank_utility": 0.7804023913445189,
+        "sign_agreement_with_rank_utility": 0.8536792951947185,
+        "auroc_rank_improves": 0.9097568116445097,
+        "mean_on_top10_entry": 0.02453877378110376,
+        "mean_on_top10_exit": -0.10848835681479309
+      }
+    },
+    "existing_router_predictability_2025": {
+      "ce": {
+        "spearman": 0.004944484073561952,
+        "sign_auroc": 0.5025227410047574,
+        "best_source_accuracy": 0.34531778345179764
+      },
+      "rank": {
+        "spearman": -0.018229661076653483,
+        "sign_auroc": 0.49551290365594763,
+        "best_source_accuracy": 0.33061900489959284
+      },
+      "margin": {
+        "spearman": 0.0049821337918306615,
+        "sign_auroc": 0.5025227410047574,
+        "best_source_accuracy": 0.34531778345179764
+      }
+    },
+    "top10_events": {
+      "entries": 39,
+      "exits": 26
+    }
+  }
+}

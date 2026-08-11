@@ -1,0 +1,17 @@
+target_domain,target_name,source_combo,source_combo_names,n_sources,users,fraction_of_target_users
+dom1,dom1,dom2+dom3+dom4,dom2+dom3+dom4,3,38918,0.9716140307077769
+dom1,dom1,dom2+dom3,dom2+dom3,2,762,0.019023842216951692
+dom1,dom1,dom2+dom4,dom2+dom4,2,285,0.0071152165772063415
+dom1,dom1,dom3+dom4,dom3+dom4,2,90,0.0022469104980651603
+dom2,dom2,dom1+dom3+dom4,dom1+dom3+dom4,3,38918,0.9711291328758578
+dom2,dom2,dom1+dom3,dom1+dom3,2,762,0.01901434809731753
+dom2,dom2,dom1+dom4,dom1+dom4,2,285,0.007111665626949469
+dom2,dom2,dom3+dom4,dom3+dom4,2,110,0.002744853399875234
+dom3,dom3,dom1+dom2+dom4,dom1+dom2+dom4,3,38918,0.9758776328986961
+dom3,dom3,dom1+dom2,dom1+dom2,2,762,0.01910732196589769
+dom3,dom3,dom2+dom4,dom2+dom4,2,110,0.0027582748244734203
+dom3,dom3,dom1+dom4,dom1+dom4,2,90,0.0022567703109327986
+dom4,dom4,dom1+dom2+dom3,dom1+dom2+dom3,3,38918,0.987691292541177
+dom4,dom4,dom1+dom2,dom1+dom2,2,285,0.007232951805700074
+dom4,dom4,dom2+dom3,dom2+dom3,2,110,0.0027916656092175723
+dom4,dom4,dom1+dom3,dom1+dom3,2,90,0.0022840900439052864

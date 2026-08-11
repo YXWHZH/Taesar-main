@@ -1,0 +1,5 @@
+target_domain,target_name,target_users,users_with_temporal_evidence,temporal_evidence_coverage,frac_with_ge1_past_source,frac_with_ge2_past_sources,frac_with_3_past_sources,mean_past_sources_available
+dom1,dom1,40055,0,0.0,,,,
+dom2,dom2,40075,0,0.0,,,,
+dom3,dom3,39880,0,0.0,,,,
+dom4,dom4,39403,0,0.0,,,,

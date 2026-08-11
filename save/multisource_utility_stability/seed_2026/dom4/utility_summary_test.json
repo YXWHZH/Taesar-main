@@ -1,0 +1,135 @@
+{
+  "target_domain": "dom4",
+  "audit_split": "test",
+  "n_users": 14491,
+  "source_domains": [
+    "dom1",
+    "dom2",
+    "dom3"
+  ],
+  "definition": {
+    "utility": "CE_loss(target_only) - CE_loss(target + one source)",
+    "positive": "source lowers CE loss",
+    "negative": "source raises CE loss",
+    "note": "Utility is an instantaneous fixed-probe quantity, not a claim about full retraining gain."
+  },
+  "loss": {
+    "target_only_mean": 9.974788665771484,
+    "dense_all_mean": 9.96273136138916,
+    "oracle_top1_source_mean": 9.919700622558594,
+    "oracle_top2_exact_mean": 9.92485237121582,
+    "safe_top1_mean": 9.916132926940918,
+    "safe_top2_mean": 9.905491828918457,
+    "oracle_any_mask_mean": 9.904300689697266,
+    "dense_minus_oracle_top1": 0.043030690401792526,
+    "dense_minus_safe_top1": 0.04659850895404816,
+    "dense_minus_safe_top2": 0.05723971128463745,
+    "target_only_minus_dense": 0.012057000771164894
+  },
+  "utility_by_source": {
+    "dom1": {
+      "mean": 0.003997331485152245,
+      "median": 0.004174232482910156,
+      "negative_rate": 0.4704299220205645,
+      "positive_rate": 0.5295700779794356,
+      "p10": -0.06906986236572266,
+      "p25": -0.03268909454345703,
+      "p75": 0.04042768478393555,
+      "p90": 0.07726097106933594
+    },
+    "dom2": {
+      "mean": 0.0076484838500618935,
+      "median": 0.007319450378417969,
+      "negative_rate": 0.454419984818163,
+      "positive_rate": 0.545580015181837,
+      "p10": -0.08663415908813477,
+      "p25": -0.03753232955932617,
+      "p75": 0.05244016647338867,
+      "p90": 0.10165786743164062
+    },
+    "dom3": {
+      "mean": 0.005617543123662472,
+      "median": 0.0046215057373046875,
+      "negative_rate": 0.46539231246980883,
+      "positive_rate": 0.5346076875301912,
+      "p10": -0.07118988037109375,
+      "p25": -0.033452510833740234,
+      "p75": 0.043535709381103516,
+      "p90": 0.08378982543945312
+    }
+  },
+  "best_source_distribution": {
+    "dom1": {
+      "count": 4572,
+      "fraction": 0.3155061762473259
+    },
+    "dom2": {
+      "count": 5215,
+      "fraction": 0.3598785453039818
+    },
+    "dom3": {
+      "count": 4704,
+      "fraction": 0.3246152784486923
+    }
+  },
+  "heterogeneity": {
+    "mean_within_user_utility_std": 0.04233725368976593,
+    "median_within_user_utility_range": 0.08546161651611328,
+    "no_source_beats_all_single_sources_rate": 0.1407080256711062,
+    "best_source_not_global_majority_rate": 0.6401214546960182,
+    "global_majority_best_source": "dom2"
+  },
+  "selection_advantage": {
+    "oracle_top1_beats_dense_rate": 0.7773100545165965,
+    "safe_top1_beats_dense_rate": 0.7773790628666069,
+    "safe_top2_beats_dense_rate": 0.8994548340349182,
+    "dense_beats_target_only_rate": 0.5526188668828929
+  },
+  "ranking_metrics": {
+    "target_only": {
+      "Recall@10": 0.03340004140501,
+      "NDCG@10": 0.023674885989133945,
+      "MRR": 0.02254643708499115
+    },
+    "dense_all": {
+      "Recall@10": 0.03395210820509282,
+      "NDCG@10": 0.024048849328833673,
+      "MRR": 0.022843111566823986
+    },
+    "oracle_top1_source_by_CE": {
+      "Recall@10": 0.034228141605134224,
+      "NDCG@10": 0.024246594321064224,
+      "MRR": 0.023137021487511657
+    },
+    "oracle_top2_exact_by_CE": {
+      "Recall@10": 0.03443516665516527,
+      "NDCG@10": 0.024270006305143133,
+      "MRR": 0.023065355180603465
+    },
+    "safe_top1_by_CE": {
+      "Recall@10": 0.03450417500517563,
+      "NDCG@10": 0.024341855786185487,
+      "MRR": 0.023166620309553597
+    },
+    "safe_top2_by_CE": {
+      "Recall@10": 0.03464219170519633,
+      "NDCG@10": 0.02441994999227114,
+      "MRR": 0.023242705311883407
+    },
+    "oracle_any_mask_by_CE": {
+      "Recall@10": 0.034780208405217033,
+      "NDCG@10": 0.02446278626596574,
+      "MRR": 0.023250184375529715
+    }
+  },
+  "mask_mean_losses": {
+    "target_only": 9.974788665771484,
+    "dom1": 9.97079086303711,
+    "dom2": 9.967141151428223,
+    "dom1+dom2": 9.965282440185547,
+    "dom3": 9.969170570373535,
+    "dom1+dom3": 9.966865539550781,
+    "dom2+dom3": 9.964141845703125,
+    "dom1+dom2+dom3": 9.96273136138916
+  }
+}

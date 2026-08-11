@@ -1,0 +1,9 @@
+wandb: WARNING Saving files without folders. If you want to preserve sub directories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Taesar-main/utils.py", line 66, in wrapper
+    out = func(config, *args, **kwargs)
+  File "/root/autodl-tmp/Taesar-main/verify_step0.py", line 306, in main
+    raise ValueError("Step 0 gains and reconstructed samples differ in user/order")
+ValueError: Step 0 gains and reconstructed samples differ in user/order
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

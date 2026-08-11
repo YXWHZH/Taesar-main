@@ -1,0 +1,23 @@
+scope=last_layer
+custom_regex=None
+tensor_count=18
+parameter_count=99840
+
+trm_encoder.layer.1.multi_head_attention.query.weight	(128, 128)	16384
+trm_encoder.layer.1.multi_head_attention.query.bias	(128,)	128
+trm_encoder.layer.1.multi_head_attention.key.weight	(128, 128)	16384
+trm_encoder.layer.1.multi_head_attention.key.bias	(128,)	128
+trm_encoder.layer.1.multi_head_attention.value.weight	(128, 128)	16384
+trm_encoder.layer.1.multi_head_attention.value.bias	(128,)	128
+trm_encoder.layer.1.multi_head_attention.dense.weight	(128, 128)	16384
+trm_encoder.layer.1.multi_head_attention.dense.bias	(128,)	128
+trm_encoder.layer.1.multi_head_attention.LayerNorm.weight	(128,)	128
+trm_encoder.layer.1.multi_head_attention.LayerNorm.bias	(128,)	128
+trm_encoder.layer.1.feed_forward.dense_1.weight	(128, 128)	16384
+trm_encoder.layer.1.feed_forward.dense_1.bias	(128,)	128
+trm_encoder.layer.1.feed_forward.dense_2.weight	(128, 128)	16384
+trm_encoder.layer.1.feed_forward.dense_2.bias	(128,)	128
+trm_encoder.layer.1.feed_forward.LayerNorm.weight	(128,)	128
+trm_encoder.layer.1.feed_forward.LayerNorm.bias	(128,)	128
+LayerNorm.weight	(128,)	128
+LayerNorm.bias	(128,)	128

@@ -1,0 +1,15 @@
+[34m[1mwandb[0m: [33mWARNING[0m Saving files without folders. If you want to preserve subdirectories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")
+[34m[1mwandb[0m: [33mWARNING[0m Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+[34m[1mwandb[0m: [33mWARNING[0m Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+[34m[1mwandb[0m: [33mWARNING[0m Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+Error executing job with overrides: ['target_dom=dom1', 'gpu_id=0']
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Taesar-main/utils.py", line 66, in wrapper
+    out = func(config, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/Taesar-main/verify_step0.py", line 207, in main
+    config = OmegaConf.to_container(config, resolve=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Input cfg is not an OmegaConf config object (dict)
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

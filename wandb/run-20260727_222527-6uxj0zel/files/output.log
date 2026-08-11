@@ -1,0 +1,25 @@
+[34m[1mwandb[0m: [33mWARNING[0m Saving files without folders. If you want to preserve subdirectories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")
+[34m[1mwandb[0m: [33mWARNING[0m Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+[34m[1mwandb[0m: [33mWARNING[0m Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+[34m[1mwandb[0m: [33mWARNING[0m Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+[2026-07-27 22:25:42,467][__main__][INFO] - Aligned 6073 samples; target range=(1, 70672); expert=checkpoint/SASRec-BEST-2025.dom1.ckpt; vocabulary=184861
+Computing U_seq: 100%|████████████████████████████| 2/2 [00:00<00:00,  2.68it/s]
+[2026-07-27 22:25:46,195][__main__][INFO] - ========================================================================
+[2026-07-27 22:25:46,196][__main__][INFO] - Step 1: U_seq vs. Regeneration Gain
+[2026-07-27 22:25:46,196][__main__][INFO] - ========================================================================
+[2026-07-27 22:25:46,196][__main__][INFO] - Spearman rho=-0.0079, p=0.536, bootstrap 95% CI=[-0.0338, +0.0182]
+[2026-07-27 22:25:46,197][__main__][INFO] - Gain by U_seq tercile:
+[2026-07-27 22:25:46,198][__main__][INFO] -    low: n=2025, mean U=-3.49113, mean gain=+0.000300 (95% CI -0.000091, +0.000690)
+[2026-07-27 22:25:46,199][__main__][INFO] -    mid: n=2024, mean U=+0.48564, mean gain=+0.000178 (95% CI -0.000397, +0.000754)
+[2026-07-27 22:25:46,200][__main__][INFO] -   high: n=2024, mean U=+5.04356, mean gain=+0.000192 (95% CI -0.000791, +0.001174)
+[2026-07-27 22:25:46,202][__main__][INFO] - U>0 vs U<0: mean gain +0.000119 vs +0.000354; one-sided Mann-Whitney U p=0.669
+[2026-07-27 22:25:46,203][__main__][INFO] - AUROC(U_seq -> gain>0)=0.4955
+[2026-07-27 22:25:46,203][__main__][INFO] - Confounder checks (Spearman with U_seq / gain):
+[2026-07-27 22:25:46,206][__main__][INFO] -   mixed_length       rho(U)=+0.0022  rho(gain)=-0.0213
+[2026-07-27 22:25:46,209][__main__][INFO] -   target_length      rho(U)=-0.0274  rho(gain)=-0.0288
+[2026-07-27 22:25:46,212][__main__][INFO] -   cross_count        rho(U)=+0.0384  rho(gain)=-0.0069
+[2026-07-27 22:25:46,215][__main__][INFO] -   cross_ratio        rho(U)=+0.0458  rho(gain)=+0.0240
+[2026-07-27 22:25:46,218][__main__][INFO] -   baseline_rr        rho(U)=+0.0175  rho(gain)=-0.6174
+[2026-07-27 22:25:46,219][__main__][INFO] -   mixed_truncated    rho(U)=+nan  rho(gain)=+nan
+[2026-07-27 22:25:46,219][__main__][INFO] - ========================================================================
+[2026-07-27 22:25:46,224][__main__][INFO] - Saved per-sample Step 1 results -> save/step1/u_seq_dom1.npz

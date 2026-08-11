@@ -1,0 +1,20 @@
+[2026-07-27 22:04:18,576][__main__][INFO] - Aligned 6073 samples; target range=(1, 70672); expert=checkpoint/SASRec-BEST-2025.dom1.ckpt; vocabulary=184861
+[2026-07-27 22:04:22,401][__main__][INFO] - ========================================================================
+[2026-07-27 22:04:22,401][__main__][INFO] - Step 1: U_seq vs. Regeneration Gain
+[2026-07-27 22:04:22,401][__main__][INFO] - ========================================================================
+[2026-07-27 22:04:22,401][__main__][INFO] - Spearman rho=-0.0079, p=0.536, bootstrap 95% CI=[-0.0338, +0.0182]
+[2026-07-27 22:04:22,402][__main__][INFO] - Gain by U_seq tercile:
+[2026-07-27 22:04:22,403][__main__][INFO] -    low: n=2025, mean U=-3.49113, mean gain=+0.000300 (95% CI -0.000091, +0.000690)
+[2026-07-27 22:04:22,404][__main__][INFO] -    mid: n=2024, mean U=+0.48564, mean gain=+0.000178 (95% CI -0.000397, +0.000754)
+[2026-07-27 22:04:22,404][__main__][INFO] -   high: n=2024, mean U=+5.04356, mean gain=+0.000192 (95% CI -0.000791, +0.001174)
+[2026-07-27 22:04:22,406][__main__][INFO] - U>0 vs U<0: mean gain +0.000119 vs +0.000354; one-sided Mann-Whitney U p=0.669
+[2026-07-27 22:04:22,407][__main__][INFO] - AUROC(U_seq -> gain>0)=0.4955
+[2026-07-27 22:04:22,407][__main__][INFO] - Confounder checks (Spearman with U_seq / gain):
+[2026-07-27 22:04:22,410][__main__][INFO] -   mixed_length       rho(U)=+0.0022  rho(gain)=-0.0213
+[2026-07-27 22:04:22,413][__main__][INFO] -   target_length      rho(U)=-0.0274  rho(gain)=-0.0288
+[2026-07-27 22:04:22,416][__main__][INFO] -   cross_count        rho(U)=+0.0384  rho(gain)=-0.0069
+[2026-07-27 22:04:22,419][__main__][INFO] -   cross_ratio        rho(U)=+0.0458  rho(gain)=+0.0240
+[2026-07-27 22:04:22,422][__main__][INFO] -   baseline_rr        rho(U)=+0.0175  rho(gain)=-0.6174
+[2026-07-27 22:04:22,422][__main__][INFO] -   mixed_truncated    rho(U)=+nan  rho(gain)=+nan
+[2026-07-27 22:04:22,422][__main__][INFO] - ========================================================================
+[2026-07-27 22:04:22,425][__main__][INFO] - Saved per-sample Step 1 results -> save/step1/u_seq_dom1.npz

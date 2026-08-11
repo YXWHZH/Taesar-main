@@ -1,0 +1,22 @@
+============================================================
+Phase 1/4: Loading dataset
+============================================================
+[1;35mBEST[0m
+[1;34mThe number of users[0m: 40166
+[1;34mAverage actions of users[0m: 8.968953068592057
+[1;34mThe number of items[0m: 184861
+[1;34mAverage actions of items[0m: 3.818912329057564
+[1;34mThe number of inters[0m: 360238
+[1;34mThe sparsity of the dataset[0m: 99.99514839269968%
+[1;34mRemain Fields[0m: ['user_id', 'item_id_list', 'item_id', 'item_length']
+Item num: 184861
+
+============================================================
+Phase 2/4: Loading models
+============================================================
+Loaded 5 models: ['full', 'dom1', 'dom2', 'dom3', 'dom4']
+
+============================================================
+Phase 3/4: Computing utility scores
+============================================================
+Utility:   0%|                                           | 0/10 [00:00<?, ?it/s]

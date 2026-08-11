@@ -1,0 +1,73 @@
+{
+  "protocol": {
+    "teacher": "existing frozen Stage-1 probe (NOT OOF)",
+    "warning": "Run an OOF-teacher replication before treating positive results as final evidence.",
+    "scope": "dom1/dom2 only; single-source routing"
+  },
+  "args": {
+    "target_dom": "dom1",
+    "routers": [
+      "cross_attention"
+    ],
+    "stage1_dir": null,
+    "output_dir": "save/stage3_smoke/dom1",
+    "token_cache_dir": "save/stage3_token_cache",
+    "checkpoint_template": "checkpoint/SASRec-BEST-2025.tune.ckpt-{domain}-sim",
+    "device": "cuda:0",
+    "gpu_id": 0,
+    "seed": 2025,
+    "epochs": 1,
+    "patience": 1,
+    "batch_size": 64,
+    "encode_batch_size": 1024,
+    "eval_batch_size": 128,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "dropout": 0.1,
+    "hidden": 128,
+    "heads": 4,
+    "max_train_users": 256,
+    "max_valid_users": 128,
+    "max_test_users": 128,
+    "max_seq_len": 50,
+    "shuffle_token_order": false,
+    "shuffle_source_pairs": false,
+    "reuse_token_cache": false
+  },
+  "sources": [
+    "dom2",
+    "dom3",
+    "dom4"
+  ],
+  "routers": {
+    "cross_attention": {
+      "parameters": 166298,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.18885053197542825,
+          "valid_joint_huber": 0.12674732506275177
+        }
+      ],
+      "ce_utility": {
+        "spearman": 0.11763949170933505,
+        "sign_auroc": 0.5713039923695327,
+        "best_source_accuracy": 0.359375
+      },
+      "rank_utility": {
+        "spearman": 0.030889296734596998,
+        "sign_auroc": 0.4918251584918252,
+        "best_source_accuracy": 0.3359375
+      },
+      "routing_by_rank_head": {
+        "ce_target_only": 11.2136812210083,
+        "ce_predicted": 11.215627670288086,
+        "ce_permuted": 11.227556228637695,
+        "recall10_predicted": 0.0,
+        "recall10_permuted": 0.0,
+        "ndcg10_predicted": 0.0,
+        "ndcg10_permuted": 0.0
+      }
+    }
+  }
+}

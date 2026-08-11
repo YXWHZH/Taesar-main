@@ -1,0 +1,42 @@
+{
+  "os": "Linux-5.15.0-78-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.11.15",
+  "startedAt": "2026-07-26T16:33:36.120264Z",
+  "args": [
+    "--target_dom",
+    "dom1",
+    "--gpu",
+    "0"
+  ],
+  "program": "/root/autodl-tmp/Taesar-main/verify_utility_signal.py",
+  "codePath": "verify_utility_signal.py",
+  "codePathLocal": "verify_utility_signal.py",
+  "email": "3126362407@qq.com",
+  "root": "/root/autodl-tmp/Taesar-main",
+  "host": "autodl-container-v07skcjs40-ba72e3ac",
+  "executable": "/root/miniconda3/envs/Taesar/bin/python",
+  "cpu_count": 104,
+  "cpu_count_logical": 208,
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "32212254720",
+      "used": "21444775936"
+    }
+  },
+  "memory": {
+    "total": "810159058944"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 5090",
+      "memoryTotal": "34190917632",
+      "cudaCores": 21760,
+      "architecture": "Blackwell",
+      "uuid": "GPU-761bf381-b177-c211-ba95-a8d5bcbfa123"
+    }
+  ],
+  "cudaVersion": "13.2",
+  "writerId": "t3fsd17cxs1382wmxml70c0aq6fkowjr"
+}

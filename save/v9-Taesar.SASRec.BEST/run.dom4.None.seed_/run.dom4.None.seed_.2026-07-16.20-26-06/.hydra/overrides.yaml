@@ -1,0 +1,4 @@
+- stage=run
+- gpu_id=
+- seed=
+- target_dom=dom4

@@ -1,0 +1,104 @@
+{
+  "target": "dom3",
+  "n_users": 10185,
+  "sources": [
+    "dom1",
+    "dom2",
+    "dom4"
+  ],
+  "definitions": {
+    "ce": "CE(target_only)-CE(single_source)",
+    "rank": "log(1+rank_target_only)-log(1+rank_single_source)",
+    "margin": "full-negative logit margin(single_source)-margin(target_only), derived exactly from full-softmax CE"
+  },
+  "seed_stability": {
+    "ce": {
+      "2025-2026": {
+        "spearman": 0.6155302991087164,
+        "sign_agreement": 0.7140566192112584,
+        "best_source_agreement": 0.5165439371624939
+      },
+      "2025-2027": {
+        "spearman": 0.603601464078683,
+        "sign_agreement": 0.7084274259531992,
+        "best_source_agreement": 0.5140893470790378
+      },
+      "2026-2027": {
+        "spearman": 0.6356748602711964,
+        "sign_agreement": 0.7166421207658321,
+        "best_source_agreement": 0.521845851742759
+      }
+    },
+    "rank": {
+      "2025-2026": {
+        "spearman": 0.5657562081237817,
+        "sign_agreement": 0.7123220422189495,
+        "best_source_agreement": 0.5041728031418753
+      },
+      "2025-2027": {
+        "spearman": 0.551329081925734,
+        "sign_agreement": 0.7048928162330225,
+        "best_source_agreement": 0.505252822778596
+      },
+      "2026-2027": {
+        "spearman": 0.5862999126675837,
+        "sign_agreement": 0.7173948617247586,
+        "best_source_agreement": 0.5098674521354933
+      }
+    },
+    "margin": {
+      "2025-2026": {
+        "spearman": 0.6155308212028138,
+        "sign_agreement": 0.7140566192112584,
+        "best_source_agreement": 0.5165439371624939
+      },
+      "2025-2027": {
+        "spearman": 0.6036014388060837,
+        "sign_agreement": 0.7084274259531992,
+        "best_source_agreement": 0.5140893470790378
+      },
+      "2026-2027": {
+        "spearman": 0.6356746021676444,
+        "sign_agreement": 0.7166421207658321,
+        "best_source_agreement": 0.521845851742759
+      }
+    }
+  },
+  "alignment_with_ranking_2025": {
+    "ce": {
+      "spearman_with_rank_utility": 0.8972057541710371,
+      "sign_agreement_with_rank_utility": 0.9049255441008018,
+      "auroc_rank_improves": 0.9675638593324061,
+      "mean_on_top10_entry": 0.4094615876674652,
+      "mean_on_top10_exit": -0.22364754974842072
+    },
+    "margin": {
+      "spearman_with_rank_utility": 0.897206662373316,
+      "sign_agreement_with_rank_utility": 0.9049255441008018,
+      "auroc_rank_improves": 0.9675633835775004,
+      "mean_on_top10_entry": 0.4095434524647377,
+      "mean_on_top10_exit": -0.22368866513380767
+    }
+  },
+  "existing_router_predictability_2025": {
+    "ce": {
+      "spearman": 0.019105479493505086,
+      "sign_auroc": 0.508247830448669,
+      "best_source_accuracy": 0.33627884143348064
+    },
+    "rank": {
+      "spearman": 0.021494315208382325,
+      "sign_auroc": 0.5060899448016672,
+      "best_source_accuracy": 0.3370643102601866
+    },
+    "margin": {
+      "spearman": 0.019105369671068448,
+      "sign_auroc": 0.508247830448669,
+      "best_source_accuracy": 0.33627884143348064
+    }
+  },
+  "top10_events": {
+    "entries": 10,
+    "exits": 31
+  }
+}

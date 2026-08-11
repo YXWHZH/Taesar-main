@@ -1,0 +1,6 @@
+signature,signature_names,n_domains,users,fraction_all_users
+dom1+dom2+dom3+dom4,dom1+dom2+dom3+dom4,4,38918,0.9689530685920578
+dom1+dom2+dom3,dom1+dom2+dom3,3,762,0.018971741566040083
+dom1+dom2+dom4,dom1+dom2+dom4,3,285,0.0070957301132827085
+dom2+dom3+dom4,dom2+dom3+dom4,3,110,0.0027387028507406944
+dom1+dom3+dom4,dom1+dom3+dom4,3,90,0.00224075687787875

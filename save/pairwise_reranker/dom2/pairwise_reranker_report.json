@@ -1,0 +1,400 @@
+{
+  "protocol": {
+    "hard_negatives": "OOF fold-specific target Top-100, K=10",
+    "candidate_pool": "OOF ensemble target Top-5000",
+    "threshold": "validation NDCG@10",
+    "test": "frozen"
+  },
+  "args": {
+    "target_dom": "dom2",
+    "device": "cuda:0",
+    "seed": 2025,
+    "hard_k": 10,
+    "hard_pool": 100,
+    "candidate_m": 5000,
+    "batch_size": 512,
+    "score_batch_size": 32,
+    "epochs": 25,
+    "patience": 5,
+    "hidden": 128,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "pair_weight": 1.0,
+    "point_weight": 0.5,
+    "output_dir": null
+  },
+  "sources": [
+    "dom1",
+    "dom3",
+    "dom4"
+  ],
+  "valid": {
+    "target": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.002,
+      "NDCG@10": 0.000974634093071328,
+      "MRR@M": 0.0012704905418541355,
+      "conditional_Recall@10": 0.007936507936507936,
+      "conditional_NDCG@10": 0.003867595607425905
+    },
+    "dense": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0024,
+      "NDCG@10": 0.0009831126409794414,
+      "MRR@M": 0.0011188010341407907,
+      "conditional_Recall@10": 0.009523809523809525,
+      "conditional_NDCG@10": 0.0039012406388073072
+    },
+    "oracle": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.002,
+      "NDCG@10": 0.0009572582337737163,
+      "MRR@M": 0.0012446443255262783,
+      "conditional_Recall@10": 0.007936507936507936,
+      "conditional_NDCG@10": 0.0037986437848163347
+    },
+    "user": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0026,
+      "NDCG@10": 0.0011310722830594248,
+      "MRR@M": 0.0012453015885715527,
+      "conditional_Recall@10": 0.010317460317460317,
+      "conditional_NDCG@10": 0.004488382075632638
+    },
+    "P1:-0.332545": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0024,
+      "NDCG@10": 0.0010122027470664033,
+      "MRR@M": 0.0011468374785182317,
+      "conditional_Recall@10": 0.009523809523809525,
+      "conditional_NDCG@10": 0.0040166775677238226
+    },
+    "P1:-0.266036": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0024,
+      "NDCG@10": 0.0010122027470664033,
+      "MRR@M": 0.0011467487834879008,
+      "conditional_Recall@10": 0.009523809523809525,
+      "conditional_NDCG@10": 0.0040166775677238226
+    },
+    "P1:-0.199527": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0024,
+      "NDCG@10": 0.0010122027470664033,
+      "MRR@M": 0.0011471174512381038,
+      "conditional_Recall@10": 0.009523809523809525,
+      "conditional_NDCG@10": 0.0040166775677238226
+    },
+    "P1:-0.133018": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0024,
+      "NDCG@10": 0.0010122027470664033,
+      "MRR@M": 0.0011482584147791879,
+      "conditional_Recall@10": 0.009523809523809525,
+      "conditional_NDCG@10": 0.0040166775677238226
+    },
+    "P1:-0.066509": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0024,
+      "NDCG@10": 0.0010122027470664033,
+      "MRR@M": 0.0011471963867390822,
+      "conditional_Recall@10": 0.009523809523809525,
+      "conditional_NDCG@10": 0.0040166775677238226
+    },
+    "P1:0": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0024,
+      "NDCG@10": 0.0010122027470664033,
+      "MRR@M": 0.00114617092465879,
+      "conditional_Recall@10": 0.009523809523809525,
+      "conditional_NDCG@10": 0.0040166775677238226
+    },
+    "P1:0.066509": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.002,
+      "NDCG@10": 0.0009965768165392482,
+      "MRR@M": 0.001284338334331907,
+      "conditional_Recall@10": 0.007936507936507936,
+      "conditional_NDCG@10": 0.003954669906901779
+    },
+    "P1:0.133018": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0024,
+      "NDCG@10": 0.0011030017806713385,
+      "MRR@M": 0.001289992104891738,
+      "conditional_Recall@10": 0.009523809523809525,
+      "conditional_NDCG@10": 0.004376991193140232
+    },
+    "P1:0.199527": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.002,
+      "NDCG@10": 0.0010685049690460243,
+      "MRR@M": 0.001396581686967251,
+      "conditional_Recall@10": 0.007936507936507936,
+      "conditional_NDCG@10": 0.004240099083515969
+    },
+    "P1:0.266036": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.002,
+      "NDCG@10": 0.000974634093071328,
+      "MRR@M": 0.0012704905418541355,
+      "conditional_Recall@10": 0.007936507936507936,
+      "conditional_NDCG@10": 0.003867595607425905
+    },
+    "P1:0.332545": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.002,
+      "NDCG@10": 0.000974634093071328,
+      "MRR@M": 0.0012704905418541355,
+      "conditional_Recall@10": 0.007936507936507936,
+      "conditional_NDCG@10": 0.003867595607425905
+    },
+    "P5:-0.332545": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.002,
+      "NDCG@10": 0.0009601452099980658,
+      "MRR@M": 0.0012374432287761631,
+      "conditional_Recall@10": 0.007936507936507936,
+      "conditional_NDCG@10": 0.0038101000396748644
+    },
+    "P5:-0.266036": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.002,
+      "NDCG@10": 0.0009601452099980658,
+      "MRR@M": 0.0012363203256775745,
+      "conditional_Recall@10": 0.007936507936507936,
+      "conditional_NDCG@10": 0.0038101000396748644
+    },
+    "P5:-0.199527": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.002,
+      "NDCG@10": 0.0009572582337737163,
+      "MRR@M": 0.0012322033986101513,
+      "conditional_Recall@10": 0.007936507936507936,
+      "conditional_NDCG@10": 0.0037986437848163347
+    },
+    "P5:-0.133018": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.002,
+      "NDCG@10": 0.0009572582337737163,
+      "MRR@M": 0.0012317900582327936,
+      "conditional_Recall@10": 0.007936507936507936,
+      "conditional_NDCG@10": 0.0037986437848163347
+    },
+    "P5:-0.066509": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.002,
+      "NDCG@10": 0.0009572582337737163,
+      "MRR@M": 0.0012307450192183677,
+      "conditional_Recall@10": 0.007936507936507936,
+      "conditional_NDCG@10": 0.0037986437848163347
+    },
+    "P5:0": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.002,
+      "NDCG@10": 0.0009572582337737163,
+      "MRR@M": 0.001230860154813801,
+      "conditional_Recall@10": 0.007936507936507936,
+      "conditional_NDCG@10": 0.0037986437848163347
+    },
+    "P5:0.066509": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0018,
+      "NDCG@10": 0.000904725278603707,
+      "MRR@M": 0.0012297486305038665,
+      "conditional_Recall@10": 0.007142857142857143,
+      "conditional_NDCG@10": 0.0035901796769988374
+    },
+    "P5:0.133018": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0016,
+      "NDCG@10": 0.0008506484034962146,
+      "MRR@M": 0.0012294732383707745,
+      "conditional_Recall@10": 0.006349206349206349,
+      "conditional_NDCG@10": 0.003375588902762756
+    },
+    "P5:0.199527": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0014,
+      "NDCG@10": 0.000847504789039456,
+      "MRR@M": 0.001306041744614959,
+      "conditional_Recall@10": 0.005555555555555556,
+      "conditional_NDCG@10": 0.0033631142422200634
+    },
+    "P5:0.266036": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0016,
+      "NDCG@10": 0.0008703908658249568,
+      "MRR@M": 0.0012584683768969462,
+      "conditional_Recall@10": 0.006349206349206349,
+      "conditional_NDCG@10": 0.0034539320072418923
+    },
+    "P5:0.332545": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0016,
+      "NDCG@10": 0.0009416323032465613,
+      "MRR@M": 0.001350622712924144,
+      "conditional_Recall@10": 0.006349206349206349,
+      "conditional_NDCG@10": 0.0037366361239942907
+    },
+    "fixed0": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.002,
+      "NDCG@10": 0.0010509614227513222,
+      "MRR@M": 0.0013558581706694915,
+      "conditional_Recall@10": 0.007936507936507936,
+      "conditional_NDCG@10": 0.00417048183631477
+    },
+    "fixed1": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0018,
+      "NDCG@10": 0.0008902443021150742,
+      "MRR@M": 0.0012219853274090435,
+      "conditional_Recall@10": 0.007142857142857143,
+      "conditional_NDCG@10": 0.0035327154845836276
+    },
+    "fixed2": {
+      "coverage": 0.252,
+      "positive_users": 1260,
+      "Recall@10": 0.0024,
+      "NDCG@10": 0.000998338058681082,
+      "MRR@M": 0.0011347649451240397,
+      "conditional_Recall@10": 0.009523809523809525,
+      "conditional_NDCG@10": 0.003961658963020167
+    }
+  },
+  "chosen_thresholds": {
+    "P1": 0.13301799297332767,
+    "P5": -0.3325449824333191
+  },
+  "fixed_source": "dom1",
+  "test": {
+    "target": {
+      "coverage": 0.24522090059473237,
+      "positive_users": 2309,
+      "Recall@10": 0.002655055225148683,
+      "NDCG@10": 0.0013117257481314913,
+      "MRR@M": 0.001448346334873638,
+      "conditional_Recall@10": 0.010827197921177999,
+      "conditional_NDCG@10": 0.005349159655437904
+    },
+    "dense": {
+      "coverage": 0.24522090059473237,
+      "positive_users": 2309,
+      "Recall@10": 0.0019116397621070519,
+      "NDCG@10": 0.0008336069027262225,
+      "MRR@M": 0.0010830786937467082,
+      "conditional_Recall@10": 0.007795582503248159,
+      "conditional_NDCG@10": 0.0033994121247596844
+    },
+    "oracle": {
+      "coverage": 0.24522090059473237,
+      "positive_users": 2309,
+      "Recall@10": 0.0021240441801189465,
+      "NDCG@10": 0.0010702478387836654,
+      "MRR@M": 0.0013133800990757793,
+      "conditional_Recall@10": 0.0086617583369424,
+      "conditional_NDCG@10": 0.0043644234083962735
+    },
+    "user": {
+      "coverage": 0.24522090059473237,
+      "positive_users": 2309,
+      "Recall@10": 0.0022302463891248937,
+      "NDCG@10": 0.0011428516231124515,
+      "MRR@M": 0.0013645037033750244,
+      "conditional_Recall@10": 0.009094846253789519,
+      "conditional_NDCG@10": 0.0046604984336192454
+    },
+    "P1:-0.332545": {
+      "coverage": 0.24522090059473237,
+      "positive_users": 2309,
+      "Recall@10": 0.0022302463891248937,
+      "NDCG@10": 0.001054337137624637,
+      "MRR@M": 0.0012534884108327594,
+      "conditional_Recall@10": 0.009094846253789519,
+      "conditional_NDCG@10": 0.004299540271924461
+    },
+    "P1:0.133018": {
+      "coverage": 0.24522090059473237,
+      "positive_users": 2309,
+      "Recall@10": 0.0024426508071367886,
+      "NDCG@10": 0.0011972881859016443,
+      "MRR@M": 0.0013733677719811464,
+      "conditional_Recall@10": 0.00996102208748376,
+      "conditional_NDCG@10": 0.004882488331940183
+    },
+    "P5:-0.332545": {
+      "coverage": 0.24522090059473237,
+      "positive_users": 2309,
+      "Recall@10": 0.0018054375531011044,
+      "NDCG@10": 0.0009136119912163118,
+      "MRR@M": 0.00121706942826517,
+      "conditional_Recall@10": 0.0073624945864010395,
+      "conditional_NDCG@10": 0.0037256693414000827
+    },
+    "P5:0.133018": {
+      "coverage": 0.24522090059473237,
+      "positive_users": 2309,
+      "Recall@10": 0.0021240441801189465,
+      "NDCG@10": 0.0010249452632929332,
+      "MRR@M": 0.0012554248842881488,
+      "conditional_Recall@10": 0.0086617583369424,
+      "conditional_NDCG@10": 0.004179681506784868
+    },
+    "fixed0": {
+      "coverage": 0.24522090059473237,
+      "positive_users": 2309,
+      "Recall@10": 0.0022302463891248937,
+      "NDCG@10": 0.001161209586632774,
+      "MRR@M": 0.0013884157151413654,
+      "conditional_Recall@10": 0.009094846253789519,
+      "conditional_NDCG@10": 0.00473536139789268
+    },
+    "fixed1": {
+      "coverage": 0.24522090059473237,
+      "positive_users": 2309,
+      "Recall@10": 0.0020178419711129993,
+      "NDCG@10": 0.0009986217016242766,
+      "MRR@M": 0.0012334541256006203,
+      "conditional_Recall@10": 0.00822867042009528,
+      "conditional_NDCG@10": 0.004072335185142568
+    },
+    "fixed2": {
+      "coverage": 0.24522090059473237,
+      "positive_users": 2309,
+      "Recall@10": 0.0022302463891248937,
+      "NDCG@10": 0.0010606739315697723,
+      "MRR@M": 0.0012720118491120285,
+      "conditional_Recall@10": 0.009094846253789519,
+      "conditional_NDCG@10": 0.004325381437705057
+    }
+  }
+}

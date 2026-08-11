@@ -1,0 +1,278 @@
+{
+  "protocol": {
+    "teacher": "existing frozen Stage-1 probe (NOT OOF)",
+    "warning": "Run an OOF-teacher replication before treating positive results as final evidence.",
+    "scope": "dom1/dom2 only; single-source routing"
+  },
+  "args": {
+    "target_dom": "dom1",
+    "routers": [
+      "pooled_mlp",
+      "pooled_larger_mlp",
+      "sequence_pooling",
+      "cross_attention"
+    ],
+    "stage1_dir": null,
+    "output_dir": null,
+    "token_cache_dir": "save/stage3_token_cache",
+    "checkpoint_template": "checkpoint/SASRec-BEST-2025.tune.ckpt-{domain}-sim",
+    "device": "cuda:0",
+    "gpu_id": 0,
+    "seed": 2025,
+    "epochs": 30,
+    "patience": 5,
+    "batch_size": 256,
+    "encode_batch_size": 512,
+    "eval_batch_size": 512,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "dropout": 0.1,
+    "hidden": 128,
+    "heads": 4,
+    "max_train_users": 20000,
+    "max_valid_users": 5000,
+    "max_test_users": 0,
+    "max_seq_len": 50,
+    "shuffle_token_order": false,
+    "shuffle_source_pairs": false,
+    "reuse_token_cache": true
+  },
+  "sources": [
+    "dom2",
+    "dom3",
+    "dom4"
+  ],
+  "routers": {
+    "pooled_mlp": {
+      "parameters": 83610,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.17654506522814434,
+          "valid_joint_huber": 0.13630874454975128
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.16868517515659331,
+          "valid_joint_huber": 0.13620591163635254
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.16381389244397482,
+          "valid_joint_huber": 0.13956668972969055
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.15631165781021117,
+          "valid_joint_huber": 0.14065980911254883
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.1448132138609886,
+          "valid_joint_huber": 0.1453540027141571
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.1330760834058126,
+          "valid_joint_huber": 0.14573878049850464
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.12134715293248495,
+          "valid_joint_huber": 0.15565596520900726
+        }
+      ],
+      "ce_utility": {
+        "spearman": 0.034269032972742815,
+        "sign_auroc": 0.5145351519075057,
+        "best_source_accuracy": 0.330973159888029
+      },
+      "rank_utility": {
+        "spearman": 0.06735665581061448,
+        "sign_auroc": 0.5229507249715608,
+        "best_source_accuracy": 0.3373950271694385
+      },
+      "routing_by_rank_head": {
+        "ce_target_only": 11.209959983825684,
+        "ce_predicted": 11.20389461517334,
+        "ce_permuted": 11.202366828918457,
+        "recall10_predicted": 0.0031286020088918164,
+        "recall10_permuted": 0.002799275481640046,
+        "ndcg10_predicted": 0.0015977616956441671,
+        "ndcg10_permuted": 0.0013985195170200045
+      }
+    },
+    "pooled_larger_mlp": {
+      "parameters": 166810,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.177005025323232,
+          "valid_joint_huber": 0.13103438913822174
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.1669583594163259,
+          "valid_joint_huber": 0.13688716292381287
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.15914880156517028,
+          "valid_joint_huber": 0.14145201444625854
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.1473422375837962,
+          "valid_joint_huber": 0.14087167382240295
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.13121753436724345,
+          "valid_joint_huber": 0.15224403142929077
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.1155083038409551,
+          "valid_joint_huber": 0.15166285634040833
+        }
+      ],
+      "ce_utility": {
+        "spearman": 0.03660686010342629,
+        "sign_auroc": 0.513941953336018,
+        "best_source_accuracy": 0.32751523135188537
+      },
+      "rank_utility": {
+        "spearman": 0.06890581456181878,
+        "sign_auroc": 0.5236981333109649,
+        "best_source_accuracy": 0.33805368022394205
+      },
+      "routing_by_rank_head": {
+        "ce_target_only": 11.209959983825684,
+        "ce_predicted": 11.201214790344238,
+        "ce_permuted": 11.20144271850586,
+        "recall10_predicted": 0.002305285690762391,
+        "recall10_permuted": 0.002634612218014161,
+        "ndcg10_predicted": 0.0012460193672775561,
+        "ndcg10_permuted": 0.0013315324936284381
+      }
+    },
+    "sequence_pooling": {
+      "parameters": 149146,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.1770708910226822,
+          "valid_joint_huber": 0.130868062376976
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.16930978744824726,
+          "valid_joint_huber": 0.1323704570531845
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.1645010971546173,
+          "valid_joint_huber": 0.13359957933425903
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.15944603360493978,
+          "valid_joint_huber": 0.13425880670547485
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.1530225929339727,
+          "valid_joint_huber": 0.13879427313804626
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.1461632669130961,
+          "valid_joint_huber": 0.139138862490654
+        }
+      ],
+      "ce_utility": {
+        "spearman": 0.03903872277201232,
+        "sign_auroc": 0.5189934493771623,
+        "best_source_accuracy": 0.3377243536966903
+      },
+      "rank_utility": {
+        "spearman": 0.06664466494103376,
+        "sign_auroc": 0.5211776556392937,
+        "best_source_accuracy": 0.34480487403260335
+      },
+      "routing_by_rank_head": {
+        "ce_target_only": 11.209959983825684,
+        "ce_predicted": 11.199954986572266,
+        "ce_permuted": 11.199688911437988,
+        "recall10_predicted": 0.002140622427136506,
+        "recall10_permuted": 0.002305285690762391,
+        "ndcg10_predicted": 0.0012363401320471532,
+        "ndcg10_permuted": 0.0012568302040742892
+      }
+    },
+    "cross_attention": {
+      "parameters": 166298,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.1729983006834984,
+          "valid_joint_huber": 0.1374824494123459
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.16501139648755392,
+          "valid_joint_huber": 0.13741178810596466
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.1583456068833669,
+          "valid_joint_huber": 0.13683761656284332
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.1509159673055013,
+          "valid_joint_huber": 0.1392691433429718
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.14119666125774383,
+          "valid_joint_huber": 0.1422523707151413
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.1328856692314148,
+          "valid_joint_huber": 0.14765331149101257
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.1240418878475825,
+          "valid_joint_huber": 0.1474103331565857
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.11711128063201905,
+          "valid_joint_huber": 0.1505701243877411
+        }
+      ],
+      "ce_utility": {
+        "spearman": 0.043015752309401516,
+        "sign_auroc": 0.5171513089373146,
+        "best_source_accuracy": 0.330973159888029
+      },
+      "rank_utility": {
+        "spearman": 0.06921752762379708,
+        "sign_auroc": 0.525573068288696,
+        "best_source_accuracy": 0.3316318129425325
+      },
+      "routing_by_rank_head": {
+        "ce_target_only": 11.209959983825684,
+        "ce_predicted": 11.20395565032959,
+        "ce_permuted": 11.201118469238281,
+        "recall10_predicted": 0.002963938745265931,
+        "recall10_permuted": 0.002963938745265931,
+        "ndcg10_predicted": 0.0016544232242756537,
+        "ndcg10_permuted": 0.0015760925107483053
+      }
+    }
+  }
+}

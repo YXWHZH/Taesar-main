@@ -1,0 +1,208 @@
+{
+  "protocol": {
+    "teacher": "5-fold OOF mask-fusion probes",
+    "router_train": "each user labeled only by a probe that excluded its fold",
+    "router_valid_test": "mean utility from all fold probes; neither split used for probe fitting/early stopping",
+    "candidate_embedding": "shared frozen target-expert item table",
+    "comparison": "P1 candidate-source prior versus P5 personalized interactions"
+  },
+  "args": {
+    "target_dom": "dom2",
+    "device": "cuda:0",
+    "folds": 5,
+    "seed": 2025,
+    "probe_epochs": 10,
+    "probe_patience": 3,
+    "probe_batch_size": 512,
+    "epochs": 40,
+    "patience": 6,
+    "batch_size": 512,
+    "eval_batch_size": 1024,
+    "hidden": 128,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "max_train_users": 20000,
+    "max_valid_users": 5000,
+    "max_test_users": 0,
+    "output_dir": null
+  },
+  "sources": [
+    "dom1",
+    "dom3",
+    "dom4"
+  ],
+  "folds": [
+    {
+      "fold": 0,
+      "seed": 3025,
+      "heldout_users": 4000,
+      "teacher_train_users": 14400,
+      "teacher_valid_users": 1600,
+      "best_valid_loss": 10.485553703308106
+    },
+    {
+      "fold": 1,
+      "seed": 3026,
+      "heldout_users": 4000,
+      "teacher_train_users": 14400,
+      "teacher_valid_users": 1600,
+      "best_valid_loss": 10.455006256103516
+    },
+    {
+      "fold": 2,
+      "seed": 3027,
+      "heldout_users": 4000,
+      "teacher_train_users": 14400,
+      "teacher_valid_users": 1600,
+      "best_valid_loss": 10.460729942321777
+    },
+    {
+      "fold": 3,
+      "seed": 3028,
+      "heldout_users": 4000,
+      "teacher_train_users": 14400,
+      "teacher_valid_users": 1600,
+      "best_valid_loss": 10.430346717834473
+    },
+    {
+      "fold": 4,
+      "seed": 3029,
+      "heldout_users": 4000,
+      "teacher_train_users": 14400,
+      "teacher_valid_users": 1600,
+      "best_valid_loss": 10.472143440246581
+    }
+  ],
+  "variants": {
+    "P1_candidate_prior": {
+      "input_dim": 131,
+      "parameters": 33666,
+      "best_valid_joint_huber": 0.03193989023566246,
+      "history": [
+        {
+          "epoch": 1,
+          "train_joint_huber": 0.04978715473016103,
+          "valid_joint_huber": 0.03264687582850456
+        },
+        {
+          "epoch": 2,
+          "train_joint_huber": 0.04709600151181221,
+          "valid_joint_huber": 0.03200177103281021
+        },
+        {
+          "epoch": 3,
+          "train_joint_huber": 0.04625423260331154,
+          "valid_joint_huber": 0.03193989023566246
+        },
+        {
+          "epoch": 4,
+          "train_joint_huber": 0.04554782463212808,
+          "valid_joint_huber": 0.03275686502456665
+        },
+        {
+          "epoch": 5,
+          "train_joint_huber": 0.044764774099985756,
+          "valid_joint_huber": 0.03216245770454407
+        },
+        {
+          "epoch": 6,
+          "train_joint_huber": 0.04422676847577095,
+          "valid_joint_huber": 0.03275742754340172
+        },
+        {
+          "epoch": 7,
+          "train_joint_huber": 0.04371965363025665,
+          "valid_joint_huber": 0.03336261212825775
+        },
+        {
+          "epoch": 8,
+          "train_joint_huber": 0.043149385408560434,
+          "valid_joint_huber": 0.03334585577249527
+        },
+        {
+          "epoch": 9,
+          "train_joint_huber": 0.0427231341679891,
+          "valid_joint_huber": 0.033499181270599365
+        }
+      ],
+      "ce_utility": {
+        "spearman": 0.5686584048809002,
+        "sign_auroc": 0.7695098087752074,
+        "best_source_accuracy": 0.41960492778249786
+      },
+      "rank_utility": {
+        "spearman": 0.283719567328872,
+        "sign_auroc": 0.6145488377223844,
+        "best_source_accuracy": 0.387107051826678
+      }
+    },
+    "P5_interactions": {
+      "input_dim": 643,
+      "parameters": 99202,
+      "best_valid_joint_huber": 0.01897311583161354,
+      "history": [
+        {
+          "epoch": 1,
+          "train_joint_huber": 0.04047113865216573,
+          "valid_joint_huber": 0.021617241203784943
+        },
+        {
+          "epoch": 2,
+          "train_joint_huber": 0.03128163496653239,
+          "valid_joint_huber": 0.019499965012073517
+        },
+        {
+          "epoch": 3,
+          "train_joint_huber": 0.027424083880583445,
+          "valid_joint_huber": 0.019364386796951294
+        },
+        {
+          "epoch": 4,
+          "train_joint_huber": 0.02421784966190656,
+          "valid_joint_huber": 0.01897311583161354
+        },
+        {
+          "epoch": 5,
+          "train_joint_huber": 0.0217947159131368,
+          "valid_joint_huber": 0.01908509060740471
+        },
+        {
+          "epoch": 6,
+          "train_joint_huber": 0.01974637828866641,
+          "valid_joint_huber": 0.0194403063505888
+        },
+        {
+          "epoch": 7,
+          "train_joint_huber": 0.018337954099973044,
+          "valid_joint_huber": 0.019418392330408096
+        },
+        {
+          "epoch": 8,
+          "train_joint_huber": 0.01677539842625459,
+          "valid_joint_huber": 0.019129076972603798
+        },
+        {
+          "epoch": 9,
+          "train_joint_huber": 0.015898361104726793,
+          "valid_joint_huber": 0.019116327166557312
+        },
+        {
+          "epoch": 10,
+          "train_joint_huber": 0.014896795199314753,
+          "valid_joint_huber": 0.019238382577896118
+        }
+      ],
+      "ce_utility": {
+        "spearman": 0.7033767316760279,
+        "sign_auroc": 0.8332418233705227,
+        "best_source_accuracy": 0.5069031435853866
+      },
+      "rank_utility": {
+        "spearman": 0.6065641736367021,
+        "sign_auroc": 0.784210733295349,
+        "best_source_accuracy": 0.4725998300764656
+      }
+    }
+  }
+}

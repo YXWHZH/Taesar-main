@@ -1,0 +1,42 @@
+{
+  "os": "Linux-5.15.0-78-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.11.15",
+  "startedAt": "2026-03-24T08:46:09.549307Z",
+  "args": [
+    "-m",
+    "stage=run",
+    "gpu_id=0",
+    "seed=2025"
+  ],
+  "program": "/root/autodl-tmp/Taesar-main/pretrain.py",
+  "codePath": "pretrain.py",
+  "codePathLocal": "pretrain.py",
+  "email": "3126362407@qq.com",
+  "root": "/root/autodl-tmp/Taesar-main",
+  "host": "autodl-container-ce11498eee-c79efdbf",
+  "executable": "/root/miniconda3/envs/Taesar/bin/python",
+  "cpu_count": 128,
+  "cpu_count_logical": 256,
+  "gpu": "NVIDIA GeForce RTX 4090 D",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "32212254720",
+      "used": "16793427968"
+    }
+  },
+  "memory": {
+    "total": "810854170624"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4090 D",
+      "memoryTotal": "25757220864",
+      "cudaCores": 14592,
+      "architecture": "Ada",
+      "uuid": "GPU-941fbeb3-1cbe-5a5f-1550-b367f3331bee"
+    }
+  ],
+  "cudaVersion": "13.0",
+  "writerId": "a29blo3db88eokio3v5n7ntdcaypphrw"
+}

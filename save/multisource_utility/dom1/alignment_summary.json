@@ -1,0 +1,45 @@
+{
+  "stats_before_subsample": {
+    "test": {
+      "target_rows": 6073,
+      "kept": 6073,
+      "skip_target_outside_domain": 0,
+      "skip_missing_source_when_required": 0,
+      "users_with_all_sources": 6073,
+      "users_with_2_sources": 0,
+      "users_with_1_source": 0,
+      "users_with_0_sources": 0
+    },
+    "train": {
+      "target_rows": 40055,
+      "kept": 38918,
+      "skip_target_outside_domain": 0,
+      "skip_missing_source_when_required": 1137,
+      "users_with_all_sources": 38918,
+      "users_with_2_sources": 1137,
+      "users_with_1_source": 0,
+      "users_with_0_sources": 0
+    },
+    "valid": {
+      "target_rows": 7437,
+      "kept": 7437,
+      "skip_target_outside_domain": 0,
+      "skip_missing_source_when_required": 0,
+      "users_with_all_sources": 7437,
+      "users_with_2_sources": 0,
+      "users_with_1_source": 0,
+      "users_with_0_sources": 0
+    }
+  },
+  "after_subsample": {
+    "test": 6073,
+    "train": 20000,
+    "valid": 5000
+  },
+  "target_item_range": [
+    1,
+    70672
+  ],
+  "n_target_classes": 70672,
+  "hidden_size": 128
+}

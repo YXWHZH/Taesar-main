@@ -1,0 +1,234 @@
+{
+  "project_root": "/root/autodl-tmp/Taesar-main",
+  "dataset_dir": "/root/autodl-tmp/Taesar-main/dataset/BEST",
+  "prefix": "BEST",
+  "domains": [
+    "dom1",
+    "dom2",
+    "dom3",
+    "dom4"
+  ],
+  "display_names": {
+    "dom1": "dom1",
+    "dom2": "dom2",
+    "dom3": "dom3",
+    "dom4": "dom4"
+  },
+  "splits": [
+    "train",
+    "valid",
+    "test"
+  ],
+  "primary_split": "train",
+  "assumptions": {
+    "user_id_global_consistency_required": true,
+    "note": "Cross-domain overlap assumes the same user_id denotes the same user across domains. This cannot be proven from processed .inter files alone."
+  },
+  "schemas": {
+    "dom1.train": {
+      "path": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom1.train.inter",
+      "user": "user_id",
+      "item_seq": "item_id_list",
+      "target_item": "item_id",
+      "time_seq": null,
+      "target_time": null,
+      "seq_len_field": null,
+      "columns": [
+        "user_id",
+        "item_id_list",
+        "item_id"
+      ]
+    },
+    "dom1.valid": {
+      "path": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom1.valid.inter",
+      "user": "user_id",
+      "item_seq": "item_id_list",
+      "target_item": "item_id",
+      "time_seq": null,
+      "target_time": null,
+      "seq_len_field": null,
+      "columns": [
+        "user_id",
+        "item_id_list",
+        "item_id"
+      ]
+    },
+    "dom1.test": {
+      "path": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom1.test.inter",
+      "user": "user_id",
+      "item_seq": "item_id_list",
+      "target_item": "item_id",
+      "time_seq": null,
+      "target_time": null,
+      "seq_len_field": null,
+      "columns": [
+        "user_id",
+        "item_id_list",
+        "item_id"
+      ]
+    },
+    "dom2.train": {
+      "path": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom2.train.inter",
+      "user": "user_id",
+      "item_seq": "item_id_list",
+      "target_item": "item_id",
+      "time_seq": null,
+      "target_time": null,
+      "seq_len_field": null,
+      "columns": [
+        "user_id",
+        "item_id_list",
+        "item_id"
+      ]
+    },
+    "dom2.valid": {
+      "path": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom2.valid.inter",
+      "user": "user_id",
+      "item_seq": "item_id_list",
+      "target_item": "item_id",
+      "time_seq": null,
+      "target_time": null,
+      "seq_len_field": null,
+      "columns": [
+        "user_id",
+        "item_id_list",
+        "item_id"
+      ]
+    },
+    "dom2.test": {
+      "path": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom2.test.inter",
+      "user": "user_id",
+      "item_seq": "item_id_list",
+      "target_item": "item_id",
+      "time_seq": null,
+      "target_time": null,
+      "seq_len_field": null,
+      "columns": [
+        "user_id",
+        "item_id_list",
+        "item_id"
+      ]
+    },
+    "dom3.train": {
+      "path": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom3.train.inter",
+      "user": "user_id",
+      "item_seq": "item_id_list",
+      "target_item": "item_id",
+      "time_seq": null,
+      "target_time": null,
+      "seq_len_field": null,
+      "columns": [
+        "user_id",
+        "item_id_list",
+        "item_id"
+      ]
+    },
+    "dom3.valid": {
+      "path": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom3.valid.inter",
+      "user": "user_id",
+      "item_seq": "item_id_list",
+      "target_item": "item_id",
+      "time_seq": null,
+      "target_time": null,
+      "seq_len_field": null,
+      "columns": [
+        "user_id",
+        "item_id_list",
+        "item_id"
+      ]
+    },
+    "dom3.test": {
+      "path": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom3.test.inter",
+      "user": "user_id",
+      "item_seq": "item_id_list",
+      "target_item": "item_id",
+      "time_seq": null,
+      "target_time": null,
+      "seq_len_field": null,
+      "columns": [
+        "user_id",
+        "item_id_list",
+        "item_id"
+      ]
+    },
+    "dom4.train": {
+      "path": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom4.train.inter",
+      "user": "user_id",
+      "item_seq": "item_id_list",
+      "target_item": "item_id",
+      "time_seq": null,
+      "target_time": null,
+      "seq_len_field": null,
+      "columns": [
+        "user_id",
+        "item_id_list",
+        "item_id"
+      ]
+    },
+    "dom4.valid": {
+      "path": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom4.valid.inter",
+      "user": "user_id",
+      "item_seq": "item_id_list",
+      "target_item": "item_id",
+      "time_seq": null,
+      "target_time": null,
+      "seq_len_field": null,
+      "columns": [
+        "user_id",
+        "item_id_list",
+        "item_id"
+      ]
+    },
+    "dom4.test": {
+      "path": "/root/autodl-tmp/Taesar-main/dataset/BEST/BEST.dom4.test.inter",
+      "user": "user_id",
+      "item_seq": "item_id_list",
+      "target_item": "item_id",
+      "time_seq": null,
+      "target_time": null,
+      "seq_len_field": null,
+      "columns": [
+        "user_id",
+        "item_id_list",
+        "item_id"
+      ]
+    }
+  },
+  "gates": {
+    "multi_source_overlap": {
+      "status": "PASS",
+      "avg_fraction_target_users_with_ge2_sources": 1.0,
+      "min_fraction_target_users_with_ge2_sources": 1.0,
+      "heuristic": "PASS >=20%, WARN 5-20%, FAIL <5% (average across targets)"
+    },
+    "history_length": {
+      "status": "PASS",
+      "average_domain_median_history_length": 5.5,
+      "heuristic": "PASS >=3, WARN 2-3, FAIL <2"
+    },
+    "timestamp_readiness": {
+      "status": "FAIL",
+      "avg_time_seq_coverage": 0.0,
+      "avg_target_time_coverage": 0.0,
+      "avg_time_monotonic_rate": 0.0,
+      "heuristic": "PASS requires >=95% coverage and monotonicity."
+    },
+    "temporal_source_availability": {
+      "status": "FAIL",
+      "avg_temporal_evidence_coverage": 0.0,
+      "avg_fraction_with_ge1_past_source_given_evidence": 0.0,
+      "heuristic": "PASS: evidence coverage >=50% and >=70% have >=1 past source."
+    }
+  },
+  "output_files": {
+    "domain_stats": "/root/autodl-tmp/Taesar-main/save/multisource_audit/domain_stats.csv",
+    "pairwise_user_overlap": "/root/autodl-tmp/Taesar-main/save/multisource_audit/pairwise_user_overlap.csv",
+    "user_domain_matrix": "/root/autodl-tmp/Taesar-main/save/multisource_audit/user_domain_matrix.csv",
+    "user_domain_signatures": "/root/autodl-tmp/Taesar-main/save/multisource_audit/user_domain_signatures.csv",
+    "target_source_availability": "/root/autodl-tmp/Taesar-main/save/multisource_audit/target_source_availability.csv",
+    "target_source_combinations": "/root/autodl-tmp/Taesar-main/save/multisource_audit/target_source_combinations.csv",
+    "temporal_alignment_summary": "/root/autodl-tmp/Taesar-main/save/multisource_audit/temporal_alignment_summary.csv",
+    "temporal_alignment_detail": "/root/autodl-tmp/Taesar-main/save/multisource_audit/temporal_alignment_detail.csv",
+    "temporal_router_readiness": "/root/autodl-tmp/Taesar-main/save/multisource_audit/temporal_router_readiness.csv"
+  }
+}

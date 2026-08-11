@@ -1,0 +1,100 @@
+{
+  "protocol": {
+    "split": "valid only",
+    "logits": "mean of five OOF fold probes",
+    "views": [
+      "000",
+      "single_dom2",
+      "single_dom3",
+      "single_dom4",
+      "111"
+    ],
+    "selection": "No test inspection; choose candidate policy from this report."
+  },
+  "target": "dom1",
+  "n_users": 5000,
+  "target_only": {
+    "100": {
+      "nominal_budget": 100,
+      "coverage": 0.0076,
+      "positive_users": 38
+    },
+    "500": {
+      "nominal_budget": 500,
+      "coverage": 0.0222,
+      "positive_users": 111
+    },
+    "1000": {
+      "nominal_budget": 1000,
+      "coverage": 0.0354,
+      "positive_users": 177
+    },
+    "2000": {
+      "nominal_budget": 2000,
+      "coverage": 0.0568,
+      "positive_users": 284
+    },
+    "5000": {
+      "nominal_budget": 5000,
+      "coverage": 0.1184,
+      "positive_users": 592
+    }
+  },
+  "multi_view_union": {
+    "20": {
+      "per_view_k": 20,
+      "max_budget": 100,
+      "mean_pool_size": 36.97,
+      "median_pool_size": 36.0,
+      "p10_pool_size": 29.0,
+      "p90_pool_size": 46.0,
+      "coverage": 0.0062,
+      "matched_target_coverage": 0.0052,
+      "positive_users": 31
+    },
+    "100": {
+      "per_view_k": 100,
+      "max_budget": 500,
+      "mean_pool_size": 175.6952,
+      "median_pool_size": 170.0,
+      "p10_pool_size": 143.0,
+      "p90_pool_size": 217.0,
+      "coverage": 0.011,
+      "matched_target_coverage": 0.0096,
+      "positive_users": 55
+    },
+    "200": {
+      "per_view_k": 200,
+      "max_budget": 1000,
+      "mean_pool_size": 343.1326,
+      "median_pool_size": 331.0,
+      "p10_pool_size": 281.0,
+      "p90_pool_size": 423.0,
+      "coverage": 0.0182,
+      "matched_target_coverage": 0.0162,
+      "positive_users": 91
+    },
+    "400": {
+      "per_view_k": 400,
+      "max_budget": 2000,
+      "mean_pool_size": 667.7918,
+      "median_pool_size": 645.0,
+      "p10_pool_size": 555.0,
+      "p90_pool_size": 819.0,
+      "coverage": 0.0294,
+      "matched_target_coverage": 0.0252,
+      "positive_users": 147
+    },
+    "1000": {
+      "per_view_k": 1000,
+      "max_budget": 5000,
+      "mean_pool_size": 1600.1998,
+      "median_pool_size": 1548.0,
+      "p10_pool_size": 1348.0,
+      "p90_pool_size": 1930.0,
+      "coverage": 0.0564,
+      "matched_target_coverage": 0.047,
+      "positive_users": 282
+    }
+  }
+}

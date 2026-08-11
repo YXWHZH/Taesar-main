@@ -1,0 +1,69 @@
+[1] user_id=32452
+    target_same=True  jaccard=0.7000
+    original_len=7 target=33031
+    original_seq=41044 7942 19740 4779 1209 4062 39011
+    regenerated_len=10 target=33031
+    regenerated_seq=41044 7943 7942 19741 19740 4780 4779 1209 4062 39011
+
+[2] user_id=5755
+    target_same=True  jaccard=0.7778
+    original_len=7 target=46585
+    original_seq=3313 16845 46584 16558 2062 25404 14014
+    regenerated_len=9 target=46585
+    regenerated_seq=3313 16845 46584 16558 2062 25404 14014 46586 39861
+
+[3] user_id=35099
+    target_same=True  jaccard=0.7500
+    original_len=3 target=24098
+    original_seq=24735 52726 10124
+    regenerated_len=4 target=24098
+    regenerated_seq=24735 52726 10124 10125
+
+[4] user_id=26672
+    target_same=True  jaccard=0.4000
+    original_len=4 target=665
+    original_seq=5819 4511 68460 26059
+    regenerated_len=11 target=665
+    regenerated_seq=5819 4511 68461 7355 4612 2566 666 2566 26060 68460 26059
+
+[5] user_id=15676
+    target_same=True  jaccard=0.7500
+    original_len=6 target=33401
+    original_seq=18379 58801 26598 58802 43687 8976
+    regenerated_len=9 target=33401
+    regenerated_seq=18379 58802 56604 33402 58801 26598 58802 43687 8976
+
+[6] user_id=5279
+    target_same=True  jaccard=0.7143
+    original_len=5 target=1166
+    original_seq=2375 2376 2377 2378 2379
+    regenerated_len=7 target=1166
+    regenerated_seq=2375 2376 2377 2378 2379 1167 34517
+
+[7] user_id=29618
+    target_same=True  jaccard=0.9231
+    original_len=12 target=52940
+    original_seq=34086 2597 35206 65282 61866 38586 41627 59307 8314 9390 9391 12471
+    regenerated_len=13 target=52940
+    regenerated_seq=34086 2597 35206 65282 61866 61867 38586 41627 59307 8314 9390 9391 12471
+
+[8] user_id=2695
+    target_same=True  jaccard=0.6750
+    original_len=27 target=3161
+    original_seq=10191 7054 519 43349 4511 16607 43389 22563 1653 38686 15596 47975 29269 54594 25175 2629 43309 8313 21597 13101 64123 61055 5000 1955 5475 19185 69303
+    regenerated_len=41 target=3161
+    regenerated_seq=10191 7054 519 43350 36829 4512 43349 11308 4511 16607 25174 43389 22563 1653 38686 15597 6408 15596 47975 29269 54595 54594 25175 2629 43309 8313 21597 13101 64123 61056 4862 61055 5000 1955 5475 19186 29767 19185 69304 69303 69304
+
+[9] user_id=13681
+    target_same=True  jaccard=0.6667
+    original_len=2 target=5487
+    original_seq=9396 31633
+    regenerated_len=3 target=5487
+    regenerated_seq=9396 31633 55146
+
+[10] user_id=11191
+    target_same=True  jaccard=0.5000
+    original_len=3 target=41726
+    original_seq=7076 3163 21265
+    regenerated_len=6 target=41726
+    regenerated_seq=7076 3164 3163 21266 48374 21265

@@ -1,0 +1,278 @@
+[34m[1mwandb[0m: [33mWARNING[0m Saving files without folders. If you want to preserve subdirectories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")
+[34m[1mwandb[0m: [33mWARNING[0m Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+[34m[1mwandb[0m: [33mWARNING[0m Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+[34m[1mwandb[0m: [33mWARNING[0m Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+[2026-07-17 21:39:38,751][root][WARNING] - command line args [-m stage=tun gpu_id=0 seed=2025 train_type=full target_dom=dom4] will not be used in RecBole
+[2026-07-17 21:39:38,995][__main__][INFO] -
+[1;35mGeneral Hyper Parameters:
+[0m[1;36mgpu_id[0m =[1;33m 0[0m
+[1;36muse_gpu[0m =[1;33m True[0m
+[1;36mseed[0m =[1;33m 2025[0m
+[1;36mstate[0m =[1;33m INFO[0m
+[1;36mreproducibility[0m =[1;33m True[0m
+[1;36mdata_path[0m =[1;33m dataset/BEST[0m
+[1;36mcheckpoint_dir[0m =[1;33m checkpoint[0m
+[1;36mshow_progress[0m =[1;33m True[0m
+[1;36msave_dataset[0m =[1;33m False[0m
+[1;36mdataset_save_path[0m =[1;33m None[0m
+[1;36msave_dataloaders[0m =[1;33m False[0m
+[1;36mdataloaders_save_path[0m =[1;33m None[0m
+[1;36mlog_wandb[0m =[1;33m False[0m
+
+[1;35mTraining Hyper Parameters:
+[0m[1;36mepochs[0m =[1;33m 300[0m
+[1;36mtrain_batch_size[0m =[1;33m 128[0m
+[1;36mlearner[0m =[1;33m adam[0m
+[1;36mlearning_rate[0m =[1;33m 0.0003[0m
+[1;36mtrain_neg_sample_args[0m =[1;33m {'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}[0m
+[1;36meval_step[0m =[1;33m 1[0m
+[1;36mstopping_step[0m =[1;33m 10[0m
+[1;36mclip_grad_norm[0m =[1;33m None[0m
+[1;36mweight_decay[0m =[1;33m 0.0[0m
+[1;36mloss_decimal_place[0m =[1;33m 4[0m
+
+[1;35mEvaluation Hyper Parameters:
+[0m[1;36meval_args[0m =[1;33m {'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}[0m
+[1;36mrepeatable[0m =[1;33m True[0m
+[1;36mmetrics[0m =[1;33m ['HIT', 'NDCG', 'MRR', 'Precision'][0m
+[1;36mtopk[0m =[1;33m [5, 10, 20, 50, 100][0m
+[1;36mvalid_metric[0m =[1;33m NDCG@10[0m
+[1;36mvalid_metric_bigger[0m =[1;33m True[0m
+[1;36meval_batch_size[0m =[1;33m 4096[0m
+[1;36mmetric_decimal_place[0m =[1;33m 4[0m
+
+[1;35mDataset Hyper Parameters:
+[0m[1;36mfield_separator[0m =[1;33m 	[0m
+[1;36mseq_separator[0m =[1;33m  [0m
+[1;36mUSER_ID_FIELD[0m =[1;33m user_id[0m
+[1;36mITEM_ID_FIELD[0m =[1;33m item_id[0m
+[1;36mRATING_FIELD[0m =[1;33m rating[0m
+[1;36mTIME_FIELD[0m =[1;33m timestamp[0m
+[1;36mseq_len[0m =[1;33m None[0m
+[1;36mLABEL_FIELD[0m =[1;33m label[0m
+[1;36mthreshold[0m =[1;33m None[0m
+[1;36mNEG_PREFIX[0m =[1;33m neg_[0m
+[1;36mload_col[0m =[1;33m {'inter': ['user_id', 'item_id_list', 'item_id']}[0m
+[1;36munload_col[0m =[1;33m None[0m
+[1;36munused_col[0m =[1;33m None[0m
+[1;36madditional_feat_suffix[0m =[1;33m None[0m
+[1;36mrm_dup_inter[0m =[1;33m None[0m
+[1;36mval_interval[0m =[1;33m None[0m
+[1;36mfilter_inter_by_user_or_item[0m =[1;33m True[0m
+[1;36muser_inter_num_interval[0m =[1;33m [0,inf)[0m
+[1;36mitem_inter_num_interval[0m =[1;33m [0,inf)[0m
+[1;36malias_of_user_id[0m =[1;33m None[0m
+[1;36malias_of_item_id[0m =[1;33m ['item_id_list'][0m
+[1;36malias_of_entity_id[0m =[1;33m None[0m
+[1;36malias_of_relation_id[0m =[1;33m None[0m
+[1;36mpreload_weight[0m =[1;33m None[0m
+[1;36mnormalize_field[0m =[1;33m None[0m
+[1;36mnormalize_all[0m =[1;33m None[0m
+[1;36mITEM_LIST_LENGTH_FIELD[0m =[1;33m item_length[0m
+[1;36mLIST_SUFFIX[0m =[1;33m _list[0m
+[1;36mMAX_ITEM_LIST_LENGTH[0m =[1;33m 128[0m
+[1;36mPOSITION_FIELD[0m =[1;33m position_id[0m
+[1;36mHEAD_ENTITY_ID_FIELD[0m =[1;33m head_id[0m
+[1;36mTAIL_ENTITY_ID_FIELD[0m =[1;33m tail_id[0m
+[1;36mRELATION_ID_FIELD[0m =[1;33m relation_id[0m
+[1;36mENTITY_ID_FIELD[0m =[1;33m entity_id[0m
+[1;36mbenchmark_filename[0m =[1;33m ['full.train', 'full.valid', 'full.test', 'dom1.train', 'dom1.valid', 'dom1.test', 'dom2.train', 'dom2.valid', 'dom2.test', 'dom3.train', 'dom3.valid', 'dom3.test', 'dom4.train', 'dom4.valid', 'dom4.test'][0m
+
+[1;35mOther Hyper Parameters:
+[0m[1;36mworker[0m = [1;33m0[0m
+[1;36mwandb_project[0m = [1;33mrecbole[0m
+[1;36mshuffle[0m = [1;33mTrue[0m
+[1;36mrequire_pow[0m = [1;33mFalse[0m
+[1;36menable_amp[0m = [1;33mFalse[0m
+[1;36menable_scaler[0m = [1;33mFalse[0m
+[1;36mtransform[0m = [1;33mNone[0m
+[1;36mn_layers[0m = [1;33m2[0m
+[1;36mn_heads[0m = [1;33m2[0m
+[1;36mhidden_size[0m = [1;33m128[0m
+[1;36minner_size[0m = [1;33m128[0m
+[1;36mhidden_dropout_prob[0m = [1;33m0.2[0m
+[1;36mattn_dropout_prob[0m = [1;33m0.2[0m
+[1;36mhidden_act[0m = [1;33mgelu[0m
+[1;36mlayer_norm_eps[0m = [1;33m1e-12[0m
+[1;36minitializer_range[0m = [1;33m0.02[0m
+[1;36mloss_type[0m = [1;33mCE[0m
+[1;36mnumerical_features[0m = [1;33m[][0m
+[1;36mdiscretization[0m = [1;33mNone[0m
+[1;36mkg_reverse_r[0m = [1;33mFalse[0m
+[1;36mentity_kg_num_interval[0m = [1;33m[0,inf)[0m
+[1;36mrelation_kg_num_interval[0m = [1;33m[0,inf)[0m
+[1;36mMODEL_TYPE[0m = [1;33mModelType.SEQUENTIAL[0m
+[1;36mmodel_name[0m = [1;33mSASRec[0m
+[1;36mitem_path[0m = [1;33mdataset/BEST/BEST.item[0m
+[1;36mstage[0m = [1;33mtun[0m
+[1;36mdomains[0m = [1;33m4[0m
+[1;36mtarget_dom[0m = [1;33mdom4[0m
+[1;36mtrain_type[0m = [1;33mfull[0m
+[1;36mnew_inter_path[0m = [1;33mdataset/BEST/BEST.2025.dom4.train.inter[0m
+[1;36mckpt_para[0m = [1;33mcheckpoint/SASRec-BEST-2025[0m
+[1;36mfull_ckpt[0m = [1;33mcheckpoint/SASRec-BEST-2025.full.ckpt[0m
+[1;36mdom1_ckpt[0m = [1;33mcheckpoint/SASRec-BEST-2025.dom1.ckpt[0m
+[1;36mdom2_ckpt[0m = [1;33mcheckpoint/SASRec-BEST-2025.dom2.ckpt[0m
+[1;36mdom3_ckpt[0m = [1;33mcheckpoint/SASRec-BEST-2025.dom3.ckpt[0m
+[1;36mdom4_ckpt[0m = [1;33mcheckpoint/SASRec-BEST-2025.dom4.ckpt[0m
+[1;36mtune_ckpt[0m = [1;33mcheckpoint/SASRec-BEST-2025.tune.ckpt[0m
+[1;36mbase[0m = [1;33m{'experiment_name': 'v9-Taesar.SASRec.BEST', 'method': 'tun.dom4.full.seed_2025', 'run_name': 'tun.dom4.full.seed_2025.2026-07-17.21-39-29', 'data_dir_root': 'dataset', 'save_dir_root': './save', 'save_method_dir': './save/v9-Taesar.SASRec.BEST/tun.dom4.full.seed_2025', 'save_dir': './save/v9-Taesar.SASRec.BEST/tun.dom4.full.seed_2025/2026-07-17.21-39-29'}[0m
+[1;36mMODEL_INPUT_TYPE[0m = [1;33mInputType.POINTWISE[0m
+[1;36meval_type[0m = [1;33mEvaluatorType.RANKING[0m
+[1;36msingle_spec[0m = [1;33mTrue[0m
+[1;36mlocal_rank[0m = [1;33m0[0m
+[1;36mdevice[0m = [1;33mcuda[0m
+[1;36mvalid_neg_sample_args[0m = [1;33m{'distribution': 'uniform', 'sample_num': 'none'}[0m
+[1;36mtest_neg_sample_args[0m = [1;33m{'distribution': 'uniform', 'sample_num': 'none'}[0m
+
+
+[2026-07-17 21:39:40,567][__main__][INFO] - [1;35mBEST[0m
+[1;34mThe number of users[0m: 40166
+[1;34mAverage actions of users[0m: 1.6837047180380929
+[1;34mThe number of items[0m: 184743
+[1;34mAverage actions of items[0m: 1.8490689853170372
+[1;34mThe number of inters[0m: 67626
+[1;34mThe sparsity of the dataset[0m: 99.99908864595714%
+[1;34mRemain Fields[0m: ['user_id', 'item_id_list', 'item_id', 'item_length']
+[2026-07-17 21:39:41,364][root][INFO] - [1;35m[Training]: [0m[1;36mtrain_batch_size[0m = [1;33m[128][0m[1;36m train_neg_sample_args[0m: [1;33m[{'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}][0m
+[2026-07-17 21:39:41,365][root][INFO] - [1;35m[Evaluation]: [0m[1;36meval_batch_size[0m = [1;33m[4096][0m[1;36m eval_args[0m: [1;33m[{'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}][0m
+[1;35mTrain     0[0m: 100%|█| 314/314 [00:46<00:00,  6.70it[0m
+[2026-07-17 21:40:29,494][root][INFO] - [1;32mepoch 0 training[0m [[1;34mtime[0m: 46.88s, [1;34mtrain loss[0m: 3709.1214]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 17.70it/s][0m
+[2026-07-17 21:40:29,823][root][INFO] - [1;32mepoch 0 evaluating[0m [[1;34mtime[0m: 0.33s, [1;34mvalid_score[0m: 0.004200]
+[2026-07-17 21:40:29,823][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0048    hit@10 : 0.0073    hit@20 : 0.0134    hit@50 : 0.028    hit@100 : 0.0507    ndcg@5 : 0.0034    ndcg@10 : 0.0042    ndcg@20 : 0.0058    ndcg@50 : 0.0086    ndcg@100 : 0.0123    mrr@5 : 0.003    mrr@10 : 0.0033    mrr@20 : 0.0037    mrr@50 : 0.0042    mrr@100 : 0.0045    precision@5 : 0.001    precision@10 : 0.0007    precision@20 : 0.0007    precision@50 : 0.0006    precision@100 : 0.0005
+[2026-07-17 21:40:30,555][root][INFO] - [1;34mSaving current[0m: checkpoint/SASRec-BEST-2025.tune.ckpt-dom4-full
+[1;35mTrain     1[0m: 100%|█| 314/314 [00:46<00:00,  6.75it[0m
+[2026-07-17 21:41:17,092][root][INFO] - [1;32mepoch 1 training[0m [[1;34mtime[0m: 46.54s, [1;34mtrain loss[0m: 3573.7269]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.53it/s][0m
+[2026-07-17 21:41:17,395][root][INFO] - [1;32mepoch 1 evaluating[0m [[1;34mtime[0m: 0.30s, [1;34mvalid_score[0m: 0.011700]
+[2026-07-17 21:41:17,396][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0123    hit@10 : 0.0163    hit@20 : 0.0234    hit@50 : 0.0396    hit@100 : 0.0591    ndcg@5 : 0.0104    ndcg@10 : 0.0117    ndcg@20 : 0.0135    ndcg@50 : 0.0166    ndcg@100 : 0.0198    mrr@5 : 0.0098    mrr@10 : 0.0103    mrr@20 : 0.0108    mrr@50 : 0.0113    mrr@100 : 0.0116    precision@5 : 0.0025    precision@10 : 0.0016    precision@20 : 0.0012    precision@50 : 0.0008    precision@100 : 0.0006
+[2026-07-17 21:41:18,114][root][INFO] - [1;34mSaving current[0m: checkpoint/SASRec-BEST-2025.tune.ckpt-dom4-full
+[1;35mTrain     2[0m: 100%|█| 314/314 [00:46<00:00,  6.77it[0m
+[2026-07-17 21:42:04,479][root][INFO] - [1;32mepoch 2 training[0m [[1;34mtime[0m: 46.36s, [1;34mtrain loss[0m: 3438.5511]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.50it/s][0m
+[2026-07-17 21:42:04,779][root][INFO] - [1;32mepoch 2 evaluating[0m [[1;34mtime[0m: 0.30s, [1;34mvalid_score[0m: 0.019200]
+[2026-07-17 21:42:04,780][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0205    hit@10 : 0.0255    hit@20 : 0.0328    hit@50 : 0.0488    hit@100 : 0.0719    ndcg@5 : 0.0176    ndcg@10 : 0.0192    ndcg@20 : 0.021    ndcg@50 : 0.0241    ndcg@100 : 0.0279    mrr@5 : 0.0166    mrr@10 : 0.0173    mrr@20 : 0.0178    mrr@50 : 0.0182    mrr@100 : 0.0186    precision@5 : 0.0041    precision@10 : 0.0026    precision@20 : 0.0016    precision@50 : 0.001    precision@100 : 0.0007
+[2026-07-17 21:42:05,523][root][INFO] - [1;34mSaving current[0m: checkpoint/SASRec-BEST-2025.tune.ckpt-dom4-full
+[1;35mTrain     3[0m: 100%|█| 314/314 [00:46<00:00,  6.75it[0m
+[2026-07-17 21:42:52,064][root][INFO] - [1;32mepoch 3 training[0m [[1;34mtime[0m: 46.54s, [1;34mtrain loss[0m: 3311.3965]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.51it/s][0m
+[2026-07-17 21:42:52,364][root][INFO] - [1;32mepoch 3 evaluating[0m [[1;34mtime[0m: 0.30s, [1;34mvalid_score[0m: 0.022100]
+[2026-07-17 21:42:52,365][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0237    hit@10 : 0.0288    hit@20 : 0.0363    hit@50 : 0.0547    hit@100 : 0.0762    ndcg@5 : 0.0205    ndcg@10 : 0.0221    ndcg@20 : 0.024    ndcg@50 : 0.0277    ndcg@100 : 0.0311    mrr@5 : 0.0194    mrr@10 : 0.0201    mrr@20 : 0.0206    mrr@50 : 0.0212    mrr@100 : 0.0215    precision@5 : 0.0047    precision@10 : 0.0029    precision@20 : 0.0018    precision@50 : 0.0011    precision@100 : 0.0008
+[2026-07-17 21:42:53,139][root][INFO] - [1;34mSaving current[0m: checkpoint/SASRec-BEST-2025.tune.ckpt-dom4-full
+[1;35mTrain     4[0m: 100%|█| 314/314 [00:46<00:00,  6.80it[0m
+[2026-07-17 21:43:39,298][root][INFO] - [1;32mepoch 4 training[0m [[1;34mtime[0m: 46.16s, [1;34mtrain loss[0m: 3195.3471]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.51it/s][0m
+[2026-07-17 21:43:39,597][root][INFO] - [1;32mepoch 4 evaluating[0m [[1;34mtime[0m: 0.30s, [1;34mvalid_score[0m: 0.024000]
+[2026-07-17 21:43:39,597][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0265    hit@10 : 0.0319    hit@20 : 0.0398    hit@50 : 0.058    hit@100 : 0.0798    ndcg@5 : 0.0223    ndcg@10 : 0.024    ndcg@20 : 0.026    ndcg@50 : 0.0296    ndcg@100 : 0.0331    mrr@5 : 0.0209    mrr@10 : 0.0216    mrr@20 : 0.0221    mrr@50 : 0.0227    mrr@100 : 0.023    precision@5 : 0.0053    precision@10 : 0.0032    precision@20 : 0.002    precision@50 : 0.0012    precision@100 : 0.0008
+[2026-07-17 21:43:40,325][root][INFO] - [1;34mSaving current[0m: checkpoint/SASRec-BEST-2025.tune.ckpt-dom4-full
+[1;35mTrain     5[0m: 100%|█| 314/314 [00:46<00:00,  6.74it[0m
+[2026-07-17 21:44:26,910][root][INFO] - [1;32mepoch 5 training[0m [[1;34mtime[0m: 46.58s, [1;34mtrain loss[0m: 3082.6620]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 19.99it/s][0m
+[2026-07-17 21:44:27,230][root][INFO] - [1;32mepoch 5 evaluating[0m [[1;34mtime[0m: 0.32s, [1;34mvalid_score[0m: 0.025000]
+[2026-07-17 21:44:27,230][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0277    hit@10 : 0.0332    hit@20 : 0.0406    hit@50 : 0.0594    hit@100 : 0.0796    ndcg@5 : 0.0232    ndcg@10 : 0.025    ndcg@20 : 0.0268    ndcg@50 : 0.0305    ndcg@100 : 0.0338    mrr@5 : 0.0217    mrr@10 : 0.0224    mrr@20 : 0.0229    mrr@50 : 0.0235    mrr@100 : 0.0238    precision@5 : 0.0055    precision@10 : 0.0033    precision@20 : 0.002    precision@50 : 0.0012    precision@100 : 0.0008
+[2026-07-17 21:44:28,005][root][INFO] - [1;34mSaving current[0m: checkpoint/SASRec-BEST-2025.tune.ckpt-dom4-full
+[1;35mTrain     6[0m: 100%|█| 314/314 [00:46<00:00,  6.75it[0m
+[2026-07-17 21:45:14,516][root][INFO] - [1;32mepoch 6 training[0m [[1;34mtime[0m: 46.51s, [1;34mtrain loss[0m: 2972.5503]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.20it/s][0m
+[2026-07-17 21:45:14,820][root][INFO] - [1;32mepoch 6 evaluating[0m [[1;34mtime[0m: 0.30s, [1;34mvalid_score[0m: 0.025300]
+[2026-07-17 21:45:14,820][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0288    hit@10 : 0.0337    hit@20 : 0.0422    hit@50 : 0.0591    hit@100 : 0.0794    ndcg@5 : 0.0238    ndcg@10 : 0.0253    ndcg@20 : 0.0275    ndcg@50 : 0.0308    ndcg@100 : 0.0341    mrr@5 : 0.0221    mrr@10 : 0.0227    mrr@20 : 0.0233    mrr@50 : 0.0238    mrr@100 : 0.0241    precision@5 : 0.0058    precision@10 : 0.0034    precision@20 : 0.0021    precision@50 : 0.0012    precision@100 : 0.0008
+[2026-07-17 21:45:15,603][root][INFO] - [1;34mSaving current[0m: checkpoint/SASRec-BEST-2025.tune.ckpt-dom4-full
+[1;35mTrain     7[0m: 100%|█| 314/314 [00:46<00:00,  6.72it[0m
+[2026-07-17 21:46:02,302][root][INFO] - [1;32mepoch 7 training[0m [[1;34mtime[0m: 46.70s, [1;34mtrain loss[0m: 2867.4157]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.26it/s][0m
+[2026-07-17 21:46:02,610][root][INFO] - [1;32mepoch 7 evaluating[0m [[1;34mtime[0m: 0.31s, [1;34mvalid_score[0m: 0.025900]
+[2026-07-17 21:46:02,610][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0302    hit@10 : 0.0353    hit@20 : 0.0429    hit@50 : 0.0586    hit@100 : 0.0778    ndcg@5 : 0.0243    ndcg@10 : 0.0259    ndcg@20 : 0.0278    ndcg@50 : 0.0308    ndcg@100 : 0.0339    mrr@5 : 0.0223    mrr@10 : 0.0229    mrr@20 : 0.0234    mrr@50 : 0.0239    mrr@100 : 0.0242    precision@5 : 0.006    precision@10 : 0.0035    precision@20 : 0.0021    precision@50 : 0.0012    precision@100 : 0.0008
+[2026-07-17 21:46:03,347][root][INFO] - [1;34mSaving current[0m: checkpoint/SASRec-BEST-2025.tune.ckpt-dom4-full
+[1;35mTrain     8[0m: 100%|█| 314/314 [00:46<00:00,  6.77it[0m
+[2026-07-17 21:46:49,740][root][INFO] - [1;32mepoch 8 training[0m [[1;34mtime[0m: 46.39s, [1;34mtrain loss[0m: 2769.4259]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.44it/s][0m
+[2026-07-17 21:46:50,038][root][INFO] - [1;32mepoch 8 evaluating[0m [[1;34mtime[0m: 0.30s, [1;34mvalid_score[0m: 0.026000]
+[2026-07-17 21:46:50,039][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0297    hit@10 : 0.0356    hit@20 : 0.0419    hit@50 : 0.0583    hit@100 : 0.0773    ndcg@5 : 0.0241    ndcg@10 : 0.026    ndcg@20 : 0.0276    ndcg@50 : 0.0308    ndcg@100 : 0.0339    mrr@5 : 0.0222    mrr@10 : 0.023    mrr@20 : 0.0234    mrr@50 : 0.0239    mrr@100 : 0.0242    precision@5 : 0.0059    precision@10 : 0.0036    precision@20 : 0.0021    precision@50 : 0.0012    precision@100 : 0.0008
+[2026-07-17 21:46:50,778][root][INFO] - [1;34mSaving current[0m: checkpoint/SASRec-BEST-2025.tune.ckpt-dom4-full
+[1;35mTrain     9[0m: 100%|█| 314/314 [00:46<00:00,  6.71it[0m
+[2026-07-17 21:47:37,578][root][INFO] - [1;32mepoch 9 training[0m [[1;34mtime[0m: 46.80s, [1;34mtrain loss[0m: 2680.7739]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.46it/s][0m
+[2026-07-17 21:47:37,881][root][INFO] - [1;32mepoch 9 evaluating[0m [[1;34mtime[0m: 0.30s, [1;34mvalid_score[0m: 0.026100]
+[2026-07-17 21:47:37,882][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0301    hit@10 : 0.0359    hit@20 : 0.043    hit@50 : 0.0581    hit@100 : 0.075    ndcg@5 : 0.0243    ndcg@10 : 0.0261    ndcg@20 : 0.0279    ndcg@50 : 0.0309    ndcg@100 : 0.0336    mrr@5 : 0.0223    mrr@10 : 0.0231    mrr@20 : 0.0235    mrr@50 : 0.024    mrr@100 : 0.0242    precision@5 : 0.006    precision@10 : 0.0036    precision@20 : 0.0022    precision@50 : 0.0012    precision@100 : 0.0008
+[2026-07-17 21:47:38,624][root][INFO] - [1;34mSaving current[0m: checkpoint/SASRec-BEST-2025.tune.ckpt-dom4-full
+[1;35mTrain    10[0m: 100%|█| 314/314 [00:46<00:00,  6.69it[0m
+[2026-07-17 21:48:25,538][root][INFO] - [1;32mepoch 10 training[0m [[1;34mtime[0m: 46.91s, [1;34mtrain loss[0m: 2603.0631]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 19.83it/s][0m
+[2026-07-17 21:48:25,846][root][INFO] - [1;32mepoch 10 evaluating[0m [[1;34mtime[0m: 0.31s, [1;34mvalid_score[0m: 0.025800]
+[2026-07-17 21:48:25,846][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0302    hit@10 : 0.0354    hit@20 : 0.0419    hit@50 : 0.0569    hit@100 : 0.0729    ndcg@5 : 0.0241    ndcg@10 : 0.0258    ndcg@20 : 0.0275    ndcg@50 : 0.0304    ndcg@100 : 0.033    mrr@5 : 0.0221    mrr@10 : 0.0228    mrr@20 : 0.0233    mrr@50 : 0.0237    mrr@100 : 0.024    precision@5 : 0.006    precision@10 : 0.0035    precision@20 : 0.0021    precision@50 : 0.0011    precision@100 : 0.0007
+[1;35mTrain    11[0m: 100%|█| 314/314 [00:46<00:00,  6.71it[0m
+[2026-07-17 21:49:12,642][root][INFO] - [1;32mepoch 11 training[0m [[1;34mtime[0m: 46.79s, [1;34mtrain loss[0m: 2536.5677]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.44it/s][0m
+[2026-07-17 21:49:12,946][root][INFO] - [1;32mepoch 11 evaluating[0m [[1;34mtime[0m: 0.30s, [1;34mvalid_score[0m: 0.025800]
+[2026-07-17 21:49:12,946][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0299    hit@10 : 0.0355    hit@20 : 0.0425    hit@50 : 0.0566    hit@100 : 0.0729    ndcg@5 : 0.024    ndcg@10 : 0.0258    ndcg@20 : 0.0276    ndcg@50 : 0.0304    ndcg@100 : 0.033    mrr@5 : 0.0221    mrr@10 : 0.0228    mrr@20 : 0.0233    mrr@50 : 0.0237    mrr@100 : 0.0239    precision@5 : 0.006    precision@10 : 0.0035    precision@20 : 0.0021    precision@50 : 0.0011    precision@100 : 0.0007
+[1;35mTrain    12[0m: 100%|█| 314/314 [00:46<00:00,  6.74it[0m
+[2026-07-17 21:49:59,548][root][INFO] - [1;32mepoch 12 training[0m [[1;34mtime[0m: 46.60s, [1;34mtrain loss[0m: 2479.0112]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.49it/s][0m
+[2026-07-17 21:49:59,849][root][INFO] - [1;32mepoch 12 evaluating[0m [[1;34mtime[0m: 0.30s, [1;34mvalid_score[0m: 0.025500]
+[2026-07-17 21:49:59,850][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0298    hit@10 : 0.0348    hit@20 : 0.042    hit@50 : 0.0566    hit@100 : 0.0729    ndcg@5 : 0.0239    ndcg@10 : 0.0255    ndcg@20 : 0.0273    ndcg@50 : 0.0302    ndcg@100 : 0.0328    mrr@5 : 0.0219    mrr@10 : 0.0226    mrr@20 : 0.0231    mrr@50 : 0.0235    mrr@100 : 0.0238    precision@5 : 0.006    precision@10 : 0.0035    precision@20 : 0.0021    precision@50 : 0.0011    precision@100 : 0.0007
+[1;35mTrain    13[0m: 100%|█| 314/314 [00:46<00:00,  6.73it[0m
+[2026-07-17 21:50:46,499][root][INFO] - [1;32mepoch 13 training[0m [[1;34mtime[0m: 46.65s, [1;34mtrain loss[0m: 2430.5251]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.52it/s][0m
+[2026-07-17 21:50:46,799][root][INFO] - [1;32mepoch 13 evaluating[0m [[1;34mtime[0m: 0.30s, [1;34mvalid_score[0m: 0.025700]
+[2026-07-17 21:50:46,800][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0298    hit@10 : 0.0352    hit@20 : 0.0413    hit@50 : 0.0548    hit@100 : 0.0712    ndcg@5 : 0.024    ndcg@10 : 0.0257    ndcg@20 : 0.0272    ndcg@50 : 0.0299    ndcg@100 : 0.0325    mrr@5 : 0.022    mrr@10 : 0.0227    mrr@20 : 0.0231    mrr@50 : 0.0235    mrr@100 : 0.0238    precision@5 : 0.006    precision@10 : 0.0035    precision@20 : 0.0021    precision@50 : 0.0011    precision@100 : 0.0007
+[1;35mTrain    14[0m: 100%|█| 314/314 [00:46<00:00,  6.76it[0m
+[2026-07-17 21:51:33,223][root][INFO] - [1;32mepoch 14 training[0m [[1;34mtime[0m: 46.42s, [1;34mtrain loss[0m: 2387.5305]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 19.94it/s][0m
+[2026-07-17 21:51:33,542][root][INFO] - [1;32mepoch 14 evaluating[0m [[1;34mtime[0m: 0.32s, [1;34mvalid_score[0m: 0.025600]
+[2026-07-17 21:51:33,543][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0295    hit@10 : 0.0348    hit@20 : 0.0415    hit@50 : 0.0548    hit@100 : 0.072    ndcg@5 : 0.0239    ndcg@10 : 0.0256    ndcg@20 : 0.0273    ndcg@50 : 0.0299    ndcg@100 : 0.0327    mrr@5 : 0.022    mrr@10 : 0.0227    mrr@20 : 0.0231    mrr@50 : 0.0236    mrr@100 : 0.0238    precision@5 : 0.0059    precision@10 : 0.0035    precision@20 : 0.0021    precision@50 : 0.0011    precision@100 : 0.0007
+[1;35mTrain    15[0m: 100%|█| 314/314 [00:46<00:00,  6.75it[0m
+[2026-07-17 21:52:20,077][root][INFO] - [1;32mepoch 15 training[0m [[1;34mtime[0m: 46.53s, [1;34mtrain loss[0m: 2348.5408]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.44it/s][0m
+[2026-07-17 21:52:20,391][root][INFO] - [1;32mepoch 15 evaluating[0m [[1;34mtime[0m: 0.31s, [1;34mvalid_score[0m: 0.025600]
+[2026-07-17 21:52:20,391][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0297    hit@10 : 0.0348    hit@20 : 0.041    hit@50 : 0.0542    hit@100 : 0.0693    ndcg@5 : 0.024    ndcg@10 : 0.0256    ndcg@20 : 0.0272    ndcg@50 : 0.0298    ndcg@100 : 0.0322    mrr@5 : 0.022    mrr@10 : 0.0227    mrr@20 : 0.0231    mrr@50 : 0.0235    mrr@100 : 0.0238    precision@5 : 0.0059    precision@10 : 0.0035    precision@20 : 0.0021    precision@50 : 0.0011    precision@100 : 0.0007
+[1;35mTrain    16[0m: 100%|█| 314/314 [00:46<00:00,  6.73it[0m
+[2026-07-17 21:53:07,048][root][INFO] - [1;32mepoch 16 training[0m [[1;34mtime[0m: 46.66s, [1;34mtrain loss[0m: 2312.7170]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.47it/s][0m
+[2026-07-17 21:53:07,365][root][INFO] - [1;32mepoch 16 evaluating[0m [[1;34mtime[0m: 0.32s, [1;34mvalid_score[0m: 0.025600]
+[2026-07-17 21:53:07,365][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0291    hit@10 : 0.0347    hit@20 : 0.0406    hit@50 : 0.0535    hit@100 : 0.0686    ndcg@5 : 0.0238    ndcg@10 : 0.0256    ndcg@20 : 0.0271    ndcg@50 : 0.0297    ndcg@100 : 0.0321    mrr@5 : 0.022    mrr@10 : 0.0228    mrr@20 : 0.0232    mrr@50 : 0.0236    mrr@100 : 0.0238    precision@5 : 0.0058    precision@10 : 0.0035    precision@20 : 0.002    precision@50 : 0.0011    precision@100 : 0.0007
+[1;35mTrain    17[0m: 100%|█| 314/314 [00:46<00:00,  6.70it[0m
+[2026-07-17 21:53:54,199][root][INFO] - [1;32mepoch 17 training[0m [[1;34mtime[0m: 46.83s, [1;34mtrain loss[0m: 2279.2595]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.51it/s][0m
+[2026-07-17 21:53:54,496][root][INFO] - [1;32mepoch 17 evaluating[0m [[1;34mtime[0m: 0.30s, [1;34mvalid_score[0m: 0.025300]
+[2026-07-17 21:53:54,497][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0292    hit@10 : 0.0336    hit@20 : 0.0403    hit@50 : 0.0535    hit@100 : 0.0685    ndcg@5 : 0.0238    ndcg@10 : 0.0253    ndcg@20 : 0.0269    ndcg@50 : 0.0295    ndcg@100 : 0.0319    mrr@5 : 0.022    mrr@10 : 0.0226    mrr@20 : 0.0231    mrr@50 : 0.0235    mrr@100 : 0.0237    precision@5 : 0.0058    precision@10 : 0.0034    precision@20 : 0.002    precision@50 : 0.0011    precision@100 : 0.0007
+[1;35mTrain    18[0m: 100%|█| 314/314 [00:46<00:00,  6.72it[0m
+[2026-07-17 21:54:41,222][root][INFO] - [1;32mepoch 18 training[0m [[1;34mtime[0m: 46.72s, [1;34mtrain loss[0m: 2247.7280]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.43it/s][0m
+[2026-07-17 21:54:41,540][root][INFO] - [1;32mepoch 18 evaluating[0m [[1;34mtime[0m: 0.32s, [1;34mvalid_score[0m: 0.025300]
+[2026-07-17 21:54:41,540][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.029    hit@10 : 0.0338    hit@20 : 0.0402    hit@50 : 0.0527    hit@100 : 0.0686    ndcg@5 : 0.0237    ndcg@10 : 0.0253    ndcg@20 : 0.0269    ndcg@50 : 0.0293    ndcg@100 : 0.0319    mrr@5 : 0.0219    mrr@10 : 0.0226    mrr@20 : 0.023    mrr@50 : 0.0234    mrr@100 : 0.0236    precision@5 : 0.0058    precision@10 : 0.0034    precision@20 : 0.002    precision@50 : 0.0011    precision@100 : 0.0007
+[1;35mTrain    19[0m: 100%|█| 314/314 [00:47<00:00,  6.67it[0m
+[2026-07-17 21:55:28,615][root][INFO] - [1;32mepoch 19 training[0m [[1;34mtime[0m: 47.07s, [1;34mtrain loss[0m: 2217.0760]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.46it/s][0m
+[2026-07-17 21:55:28,914][root][INFO] - [1;32mepoch 19 evaluating[0m [[1;34mtime[0m: 0.30s, [1;34mvalid_score[0m: 0.024900]
+[2026-07-17 21:55:28,915][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0284    hit@10 : 0.0328    hit@20 : 0.0394    hit@50 : 0.0516    hit@100 : 0.0657    ndcg@5 : 0.0235    ndcg@10 : 0.0249    ndcg@20 : 0.0266    ndcg@50 : 0.029    ndcg@100 : 0.0312    mrr@5 : 0.0218    mrr@10 : 0.0224    mrr@20 : 0.0228    mrr@50 : 0.0232    mrr@100 : 0.0234    precision@5 : 0.0057    precision@10 : 0.0033    precision@20 : 0.002    precision@50 : 0.001    precision@100 : 0.0007
+[1;35mTrain    20[0m: 100%|█| 314/314 [00:46<00:00,  6.71it[0m
+[2026-07-17 21:56:15,727][root][INFO] - [1;32mepoch 20 training[0m [[1;34mtime[0m: 46.81s, [1;34mtrain loss[0m: 2186.9488]
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 20.44it/s][0m
+[2026-07-17 21:56:16,025][root][INFO] - [1;32mepoch 20 evaluating[0m [[1;34mtime[0m: 0.30s, [1;34mvalid_score[0m: 0.025100]
+[2026-07-17 21:56:16,026][root][INFO] - [1;34mvalid result[0m:
+hit@5 : 0.0289    hit@10 : 0.0335    hit@20 : 0.0395    hit@50 : 0.0512    hit@100 : 0.0662    ndcg@5 : 0.0236    ndcg@10 : 0.0251    ndcg@20 : 0.0266    ndcg@50 : 0.0289    ndcg@100 : 0.0314    mrr@5 : 0.0219    mrr@10 : 0.0225    mrr@20 : 0.0229    mrr@50 : 0.0233    mrr@100 : 0.0235    precision@5 : 0.0058    precision@10 : 0.0033    precision@20 : 0.002    precision@50 : 0.001    precision@100 : 0.0007
+[2026-07-17 21:56:16,027][root][INFO] - Finished training, best eval result in epoch 9
+[2026-07-17 21:56:16,279][root][INFO] - Loading model structure and parameters from checkpoint/SASRec-BEST-2025.tune.ckpt-dom4-full
+[1;35mEvaluate   [0m: 100%|██| 4/4 [00:00<00:00, 18.81it/s][0m
+[2026-07-17 21:56:16,609][__main__][INFO] - [1;33mtest result[0m: OrderedDict([('hit@5', 0.0276), ('hit@10', 0.0327), ('hit@20', 0.0373), ('hit@50', 0.0497), ('hit@100', 0.0645), ('ndcg@5', 0.0227), ('ndcg@10', 0.0243), ('ndcg@20', 0.0255), ('ndcg@50', 0.0279), ('ndcg@100', 0.0303), ('mrr@5', 0.021), ('mrr@10', 0.0217), ('mrr@20', 0.022), ('mrr@50', 0.0224), ('mrr@100', 0.0226), ('precision@5', 0.0055), ('precision@10', 0.0033), ('precision@20', 0.0019), ('precision@50', 0.001), ('precision@100', 0.0006)])

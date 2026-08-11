@@ -1,0 +1,570 @@
+2026-07-27 21:51:57,028 INFO    StreamThr :9567 [internal.py:wandb_internal():86] W&B internal server running at pid: 9567, started at: 2026-07-27 21:51:57.027629
+2026-07-27 21:51:57,059 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: status
+2026-07-27 21:51:57,063 INFO    WriterThread:9567 [datastore.py:open_for_write():85] open: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/run-x6xm3spo.wandb
+2026-07-27 21:51:57,064 DEBUG   SenderThread:9567 [sender.py:send():380] send: header
+2026-07-27 21:51:57,064 DEBUG   SenderThread:9567 [sender.py:send():380] send: run
+2026-07-27 21:51:58,502 INFO    SenderThread:9567 [dir_watcher.py:__init__():211] watching files in: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files
+2026-07-27 21:51:58,503 INFO    SenderThread:9567 [sender.py:_start_run_threads():1122] run started: x6xm3spo with start time 1785160317.02771
+2026-07-27 21:51:58,659 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: check_version
+2026-07-27 21:51:58,660 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: check_version
+2026-07-27 21:51:59,773 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: run_start
+2026-07-27 21:51:59,836 DEBUG   HandlerThread:9567 [system_info.py:__init__():32] System info init
+2026-07-27 21:51:59,836 DEBUG   HandlerThread:9567 [system_info.py:__init__():47] System info init done
+2026-07-27 21:51:59,837 INFO    HandlerThread:9567 [system_monitor.py:start():194] Starting system monitor
+2026-07-27 21:51:59,837 INFO    SystemMonitor:9567 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2026-07-27 21:51:59,837 INFO    HandlerThread:9567 [system_monitor.py:probe():214] Collecting system info
+2026-07-27 21:51:59,838 INFO    SystemMonitor:9567 [interfaces.py:start():190] Started cpu monitoring
+2026-07-27 21:51:59,839 INFO    SystemMonitor:9567 [interfaces.py:start():190] Started disk monitoring
+2026-07-27 21:51:59,840 INFO    SystemMonitor:9567 [interfaces.py:start():190] Started gpu monitoring
+2026-07-27 21:51:59,840 INFO    SystemMonitor:9567 [interfaces.py:start():190] Started memory monitoring
+2026-07-27 21:51:59,842 INFO    SystemMonitor:9567 [interfaces.py:start():190] Started network monitoring
+2026-07-27 21:52:00,047 DEBUG   HandlerThread:9567 [system_info.py:probe():196] Probing system
+2026-07-27 21:52:00,048 DEBUG   HandlerThread:9567 [gitlib.py:_init_repo():53] git repository is invalid
+2026-07-27 21:52:00,048 DEBUG   HandlerThread:9567 [system_info.py:probe():244] Probing system done
+2026-07-27 21:52:00,048 DEBUG   HandlerThread:9567 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'python': '3.10.8', 'heartbeatAt': '2026-07-27T13:52:00.047981', 'startedAt': '2026-07-27T13:51:57.020284', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/root/autodl-tmp/Taesar-main/verify_step0.py', 'codePathLocal': 'verify_step0.py', 'codePath': 'verify_step0.py', 'host': 'autodl-container-92bq6w2nqn-a70ac901', 'username': 'root', 'executable': '/root/miniconda3/bin/python', 'cpu_count': 104, 'cpu_count_logical': 208, 'cpu_freq': {'current': 1050.704735576923, 'min': 800.0, 'max': 2101.0}, 'cpu_freq_per_core': [{'current': 800.004, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 2100.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 3200.0, 'min': 800.0, 'max': 2101.0}, {'current': 2000.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 1600.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 2100.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 3200.0, 'min': 800.0, 'max': 2101.0}, {'current': 1700.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 1500.0, 'min': 800.0, 'max': 2101.0}, {'current': 3200.0, 'min': 800.0, 'max': 2101.0}, {'current': 1400.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 1600.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 1100.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 1500.0, 'min': 800.0, 'max': 2101.0}, {'current': 2000.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 1281.311, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 2101.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 2100.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 1564.689, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 3199.372, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 1800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 2101.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 3200.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 2099.808, 'min': 800.0, 'max': 2101.0}, {'current': 2000.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 3200.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 1400.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 1200.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 3200.0, 'min': 800.0, 'max': 2101.0}, {'current': 3200.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 2101.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 3200.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 1500.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 1400.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 900.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 3200.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 800.0, 'min': 800.0, 'max': 2101.0}, {'current': 2101.0, 'min': 800.0, 'max': 2101.0}], 'disk': {'/': {'total': 30.0, 'used': 20.36361312866211}}, 'gpu': 'NVIDIA GeForce RTX 5090', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 5090', 'memory_total': 34190917632}], 'memory': {'total': 754.5186233520508}}
+2026-07-27 21:52:00,049 INFO    HandlerThread:9567 [system_monitor.py:probe():224] Finished collecting system info
+2026-07-27 21:52:00,049 INFO    HandlerThread:9567 [system_monitor.py:probe():227] Publishing system info
+2026-07-27 21:52:00,049 DEBUG   HandlerThread:9567 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2026-07-27 21:52:00,050 DEBUG   HandlerThread:9567 [system_info.py:_save_pip():68] Saving pip packages done
+2026-07-27 21:52:00,050 DEBUG   HandlerThread:9567 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2026-07-27 21:52:00,505 INFO    Thread-12 :9567 [dir_watcher.py:_on_file_created():271] file/dir created: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/conda-environment.yaml
+2026-07-27 21:52:00,506 INFO    Thread-12 :9567 [dir_watcher.py:_on_file_created():271] file/dir created: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/requirements.txt
+2026-07-27 21:52:02,928 DEBUG   HandlerThread:9567 [system_info.py:_save_conda():87] Saving conda packages done
+2026-07-27 21:52:02,932 INFO    HandlerThread:9567 [system_monitor.py:probe():229] Finished publishing system info
+2026-07-27 21:52:02,943 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: status_report
+2026-07-27 21:52:02,944 DEBUG   SenderThread:9567 [sender.py:send():380] send: files
+2026-07-27 21:52:02,944 INFO    SenderThread:9567 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2026-07-27 21:52:02,954 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: stop_status
+2026-07-27 21:52:02,955 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: stop_status
+2026-07-27 21:52:02,959 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: internal_messages
+2026-07-27 21:52:03,504 INFO    Thread-12 :9567 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/conda-environment.yaml
+2026-07-27 21:52:03,505 INFO    Thread-12 :9567 [dir_watcher.py:_on_file_created():271] file/dir created: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/wandb-metadata.json
+2026-07-27 21:52:03,919 DEBUG   SenderThread:9567 [sender.py:send():380] send: telemetry
+2026-07-27 21:52:04,178 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: log_artifact
+2026-07-27 21:52:04,178 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: log_artifact
+2026-07-27 21:52:04,505 INFO    Thread-12 :9567 [dir_watcher.py:_on_file_created():271] file/dir created: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/hydra.yaml
+2026-07-27 21:52:04,506 INFO    Thread-12 :9567 [dir_watcher.py:_on_file_created():271] file/dir created: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/overrides.yaml
+2026-07-27 21:52:04,829 INFO    wandb-upload_0:9567 [upload_job.py:push():131] Uploaded file /tmp/tmpvnj62tb1wandb/lfah5upm-wandb-metadata.json
+2026-07-27 21:52:07,955 INFO    wandb-upload_0:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpiwrsp3x7
+2026-07-27 21:52:07,956 INFO    wandb-upload_1:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpteltz_ka
+2026-07-27 21:52:07,956 INFO    wandb-upload_2:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpdb1h92mz
+2026-07-27 21:52:07,956 INFO    wandb-upload_3:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpbgahvmpr
+2026-07-27 21:52:07,956 INFO    wandb-upload_4:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpew_fwvme
+2026-07-27 21:52:07,956 INFO    wandb-upload_5:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpen_zc61e
+2026-07-27 21:52:07,956 INFO    wandb-upload_6:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpfwut20dm
+2026-07-27 21:52:07,956 INFO    wandb-upload_7:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp244uuq10
+2026-07-27 21:52:07,957 INFO    wandb-upload_8:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp2jgbvi3u
+2026-07-27 21:52:07,957 INFO    wandb-upload_9:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpoxaqchxr
+2026-07-27 21:52:07,957 INFO    wandb-upload_10:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp7lp5urip
+2026-07-27 21:52:07,957 INFO    wandb-upload_11:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp_c1f__do
+2026-07-27 21:52:07,957 INFO    wandb-upload_12:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp2sy7qxs6
+2026-07-27 21:52:07,957 INFO    wandb-upload_13:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp2k8jsf4t
+2026-07-27 21:52:07,957 INFO    wandb-upload_14:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp26bsgual
+2026-07-27 21:52:07,957 INFO    wandb-upload_15:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpi3li21ng
+2026-07-27 21:52:07,957 INFO    wandb-upload_16:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpiq04r6gx
+2026-07-27 21:52:07,958 INFO    wandb-upload_17:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpjatmwlbd
+2026-07-27 21:52:07,958 INFO    wandb-upload_18:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmplc5ssggq
+2026-07-27 21:52:07,958 INFO    wandb-upload_19:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpyqoc0bap
+2026-07-27 21:52:07,958 INFO    wandb-upload_20:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpnacibu8n
+2026-07-27 21:52:07,958 INFO    wandb-upload_21:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpc9l28efk
+2026-07-27 21:52:07,958 INFO    wandb-upload_22:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmptcxw6j9x
+2026-07-27 21:52:07,958 INFO    wandb-upload_23:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp5tulo575
+2026-07-27 21:52:07,959 INFO    wandb-upload_24:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpmk80m78s
+2026-07-27 21:52:07,959 INFO    wandb-upload_25:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp8w0ms4f5
+2026-07-27 21:52:07,959 INFO    wandb-upload_26:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpjsfo9xlo
+2026-07-27 21:52:07,959 INFO    wandb-upload_28:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpwn3yodzd
+2026-07-27 21:52:07,959 INFO    wandb-upload_27:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpv7jqdan9
+2026-07-27 21:52:07,959 INFO    wandb-upload_29:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpz_ohajcd
+2026-07-27 21:52:07,959 INFO    wandb-upload_30:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpe_zbuhi1
+2026-07-27 21:52:07,959 INFO    wandb-upload_31:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpuky3oet6
+2026-07-27 21:52:07,959 INFO    wandb-upload_32:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpl65p7_ve
+2026-07-27 21:52:07,960 INFO    wandb-upload_33:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp8092b_sj
+2026-07-27 21:52:07,960 INFO    wandb-upload_34:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp5uiouuqu
+2026-07-27 21:52:07,960 INFO    wandb-upload_35:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpbzg62zhn
+2026-07-27 21:52:07,960 INFO    wandb-upload_36:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpaihyrmx5
+2026-07-27 21:52:07,960 INFO    wandb-upload_42:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp0_hixu6y
+2026-07-27 21:52:07,960 INFO    wandb-upload_51:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp0t4v6uje
+2026-07-27 21:52:07,960 INFO    wandb-upload_57:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpapc5j1dc
+2026-07-27 21:52:07,960 INFO    wandb-upload_63:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpkn8e_djq
+2026-07-27 21:52:07,960 INFO    wandb-upload_37:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp0l7flcnn
+2026-07-27 21:52:07,961 INFO    wandb-upload_38:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpww0nfrgo
+2026-07-27 21:52:07,961 INFO    wandb-upload_39:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp45z8fmfp
+2026-07-27 21:52:07,961 INFO    wandb-upload_40:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpfnkrmqcu
+2026-07-27 21:52:07,961 INFO    wandb-upload_41:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp2m969kg8
+2026-07-27 21:52:07,961 INFO    wandb-upload_43:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp0w2xu6ac
+2026-07-27 21:52:07,961 INFO    wandb-upload_44:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmph747h10u
+2026-07-27 21:52:07,961 INFO    wandb-upload_46:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpra0p8egu
+2026-07-27 21:52:07,961 INFO    wandb-upload_45:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpjijuthpk
+2026-07-27 21:52:07,961 INFO    wandb-upload_48:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmputtc4_fz
+2026-07-27 21:52:07,961 INFO    wandb-upload_47:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpow8wzg64
+2026-07-27 21:52:07,961 INFO    wandb-upload_49:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpu5w2fsxa
+2026-07-27 21:52:07,961 INFO    wandb-upload_50:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpstuit5y0
+2026-07-27 21:52:07,961 INFO    wandb-upload_52:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp391hetru
+2026-07-27 21:52:07,962 INFO    wandb-upload_53:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpyhfq_6j_
+2026-07-27 21:52:07,962 INFO    wandb-upload_54:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpoqcxypsn
+2026-07-27 21:52:07,962 INFO    wandb-upload_55:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmplzlzijhb
+2026-07-27 21:52:07,962 INFO    wandb-upload_56:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp4zw5_17q
+2026-07-27 21:52:07,962 INFO    wandb-upload_58:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpsplrn0af
+2026-07-27 21:52:07,962 INFO    wandb-upload_59:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpslcpjp40
+2026-07-27 21:52:07,962 INFO    wandb-upload_60:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp0v6lh9j5
+2026-07-27 21:52:07,962 INFO    wandb-upload_62:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpnu4vxivt
+2026-07-27 21:52:07,962 INFO    wandb-upload_61:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpmduet73_
+2026-07-27 21:52:09,284 INFO    wandb-upload_0:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpvzom3xvt
+2026-07-27 21:52:09,284 INFO    wandb-upload_1:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpheduekyr
+2026-07-27 21:52:09,285 INFO    wandb-upload_2:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp1hv0juuq
+2026-07-27 21:52:09,285 INFO    wandb-upload_3:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp9nwyae5z
+2026-07-27 21:52:09,285 INFO    wandb-upload_4:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpgrnyvws9
+2026-07-27 21:52:09,285 INFO    wandb-upload_5:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp2dfyiu47
+2026-07-27 21:52:09,285 INFO    wandb-upload_6:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpnbkb6eoc
+2026-07-27 21:52:09,285 INFO    wandb-upload_7:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp1md2mdb6
+2026-07-27 21:52:09,286 INFO    wandb-upload_8:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp0r3tv_9g
+2026-07-27 21:52:09,286 INFO    wandb-upload_9:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpn1kbg0dx
+2026-07-27 21:52:09,286 INFO    wandb-upload_10:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpmo4xvnme
+2026-07-27 21:52:09,286 INFO    wandb-upload_11:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpwhc1xtrm
+2026-07-27 21:52:09,286 INFO    wandb-upload_12:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpoxr9ht2w
+2026-07-27 21:52:09,286 INFO    wandb-upload_13:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpwkdldafa
+2026-07-27 21:52:09,286 INFO    wandb-upload_14:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpue19_peb
+2026-07-27 21:52:09,287 INFO    wandb-upload_15:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp9frvtl92
+2026-07-27 21:52:09,287 INFO    wandb-upload_16:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp6lyrykoj
+2026-07-27 21:52:09,287 INFO    wandb-upload_17:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp2xhrooc_
+2026-07-27 21:52:09,287 INFO    wandb-upload_18:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpwupn3b6p
+2026-07-27 21:52:09,287 INFO    wandb-upload_19:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp71bvtjtc
+2026-07-27 21:52:09,287 INFO    wandb-upload_20:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpnr5d1bgc
+2026-07-27 21:52:09,287 INFO    wandb-upload_21:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpqrkj4tvh
+2026-07-27 21:52:09,287 INFO    wandb-upload_22:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpbf81q2ie
+2026-07-27 21:52:09,288 INFO    wandb-upload_23:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpscpiyi32
+2026-07-27 21:52:09,288 INFO    wandb-upload_24:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpk0v41qk6
+2026-07-27 21:52:09,288 INFO    wandb-upload_25:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpkclz7lbf
+2026-07-27 21:52:09,288 INFO    wandb-upload_26:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp5byfg2zp
+2026-07-27 21:52:09,288 INFO    wandb-upload_28:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpwpps24h5
+2026-07-27 21:52:09,288 INFO    wandb-upload_27:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp0euzb0y5
+2026-07-27 21:52:09,289 INFO    wandb-upload_29:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp971fo162
+2026-07-27 21:52:09,289 INFO    wandb-upload_30:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpj8reyjdn
+2026-07-27 21:52:09,289 INFO    wandb-upload_33:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpjxrqbfbf
+2026-07-27 21:52:09,289 INFO    wandb-upload_48:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmptgc4udi8
+2026-07-27 21:52:09,289 INFO    wandb-upload_55:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpcxr5xzbe
+2026-07-27 21:52:09,290 INFO    wandb-upload_32:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpxt0ytygk
+2026-07-27 21:52:09,290 INFO    wandb-upload_34:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpdl__sqif
+2026-07-27 21:52:09,290 INFO    wandb-upload_35:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpxxeanoda
+2026-07-27 21:52:09,290 INFO    wandb-upload_36:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpwe8ab78v
+2026-07-27 21:52:09,290 INFO    wandb-upload_42:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpfgtd21jr
+2026-07-27 21:52:09,290 INFO    wandb-upload_51:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp12o6ugrg
+2026-07-27 21:52:09,290 INFO    wandb-upload_57:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmps9awwr59
+2026-07-27 21:52:09,290 INFO    wandb-upload_63:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpt5ehvoca
+2026-07-27 21:52:09,290 INFO    wandb-upload_37:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpk6fvohd2
+2026-07-27 21:52:09,291 INFO    wandb-upload_38:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmppaa4a_gz
+2026-07-27 21:52:09,291 INFO    wandb-upload_39:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpo7xe69zj
+2026-07-27 21:52:09,291 INFO    wandb-upload_40:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpwgyx13sb
+2026-07-27 21:52:09,291 INFO    wandb-upload_41:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpffro7ki7
+2026-07-27 21:52:09,291 INFO    wandb-upload_46:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp_cu24s0f
+2026-07-27 21:52:09,291 INFO    wandb-upload_43:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp9n0wzdp8
+2026-07-27 21:52:09,291 INFO    wandb-upload_44:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmph7m5_8pp
+2026-07-27 21:52:09,291 INFO    wandb-upload_45:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpdxuqz5f4
+2026-07-27 21:52:09,292 INFO    wandb-upload_47:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp5n9sr306
+2026-07-27 21:52:09,292 INFO    wandb-upload_49:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpus9qvutw
+2026-07-27 21:52:09,292 INFO    wandb-upload_50:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpsl_aviq5
+2026-07-27 21:52:09,292 INFO    wandb-upload_52:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpl4xr9tbo
+2026-07-27 21:52:09,292 INFO    wandb-upload_53:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp1zh5czsb
+2026-07-27 21:52:09,292 INFO    wandb-upload_54:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpuur63osa
+2026-07-27 21:52:09,292 INFO    wandb-upload_56:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpudknvkrk
+2026-07-27 21:52:09,292 INFO    wandb-upload_58:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp48ewsdqp
+2026-07-27 21:52:09,292 INFO    wandb-upload_59:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp5qm5t49d
+2026-07-27 21:52:09,292 INFO    wandb-upload_60:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpzunzsr4k
+2026-07-27 21:52:09,293 INFO    wandb-upload_62:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp5h4jxog3
+2026-07-27 21:52:09,293 INFO    wandb-upload_61:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpqy0fjvtb
+2026-07-27 21:52:09,293 INFO    wandb-upload_31:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpkj0z6l4r
+2026-07-27 21:52:10,795 INFO    wandb-upload_0:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpx9ad4vwr
+2026-07-27 21:52:10,796 INFO    wandb-upload_1:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpa7ctn85p
+2026-07-27 21:52:10,796 INFO    wandb-upload_2:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpnu780i2f
+2026-07-27 21:52:10,796 INFO    wandb-upload_3:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp5d160hfc
+2026-07-27 21:52:10,796 INFO    wandb-upload_4:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmplisvfkki
+2026-07-27 21:52:10,796 INFO    wandb-upload_5:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmppugroj7s
+2026-07-27 21:52:10,796 INFO    wandb-upload_6:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp_dlx5y7x
+2026-07-27 21:52:10,796 INFO    wandb-upload_7:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpqtrqn5nq
+2026-07-27 21:52:10,797 INFO    wandb-upload_8:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp5dz874pv
+2026-07-27 21:52:10,797 INFO    wandb-upload_9:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpnr0p93oo
+2026-07-27 21:52:10,797 INFO    wandb-upload_10:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpldtunoyo
+2026-07-27 21:52:10,797 INFO    wandb-upload_11:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpy0blgwmd
+2026-07-27 21:52:10,797 INFO    wandb-upload_12:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpw4z_x0ui
+2026-07-27 21:52:10,797 INFO    wandb-upload_13:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpmfoziwlu
+2026-07-27 21:52:10,797 INFO    wandb-upload_14:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpy1t81au8
+2026-07-27 21:52:10,797 INFO    wandb-upload_15:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpxxk3izc_
+2026-07-27 21:52:10,798 INFO    wandb-upload_16:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp9rbu8s70
+2026-07-27 21:52:10,798 INFO    wandb-upload_18:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp2uo36qs_
+2026-07-27 21:52:10,798 INFO    wandb-upload_19:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpz679kyzv
+2026-07-27 21:52:10,798 INFO    wandb-upload_20:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmph9sq59wc
+2026-07-27 21:52:10,798 INFO    wandb-upload_21:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpbdbvqqru
+2026-07-27 21:52:10,798 INFO    wandb-upload_22:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpsto620kk
+2026-07-27 21:52:10,799 INFO    wandb-upload_23:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpa32_gfxm
+2026-07-27 21:52:10,799 INFO    wandb-upload_24:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp36f_nbqw
+2026-07-27 21:52:10,799 INFO    wandb-upload_25:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpfzm98pyn
+2026-07-27 21:52:10,799 INFO    wandb-upload_26:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpkeuxmk2q
+2026-07-27 21:52:10,799 INFO    wandb-upload_28:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpl4fdal13
+2026-07-27 21:52:10,799 INFO    wandb-upload_27:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp72xs6fdt
+2026-07-27 21:52:10,799 INFO    wandb-upload_29:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmptssfxlev
+2026-07-27 21:52:10,800 INFO    wandb-upload_30:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmph0iv9ed8
+2026-07-27 21:52:10,800 INFO    wandb-upload_48:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpgkwhyxh9
+2026-07-27 21:52:10,800 INFO    wandb-upload_33:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpkp715qq6
+2026-07-27 21:52:10,800 INFO    wandb-upload_63:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpfspkay98
+2026-07-27 21:52:10,800 INFO    wandb-upload_44:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp11a3nb1b
+2026-07-27 21:52:10,800 INFO    wandb-upload_54:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp5r6f53fv
+2026-07-27 21:52:10,800 INFO    wandb-upload_31:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpbe9pi6rd
+2026-07-27 21:52:10,801 INFO    wandb-upload_55:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpdalq3zdf
+2026-07-27 21:52:10,801 INFO    wandb-upload_32:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp70mc8wnw
+2026-07-27 21:52:10,801 INFO    wandb-upload_35:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpvjhumvbf
+2026-07-27 21:52:10,801 INFO    wandb-upload_34:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpgz2bs0c2
+2026-07-27 21:52:10,801 INFO    wandb-upload_36:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpsmkjvdgn
+2026-07-27 21:52:10,801 INFO    wandb-upload_42:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpekv9jhc7
+2026-07-27 21:52:10,801 INFO    wandb-upload_51:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp_axujq8z
+2026-07-27 21:52:10,801 INFO    wandb-upload_37:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpb2ux0fvy
+2026-07-27 21:52:10,802 INFO    wandb-upload_57:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpdvjz_voc
+2026-07-27 21:52:10,802 INFO    wandb-upload_38:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp9kta6tx_
+2026-07-27 21:52:10,802 INFO    wandb-upload_39:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmplkqz4ibx
+2026-07-27 21:52:10,802 INFO    wandb-upload_40:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmph7qag0gk
+2026-07-27 21:52:10,802 INFO    wandb-upload_41:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpzty2uirz
+2026-07-27 21:52:10,802 INFO    wandb-upload_43:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpvucq5z4p
+2026-07-27 21:52:10,802 INFO    wandb-upload_46:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpbir_p130
+2026-07-27 21:52:10,802 INFO    wandb-upload_45:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpxvone4qx
+2026-07-27 21:52:10,803 INFO    wandb-upload_47:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmptn6tcdkd
+2026-07-27 21:52:10,803 INFO    wandb-upload_49:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpnk47hor0
+2026-07-27 21:52:10,803 INFO    wandb-upload_50:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpl4tdx78m
+2026-07-27 21:52:10,803 INFO    wandb-upload_52:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmprj3ag4bm
+2026-07-27 21:52:10,803 INFO    wandb-upload_53:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp47rxg5o1
+2026-07-27 21:52:10,803 INFO    wandb-upload_56:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpdp2h3wb1
+2026-07-27 21:52:10,803 INFO    wandb-upload_58:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpd5_o_onv
+2026-07-27 21:52:10,803 INFO    wandb-upload_59:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpi3sezc5k
+2026-07-27 21:52:10,803 INFO    wandb-upload_60:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpvyto6e_j
+2026-07-27 21:52:10,803 INFO    wandb-upload_62:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp6vnw_0ix
+2026-07-27 21:52:10,804 INFO    wandb-upload_61:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpsgd6eud4
+2026-07-27 21:52:11,800 INFO    wandb-upload_17:9567 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpodp67o7s
+2026-07-27 21:52:12,252 INFO    wandb-upload_0:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpsg4wobhi
+2026-07-27 21:52:12,252 INFO    wandb-upload_1:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmplpbs_a80
+2026-07-27 21:52:12,252 INFO    wandb-upload_2:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmplju2y2na
+2026-07-27 21:52:12,253 INFO    wandb-upload_3:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpdcswl1o3
+2026-07-27 21:52:12,253 INFO    wandb-upload_4:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmps5p18e1u
+2026-07-27 21:52:12,253 INFO    wandb-upload_5:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpcfiddgm0
+2026-07-27 21:52:12,253 INFO    wandb-upload_6:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpfx92s4h0
+2026-07-27 21:52:12,253 INFO    wandb-upload_7:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp7saz_5en
+2026-07-27 21:52:12,253 INFO    wandb-upload_8:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpuj47agqs
+2026-07-27 21:52:12,253 INFO    wandb-upload_9:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpjcb10ci7
+2026-07-27 21:52:12,253 INFO    wandb-upload_10:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpch06lrjv
+2026-07-27 21:52:12,254 INFO    wandb-upload_11:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp662e4fug
+2026-07-27 21:52:12,254 INFO    wandb-upload_12:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp3tbcs9x7
+2026-07-27 21:52:12,254 INFO    wandb-upload_13:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpel65asff
+2026-07-27 21:52:12,254 INFO    wandb-upload_15:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpgmvpy7m3
+2026-07-27 21:52:12,254 INFO    wandb-upload_14:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpui52th0o
+2026-07-27 21:52:12,254 INFO    wandb-upload_16:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp5omxh0lo
+2026-07-27 21:52:12,255 INFO    wandb-upload_18:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp5yqdyvqe
+2026-07-27 21:52:12,255 INFO    wandb-upload_19:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpa9nsnxqc
+2026-07-27 21:52:12,255 INFO    wandb-upload_20:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmphs17emky
+2026-07-27 21:52:12,255 INFO    wandb-upload_21:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpsxsyu5vg
+2026-07-27 21:52:12,255 INFO    wandb-upload_22:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp3ejzfkug
+2026-07-27 21:52:12,255 INFO    wandb-upload_23:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmphpw6ihw0
+2026-07-27 21:52:12,255 INFO    wandb-upload_24:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpc8x8yahw
+2026-07-27 21:52:12,256 INFO    wandb-upload_25:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmppetdo_9w
+2026-07-27 21:52:12,256 INFO    wandb-upload_26:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp0k6qw458
+2026-07-27 21:52:12,256 INFO    wandb-upload_28:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpky52tc50
+2026-07-27 21:52:12,256 INFO    wandb-upload_27:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp70_fu1ed
+2026-07-27 21:52:12,256 INFO    wandb-upload_29:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp7p6u2_ws
+2026-07-27 21:52:12,256 INFO    wandb-upload_30:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpsy80ne3e
+2026-07-27 21:52:12,256 INFO    wandb-upload_63:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpewwrslmt
+2026-07-27 21:52:12,257 INFO    wandb-upload_34:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp0g67oy9l
+2026-07-27 21:52:12,257 INFO    wandb-upload_41:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp9rc7ibjp
+2026-07-27 21:52:12,257 INFO    wandb-upload_45:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp6yxk5v0m
+2026-07-27 21:52:12,257 INFO    wandb-upload_48:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpqijrz6v6
+2026-07-27 21:52:12,257 INFO    wandb-upload_33:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp2hoe2o97
+2026-07-27 21:52:12,257 INFO    wandb-upload_44:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpp03su_9b
+2026-07-27 21:52:12,258 INFO    wandb-upload_54:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpc5aggaep
+2026-07-27 21:52:12,258 INFO    wandb-upload_31:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpud754f0c
+2026-07-27 21:52:12,258 INFO    wandb-upload_32:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpbl4lci30
+2026-07-27 21:52:12,258 INFO    wandb-upload_55:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpdyey8g7s
+2026-07-27 21:52:12,258 INFO    wandb-upload_35:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp_yrc5yv5
+2026-07-27 21:52:12,258 INFO    wandb-upload_36:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmplza2c75l
+2026-07-27 21:52:12,258 INFO    wandb-upload_51:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpx5nb7ssc
+2026-07-27 21:52:12,258 INFO    wandb-upload_42:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp759zbu_d
+2026-07-27 21:52:12,258 INFO    wandb-upload_37:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpvlcrp4y3
+2026-07-27 21:52:12,258 INFO    wandb-upload_57:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp3dho7qd2
+2026-07-27 21:52:12,259 INFO    wandb-upload_38:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpv2ai6ima
+2026-07-27 21:52:12,259 INFO    wandb-upload_39:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp95vam_q9
+2026-07-27 21:52:12,259 INFO    wandb-upload_40:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpaxnyc22r
+2026-07-27 21:52:12,259 INFO    wandb-upload_43:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp0g9sa23e
+2026-07-27 21:52:12,259 INFO    wandb-upload_46:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmptiioqka9
+2026-07-27 21:52:12,259 INFO    wandb-upload_47:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpzjuzen0h
+2026-07-27 21:52:12,259 INFO    wandb-upload_49:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpwl6c5v0f
+2026-07-27 21:52:12,259 INFO    wandb-upload_50:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpzoyo0n8q
+2026-07-27 21:52:12,259 INFO    wandb-upload_52:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpiezv0r9m
+2026-07-27 21:52:12,259 INFO    wandb-upload_53:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpm5c7dnv1
+2026-07-27 21:52:12,259 INFO    wandb-upload_59:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp319cdjgd
+2026-07-27 21:52:12,260 INFO    wandb-upload_56:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp1ld6m41s
+2026-07-27 21:52:12,260 INFO    wandb-upload_58:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpso2xj1nb
+2026-07-27 21:52:12,260 INFO    wandb-upload_60:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpi9k886ki
+2026-07-27 21:52:12,260 INFO    wandb-upload_62:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp7v0k3rl3
+2026-07-27 21:52:12,260 INFO    wandb-upload_61:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp8us4ri4t
+2026-07-27 21:52:13,498 INFO    wandb-upload_17:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpfzwbhxfl
+2026-07-27 21:52:13,499 INFO    wandb-upload_0:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpgly9fh5i
+2026-07-27 21:52:13,499 INFO    wandb-upload_1:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpnutrib9o
+2026-07-27 21:52:13,499 INFO    wandb-upload_2:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmptkzejlpy
+2026-07-27 21:52:13,499 INFO    wandb-upload_3:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpwlcoe9gn
+2026-07-27 21:52:13,499 INFO    wandb-upload_4:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpixu7rcnk
+2026-07-27 21:52:13,499 INFO    wandb-upload_5:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpzslacj5e
+2026-07-27 21:52:13,500 INFO    wandb-upload_6:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpceeurb46
+2026-07-27 21:52:13,500 INFO    wandb-upload_7:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp80d_1jmg
+2026-07-27 21:52:13,500 INFO    wandb-upload_8:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp_vlecm8j
+2026-07-27 21:52:13,500 INFO    wandb-upload_9:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmprncjvi5i
+2026-07-27 21:52:13,500 INFO    wandb-upload_10:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpj5nsxyz6
+2026-07-27 21:52:13,500 INFO    wandb-upload_11:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmphe52je6e
+2026-07-27 21:52:13,500 INFO    wandb-upload_12:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpendhwguy
+2026-07-27 21:52:13,501 INFO    wandb-upload_13:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp9_9zrwo_
+2026-07-27 21:52:13,501 INFO    wandb-upload_15:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpsfd7qoof
+2026-07-27 21:52:13,501 INFO    wandb-upload_14:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpiem8065m
+2026-07-27 21:52:13,501 INFO    wandb-upload_16:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp16l4al75
+2026-07-27 21:52:13,501 INFO    wandb-upload_18:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp8m1_2y5x
+2026-07-27 21:52:13,501 INFO    wandb-upload_19:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp4lbz_qx6
+2026-07-27 21:52:13,502 INFO    wandb-upload_20:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmprf5sugut
+2026-07-27 21:52:13,502 INFO    wandb-upload_21:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp7ns1zjeo
+2026-07-27 21:52:13,502 INFO    wandb-upload_22:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpz7ilhxld
+2026-07-27 21:52:13,502 INFO    wandb-upload_24:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpeo6orr5h
+2026-07-27 21:52:13,502 INFO    wandb-upload_23:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpmx05mab6
+2026-07-27 21:52:13,502 INFO    wandb-upload_25:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpx1h6xo42
+2026-07-27 21:52:13,502 INFO    wandb-upload_26:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp3tejzp0f
+2026-07-27 21:52:13,503 INFO    wandb-upload_27:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpafbdlpvy
+2026-07-27 21:52:13,503 INFO    wandb-upload_28:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpcivviyt7
+2026-07-27 21:52:13,503 INFO    wandb-upload_29:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp7is8gbgf
+2026-07-27 21:52:13,503 INFO    wandb-upload_30:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpueb2898r
+2026-07-27 21:52:13,503 INFO    wandb-upload_54:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp2ouw43si
+2026-07-27 21:52:13,503 INFO    wandb-upload_36:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp4y5idt1_
+2026-07-27 21:52:13,503 INFO    wandb-upload_49:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpbc_vhcjs
+2026-07-27 21:52:13,503 INFO    wandb-upload_58:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpknoztirx
+2026-07-27 21:52:13,504 INFO    wandb-upload_34:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpg1udz8sc
+2026-07-27 21:52:13,504 INFO    wandb-upload_41:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmps5xtpl3j
+2026-07-27 21:52:13,504 INFO    wandb-upload_45:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpkkbn3y2m
+2026-07-27 21:52:13,504 INFO    wandb-upload_48:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpdj4erqgo
+2026-07-27 21:52:13,504 INFO    wandb-upload_33:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp2qcqy1bs
+2026-07-27 21:52:13,504 INFO    wandb-upload_31:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmph4u5et70
+2026-07-27 21:52:13,505 INFO    wandb-upload_44:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmplkc6ijle
+2026-07-27 21:52:13,505 INFO    wandb-upload_32:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpx9b92o5w
+2026-07-27 21:52:13,505 INFO    wandb-upload_35:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpqhmad1lf
+2026-07-27 21:52:13,505 INFO    wandb-upload_55:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpdn1pz77p
+2026-07-27 21:52:13,505 INFO    wandb-upload_51:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpwesexqsb
+2026-07-27 21:52:13,505 INFO    wandb-upload_42:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpgltgzcz0
+2026-07-27 21:52:13,505 INFO    wandb-upload_37:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpkcgy4qks
+2026-07-27 21:52:13,505 INFO    wandb-upload_57:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp1ohab_ft
+2026-07-27 21:52:13,505 INFO    wandb-upload_38:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmps884k1ii
+2026-07-27 21:52:13,505 INFO    wandb-upload_39:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp853ml64s
+2026-07-27 21:52:13,506 INFO    wandb-upload_46:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp80gkf5ia
+2026-07-27 21:52:13,506 INFO    wandb-upload_40:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpwoq7dzb3
+2026-07-27 21:52:13,506 INFO    wandb-upload_43:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmptzl68snb
+2026-07-27 21:52:13,506 INFO    wandb-upload_47:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp0bcb5wpf
+2026-07-27 21:52:13,506 INFO    wandb-upload_50:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp2l16ub0j
+2026-07-27 21:52:13,506 INFO    wandb-upload_52:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmptkkt_yb1
+2026-07-27 21:52:13,506 INFO    wandb-upload_53:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp1rnexxsk
+2026-07-27 21:52:13,506 INFO    wandb-upload_59:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpdxero9hu
+2026-07-27 21:52:13,506 INFO    wandb-upload_56:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp3cxzakmj
+2026-07-27 21:52:13,506 INFO    wandb-upload_60:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpppyz0976
+2026-07-27 21:52:13,507 INFO    wandb-upload_62:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp8f1_yd5y
+2026-07-27 21:52:13,507 INFO    wandb-upload_61:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpr8t3t27n
+2026-07-27 21:52:13,507 INFO    wandb-upload_63:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpfzgbc8xi
+2026-07-27 21:52:13,801 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: poll_exit
+2026-07-27 21:52:14,602 INFO    wandb-upload_31:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpw10w66fw
+2026-07-27 21:52:14,602 INFO    wandb-upload_0:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpkouz_0rt
+2026-07-27 21:52:14,602 INFO    wandb-upload_1:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp24l8ctxx
+2026-07-27 21:52:14,602 INFO    wandb-upload_2:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp8tpx83d1
+2026-07-27 21:52:14,602 INFO    wandb-upload_3:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmptgmddvmh
+2026-07-27 21:52:14,603 INFO    wandb-upload_4:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpm33kj1ei
+2026-07-27 21:52:14,603 INFO    wandb-upload_5:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpyc12ccb7
+2026-07-27 21:52:14,603 INFO    wandb-upload_6:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpzgw0gncb
+2026-07-27 21:52:14,603 INFO    wandb-upload_7:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp_wz7e01q
+2026-07-27 21:52:14,603 INFO    wandb-upload_8:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpi2bxp0t4
+2026-07-27 21:52:14,603 INFO    wandb-upload_9:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp64c2ey_q
+2026-07-27 21:52:14,603 INFO    wandb-upload_10:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpde7xbqx3
+2026-07-27 21:52:14,604 INFO    wandb-upload_11:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp435zsdyp
+2026-07-27 21:52:14,604 INFO    wandb-upload_12:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp00pjz6jd
+2026-07-27 21:52:14,604 INFO    wandb-upload_13:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpjc08obeh
+2026-07-27 21:52:14,604 INFO    wandb-upload_15:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp6dg1c3l9
+2026-07-27 21:52:14,604 INFO    wandb-upload_14:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpx865r6nl
+2026-07-27 21:52:14,604 INFO    wandb-upload_16:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp9o401lv1
+2026-07-27 21:52:14,604 INFO    wandb-upload_18:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpv_6q_8hr
+2026-07-27 21:52:14,605 INFO    wandb-upload_19:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpr0s_wd1n
+2026-07-27 21:52:14,605 INFO    wandb-upload_20:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmprshztywt
+2026-07-27 21:52:14,605 INFO    wandb-upload_21:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp5m7hvx71
+2026-07-27 21:52:14,605 INFO    wandb-upload_22:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpr7yyqum7
+2026-07-27 21:52:14,605 INFO    wandb-upload_24:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpgb7kzsqi
+2026-07-27 21:52:14,605 INFO    wandb-upload_23:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp7gluoze6
+2026-07-27 21:52:14,605 INFO    wandb-upload_25:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmppd7gqi8h
+2026-07-27 21:52:14,606 INFO    wandb-upload_26:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpjmxi1zd7
+2026-07-27 21:52:14,606 INFO    wandb-upload_27:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpjnmclukk
+2026-07-27 21:52:14,606 INFO    wandb-upload_28:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpkglx5axx
+2026-07-27 21:52:14,606 INFO    wandb-upload_29:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp11kjdjd9
+2026-07-27 21:52:14,606 INFO    wandb-upload_30:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpl_axz3vc
+2026-07-27 21:52:14,606 INFO    wandb-upload_54:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmplv10yelb
+2026-07-27 21:52:14,606 INFO    wandb-upload_36:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpi96dee4k
+2026-07-27 21:52:14,607 INFO    wandb-upload_33:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp2qc6cacf
+2026-07-27 21:52:14,607 INFO    wandb-upload_17:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpm5oqhhhx
+2026-07-27 21:52:14,607 INFO    wandb-upload_49:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpeiadqwwg
+2026-07-27 21:52:14,607 INFO    wandb-upload_58:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpszz_536n
+2026-07-27 21:52:14,607 INFO    wandb-upload_34:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp7hte48cz
+2026-07-27 21:52:14,607 INFO    wandb-upload_41:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmpif_gxf60
+2026-07-27 21:52:14,607 INFO    wandb-upload_45:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp_5jfq6wc
+2026-07-27 21:52:14,608 INFO    wandb-upload_48:9567 [upload_job.py:push():86] Skipped uploading /root/.local/share/wandb/artifacts/staging/tmp01ken8q8
+2026-07-27 21:52:17,245 INFO    SenderThread:9567 [sender.py:send_request_log_artifact():1444] logged artifact source-v9-Taesar.SASRec.BEST-verify_step0.py - {'id': 'QXJ0aWZhY3Q6MzE5NjcwMjUwNg==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExOTMzNTc4NjM=', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MzE5NjcwMDkyNg==', 'versionIndex': 15}}}
+2026-07-27 21:52:17,247 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: status_report
+2026-07-27 21:52:17,248 DEBUG   SenderThread:9567 [sender.py:send():380] send: telemetry
+2026-07-27 21:52:17,248 DEBUG   SenderThread:9567 [sender.py:send():380] send: files
+2026-07-27 21:52:17,248 INFO    SenderThread:9567 [sender.py:_save_file():1378] saving file config.yaml with policy live
+2026-07-27 21:52:17,249 DEBUG   SenderThread:9567 [sender.py:send():380] send: files
+2026-07-27 21:52:17,249 INFO    SenderThread:9567 [sender.py:_save_file():1378] saving file hydra.yaml with policy live
+2026-07-27 21:52:17,250 DEBUG   SenderThread:9567 [sender.py:send():380] send: files
+2026-07-27 21:52:17,250 INFO    SenderThread:9567 [sender.py:_save_file():1378] saving file overrides.yaml with policy live
+2026-07-27 21:52:17,251 DEBUG   SenderThread:9567 [sender.py:send():380] send: exit
+2026-07-27 21:52:17,251 INFO    SenderThread:9567 [sender.py:send_exit():585] handling exit code: 1
+2026-07-27 21:52:17,251 INFO    SenderThread:9567 [sender.py:send_exit():587] handling runtime: 13
+2026-07-27 21:52:17,254 INFO    SenderThread:9567 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2026-07-27 21:52:17,255 INFO    SenderThread:9567 [sender.py:send_exit():593] send defer
+2026-07-27 21:52:17,255 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: poll_exit
+2026-07-27 21:52:17,256 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:17,256 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 0
+2026-07-27 21:52:17,257 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:17,257 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 0
+2026-07-27 21:52:17,257 INFO    SenderThread:9567 [sender.py:transition_state():613] send defer: 1
+2026-07-27 21:52:17,257 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:17,257 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 1
+2026-07-27 21:52:17,257 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:17,257 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 1
+2026-07-27 21:52:17,258 INFO    SenderThread:9567 [sender.py:transition_state():613] send defer: 2
+2026-07-27 21:52:17,258 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:17,258 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 2
+2026-07-27 21:52:17,258 INFO    HandlerThread:9567 [system_monitor.py:finish():203] Stopping system monitor
+2026-07-27 21:52:17,258 DEBUG   SystemMonitor:9567 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2026-07-27 21:52:17,259 DEBUG   SystemMonitor:9567 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2026-07-27 21:52:17,259 DEBUG   SystemMonitor:9567 [system_monitor.py:_start():183] Publishing last batch of metrics
+2026-07-27 21:52:17,265 INFO    HandlerThread:9567 [interfaces.py:finish():202] Joined cpu monitor
+2026-07-27 21:52:17,266 INFO    HandlerThread:9567 [interfaces.py:finish():202] Joined disk monitor
+2026-07-27 21:52:17,290 INFO    HandlerThread:9567 [interfaces.py:finish():202] Joined gpu monitor
+2026-07-27 21:52:17,290 INFO    HandlerThread:9567 [interfaces.py:finish():202] Joined memory monitor
+2026-07-27 21:52:17,290 INFO    HandlerThread:9567 [interfaces.py:finish():202] Joined network monitor
+2026-07-27 21:52:17,291 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:17,291 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 2
+2026-07-27 21:52:17,291 INFO    SenderThread:9567 [sender.py:transition_state():613] send defer: 3
+2026-07-27 21:52:17,292 DEBUG   SenderThread:9567 [sender.py:send():380] send: stats
+2026-07-27 21:52:17,292 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:17,292 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 3
+2026-07-27 21:52:17,292 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:17,292 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 3
+2026-07-27 21:52:17,292 INFO    SenderThread:9567 [sender.py:transition_state():613] send defer: 4
+2026-07-27 21:52:17,293 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:17,293 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 4
+2026-07-27 21:52:17,293 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:17,293 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 4
+2026-07-27 21:52:17,293 INFO    SenderThread:9567 [sender.py:transition_state():613] send defer: 5
+2026-07-27 21:52:17,293 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:17,293 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 5
+2026-07-27 21:52:17,293 DEBUG   SenderThread:9567 [sender.py:send():380] send: summary
+2026-07-27 21:52:17,295 INFO    SenderThread:9567 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2026-07-27 21:52:17,295 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:17,295 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 5
+2026-07-27 21:52:17,295 INFO    SenderThread:9567 [sender.py:transition_state():613] send defer: 6
+2026-07-27 21:52:17,295 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:17,296 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 6
+2026-07-27 21:52:17,296 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:17,296 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 6
+2026-07-27 21:52:17,301 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: status_report
+2026-07-27 21:52:17,513 INFO    Thread-12 :9567 [dir_watcher.py:_on_file_created():271] file/dir created: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/wandb-summary.json
+2026-07-27 21:52:17,514 INFO    Thread-12 :9567 [dir_watcher.py:_on_file_created():271] file/dir created: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/output.log
+2026-07-27 21:52:18,225 INFO    wandb-upload_44:9567 [upload_job.py:push():131] Uploaded file /tmp/tmpvnj62tb1wandb/uw4ddon9-config.yaml
+2026-07-27 21:52:18,481 INFO    SenderThread:9567 [sender.py:transition_state():613] send defer: 7
+2026-07-27 21:52:18,481 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:18,482 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 7
+2026-07-27 21:52:18,482 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:18,482 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 7
+2026-07-27 21:52:18,514 INFO    Thread-12 :9567 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/config.yaml
+2026-07-27 21:52:18,803 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: keepalive
+2026-07-27 21:52:18,805 INFO    wandb-upload_35:9567 [upload_job.py:push():131] Uploaded file /tmp/tmpvnj62tb1wandb/aysyarqf-hydra.yaml
+2026-07-27 21:52:19,117 INFO    wandb-upload_51:9567 [upload_job.py:push():131] Uploaded file /tmp/tmpvnj62tb1wandb/b2m7xabn-overrides.yaml
+2026-07-27 21:52:19,256 INFO    SenderThread:9567 [sender.py:transition_state():613] send defer: 8
+2026-07-27 21:52:19,257 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:19,257 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 8
+2026-07-27 21:52:19,258 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:19,258 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 8
+2026-07-27 21:52:19,258 INFO    SenderThread:9567 [job_builder.py:build():281] Attempting to build job artifact
+2026-07-27 21:52:19,260 INFO    SenderThread:9567 [job_builder.py:_get_source_type():397] is artifact sourced job
+2026-07-27 21:52:19,262 INFO    SenderThread:9567 [job_builder.py:build():369] adding wandb-job metadata file
+2026-07-27 21:52:19,268 INFO    SenderThread:9567 [sender.py:transition_state():613] send defer: 9
+2026-07-27 21:52:19,269 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:19,269 DEBUG   SenderThread:9567 [sender.py:send():380] send: artifact
+2026-07-27 21:52:19,270 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 9
+2026-07-27 21:52:19,514 INFO    Thread-12 :9567 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/output.log
+2026-07-27 21:52:22,603 INFO    wandb-upload_37:9567 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmp1j4l4efg
+2026-07-27 21:52:22,705 INFO    wandb-upload_57:9567 [upload_job.py:push():89] Uploaded file /root/.local/share/wandb/artifacts/staging/tmpzc_ieocr
+2026-07-27 21:52:23,807 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: keepalive
+2026-07-27 21:52:26,528 INFO    SenderThread:9567 [sender.py:send_artifact():1456] sent artifact job-source-v9-Taesar.SASRec.BEST-verify_step0.py - {'id': 'QXJ0aWZhY3Q6MzE5NjcwMjg5MQ==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExOTM0Mzc2MTA=', 'latestArtifact': None}}
+2026-07-27 21:52:26,529 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:26,529 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 9
+2026-07-27 21:52:26,529 INFO    SenderThread:9567 [dir_watcher.py:finish():358] shutting down directory watcher
+2026-07-27 21:52:26,529 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: status_report
+2026-07-27 21:52:27,517 INFO    SenderThread:9567 [dir_watcher.py:finish():388] scan: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files
+2026-07-27 21:52:27,518 INFO    SenderThread:9567 [dir_watcher.py:finish():402] scan save: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/config.yaml config.yaml
+2026-07-27 21:52:27,518 INFO    SenderThread:9567 [dir_watcher.py:finish():402] scan save: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/requirements.txt requirements.txt
+2026-07-27 21:52:27,518 INFO    SenderThread:9567 [dir_watcher.py:finish():402] scan save: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/conda-environment.yaml conda-environment.yaml
+2026-07-27 21:52:27,519 INFO    SenderThread:9567 [dir_watcher.py:finish():402] scan save: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/wandb-metadata.json wandb-metadata.json
+2026-07-27 21:52:27,519 INFO    SenderThread:9567 [dir_watcher.py:finish():402] scan save: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/hydra.yaml hydra.yaml
+2026-07-27 21:52:27,519 INFO    SenderThread:9567 [dir_watcher.py:finish():402] scan save: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/overrides.yaml overrides.yaml
+2026-07-27 21:52:27,519 INFO    SenderThread:9567 [dir_watcher.py:finish():402] scan save: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/output.log output.log
+2026-07-27 21:52:27,519 INFO    SenderThread:9567 [dir_watcher.py:finish():402] scan save: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/wandb-summary.json wandb-summary.json
+2026-07-27 21:52:27,520 INFO    SenderThread:9567 [sender.py:transition_state():613] send defer: 10
+2026-07-27 21:52:27,520 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:27,520 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 10
+2026-07-27 21:52:27,521 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:27,521 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 10
+2026-07-27 21:52:27,521 INFO    SenderThread:9567 [file_pusher.py:finish():175] shutting down file pusher
+2026-07-27 21:52:28,396 INFO    wandb-upload_40:9567 [upload_job.py:push():131] Uploaded file /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/conda-environment.yaml
+2026-07-27 21:52:28,453 INFO    wandb-upload_46:9567 [upload_job.py:push():131] Uploaded file /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/requirements.txt
+2026-07-27 21:52:28,508 INFO    wandb-upload_39:9567 [upload_job.py:push():131] Uploaded file /tmp/tmpvnj62tb1wandb/m66oz0hw-config.yaml
+2026-07-27 21:52:28,809 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: keepalive
+2026-07-27 21:52:28,896 INFO    wandb-upload_43:9567 [upload_job.py:push():131] Uploaded file /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/output.log
+2026-07-27 21:52:29,343 INFO    wandb-upload_47:9567 [upload_job.py:push():131] Uploaded file /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/files/wandb-summary.json
+2026-07-27 21:52:29,543 INFO    Thread-11 (_thread_body):9567 [sender.py:transition_state():613] send defer: 11
+2026-07-27 21:52:29,544 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:29,544 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 11
+2026-07-27 21:52:29,545 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:29,545 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 11
+2026-07-27 21:52:29,545 INFO    SenderThread:9567 [file_pusher.py:join():181] waiting for file pusher
+2026-07-27 21:52:29,545 INFO    SenderThread:9567 [sender.py:transition_state():613] send defer: 12
+2026-07-27 21:52:29,545 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:29,545 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 12
+2026-07-27 21:52:29,546 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:29,546 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 12
+2026-07-27 21:52:29,546 INFO    SenderThread:9567 [file_stream.py:finish():595] file stream finish called
+2026-07-27 21:52:33,811 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: keepalive
+2026-07-27 21:52:38,812 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: keepalive
+2026-07-27 21:52:38,944 INFO    SenderThread:9567 [file_stream.py:finish():599] file stream finish is done
+2026-07-27 21:52:38,944 INFO    SenderThread:9567 [sender.py:transition_state():613] send defer: 13
+2026-07-27 21:52:38,945 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:38,945 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 13
+2026-07-27 21:52:38,945 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: status_report
+2026-07-27 21:52:38,946 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:38,946 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 13
+2026-07-27 21:52:38,946 INFO    SenderThread:9567 [sender.py:transition_state():613] send defer: 14
+2026-07-27 21:52:38,947 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: defer
+2026-07-27 21:52:38,947 INFO    HandlerThread:9567 [handler.py:handle_request_defer():172] handle defer: 14
+2026-07-27 21:52:38,947 DEBUG   SenderThread:9567 [sender.py:send():380] send: final
+2026-07-27 21:52:38,947 DEBUG   SenderThread:9567 [sender.py:send():380] send: footer
+2026-07-27 21:52:38,947 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: defer
+2026-07-27 21:52:38,947 INFO    SenderThread:9567 [sender.py:send_request_defer():609] handle sender defer: 14
+2026-07-27 21:52:38,948 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: poll_exit
+2026-07-27 21:52:38,949 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: poll_exit
+2026-07-27 21:52:38,949 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: server_info
+2026-07-27 21:52:38,950 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: server_info
+2026-07-27 21:52:38,954 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: get_summary
+2026-07-27 21:52:38,955 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: sampled_history
+2026-07-27 21:52:38,956 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: internal_messages
+2026-07-27 21:52:38,957 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: job_info
+2026-07-27 21:52:39,319 DEBUG   SenderThread:9567 [sender.py:send_request():407] send_request: job_info
+2026-07-27 21:52:39,320 INFO    MainThread:9567 [wandb_run.py:_footer_history_summary_info():3599] rendering history
+2026-07-27 21:52:39,320 INFO    MainThread:9567 [wandb_run.py:_footer_history_summary_info():3631] rendering summary
+2026-07-27 21:52:39,320 INFO    MainThread:9567 [wandb_run.py:_footer_sync_info():3558] logging synced files
+2026-07-27 21:52:39,321 DEBUG   HandlerThread:9567 [handler.py:handle_request():146] handle_request: shutdown
+2026-07-27 21:52:39,321 INFO    HandlerThread:9567 [handler.py:finish():866] shutting down handler
+2026-07-27 21:52:39,958 INFO    WriterThread:9567 [datastore.py:close():294] close: /root/autodl-tmp/Taesar-main/wandb/run-20260727_215157-x6xm3spo/run-x6xm3spo.wandb
+2026-07-27 21:52:40,320 INFO    SenderThread:9567 [sender.py:finish():1534] shutting down sender
+2026-07-27 21:52:40,320 INFO    SenderThread:9567 [file_pusher.py:finish():175] shutting down file pusher
+2026-07-27 21:52:40,320 INFO    SenderThread:9567 [file_pusher.py:join():181] waiting for file pusher

@@ -1,0 +1,257 @@
+hydra:
+  run:
+    dir: ${base.save_dir}
+  sweep:
+    dir: ${base.save_method_dir}
+    subdir: ${base.run_name}
+  launcher:
+    _target_: hydra._internal.core_plugins.basic_launcher.BasicLauncher
+  sweeper:
+    _target_: hydra._internal.core_plugins.basic_sweeper.BasicSweeper
+    max_batch_size: null
+    params: null
+  help:
+    app_name: ${hydra.job.name}
+    header: '${hydra.help.app_name} is powered by Hydra.
+
+      '
+    footer: 'Powered by Hydra (https://hydra.cc)
+
+      Use --hydra-help to view Hydra specific help
+
+      '
+    template: '${hydra.help.header}
+
+      == Configuration groups ==
+
+      Compose your configuration from those groups (group=option)
+
+
+      $APP_CONFIG_GROUPS
+
+
+      == Config ==
+
+      Override anything in the config (foo.bar=value)
+
+
+      $CONFIG
+
+
+      ${hydra.help.footer}
+
+      '
+  hydra_help:
+    template: 'Hydra (${hydra.runtime.version})
+
+      See https://hydra.cc for more info.
+
+
+      == Flags ==
+
+      $FLAGS_HELP
+
+
+      == Configuration groups ==
+
+      Compose your configuration from those groups (For example, append hydra/job_logging=disabled
+      to command line)
+
+
+      $HYDRA_CONFIG_GROUPS
+
+
+      Use ''--cfg hydra'' to Show the Hydra config.
+
+      '
+    hydra_help: ???
+  hydra_logging:
+    version: 1
+    formatters:
+      simple:
+        format: '[%(asctime)s][HYDRA] %(message)s'
+    handlers:
+      console:
+        class: logging.StreamHandler
+        formatter: simple
+        stream: ext://sys.stdout
+    root:
+      level: INFO
+      handlers:
+      - console
+    loggers:
+      logging_example:
+        level: DEBUG
+    disable_existing_loggers: false
+  job_logging:
+    version: 1
+    formatters:
+      simple:
+        format: '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'
+    handlers:
+      console:
+        class: logging.StreamHandler
+        formatter: simple
+        stream: ext://sys.stdout
+      file:
+        class: logging.FileHandler
+        formatter: simple
+        filename: ${hydra.runtime.output_dir}/${hydra.job.name}.log
+    root:
+      level: INFO
+      handlers:
+      - console
+      - file
+    disable_existing_loggers: false
+  env: {}
+  mode: MULTIRUN
+  searchpath: []
+  callbacks: {}
+  output_subdir: .hydra
+  overrides:
+    hydra:
+    - hydra.mode=MULTIRUN
+    task:
+    - stage=tun
+    - gpu_id=0
+    - seed=2025
+    - train_type=new
+    - target_dom=dom1
+  job:
+    name: finetune
+    chdir: null
+    override_dirname: gpu_id=0,seed=2025,stage=tun,target_dom=dom1,train_type=new
+    id: ???
+    num: ???
+    config_name: overall
+    env_set: {}
+    env_copy: []
+    config:
+      override_dirname:
+        kv_sep: '='
+        item_sep: ','
+        exclude_keys: []
+  runtime:
+    version: 1.3.2
+    version_base: '1.3'
+    cwd: /root/autodl-tmp/Taesar-main
+    config_sources:
+    - path: hydra.conf
+      schema: pkg
+      provider: hydra
+    - path: /root/autodl-tmp/Taesar-main/config
+      schema: file
+      provider: main
+    - path: ''
+      schema: structured
+      provider: schema
+    output_dir: ???
+    choices:
+      model: SASRec
+      hydra/env: default
+      hydra/callbacks: null
+      hydra/job_logging: default
+      hydra/hydra_logging: default
+      hydra/hydra_help: default
+      hydra/help: default
+      hydra/sweeper: basic
+      hydra/launcher: basic
+      hydra/output: default
+  verbose: false
+gpu_id: 0
+seed: 2025
+model_name: SASRec
+dataset: BEST
+data_path: dataset
+item_path: dataset/${dataset}/${dataset}.item
+checkpoint_dir: checkpoint
+stage: tun
+domains: 4
+target_dom: dom1
+train_type: new
+new_inter_path: dataset/${dataset}/${dataset}.${seed}.${target_dom}.train.inter
+ckpt_para: ${checkpoint_dir}/${model_name}-${dataset}-${seed}
+full_ckpt: ${ckpt_para}.full.ckpt
+dom1_ckpt: ${ckpt_para}.dom1.ckpt
+dom2_ckpt: ${ckpt_para}.dom2.ckpt
+dom3_ckpt: ${ckpt_para}.dom3.ckpt
+dom4_ckpt: ${ckpt_para}.dom4.ckpt
+tune_ckpt: ${ckpt_para}.tune.ckpt
+epochs: 300
+train_batch_size: 128
+learner: adam
+learning_rate: 0.0003
+train_neg_sample_args: null
+eval_step: 1
+stopping_step: 10
+clip_grad_norm: null
+weight_decay: 0.0
+loss_decimal_place: 4
+require_pow: false
+enable_amp: false
+enable_scaler: false
+transform: null
+eval_args:
+  split:
+    LS: valid_and_test
+  order: TO
+  group_by: user
+  mode:
+    valid: full
+    test: full
+metrics:
+- HIT
+- NDCG
+- MRR
+- Precision
+topk:
+- 5
+- 10
+- 20
+- 50
+- 100
+valid_metric: NDCG@10
+eval_batch_size: 4096
+metric_decimal_place: 4
+MAX_ITEM_LIST_LENGTH: 128
+benchmark_filename:
+- full.train
+- full.valid
+- full.test
+- dom1.train
+- dom1.valid
+- dom1.test
+- dom2.train
+- dom2.valid
+- dom2.test
+- dom3.train
+- dom3.valid
+- dom3.test
+- dom4.train
+- dom4.valid
+- dom4.test
+alias_of_item_id:
+- item_id_list
+load_col:
+  inter:
+  - user_id
+  - item_id_list
+  - item_id
+base:
+  experiment_name: v9-Taesar.${model_name}.${dataset}
+  method: ${stage}.${target_dom}.${train_type}.seed_${seed}
+  run_name: ${base.method}.${now:%Y-%m-%d.%H-%M-%S}
+  data_dir_root: ${data_path}
+  save_dir_root: ./save
+  save_method_dir: ${base.save_dir_root}/${base.experiment_name}/${base.method}
+  save_dir: ${base.save_method_dir}/${now:%Y-%m-%d.%H-%M-%S}
+n_layers: 2
+n_heads: 2
+hidden_size: 128
+inner_size: 128
+hidden_dropout_prob: 0.2
+attn_dropout_prob: 0.2
+hidden_act: gelu
+layer_norm_eps: 1.0e-12
+initializer_range: 0.02
+loss_type: CE

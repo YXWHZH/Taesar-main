@@ -1,0 +1,13 @@
+target_domain,target_name,source_domain,source_name,common_users,target_time_coverage_on_common,source_time_seq_coverage_on_common,both_time_available,both_time_coverage,has_usable_past,usable_past_rate_given_both_time,only_future_rate_given_both_time,future_contamination_rate_given_both_time,future_event_fraction_mean,usable_past_events_median,source_recency_median,source_recency_p90
+dom1,dom1,dom2,dom2,39965,0.0,0.0,0,0.0,0,,,,,,,
+dom1,dom1,dom3,dom3,39770,0.0,0.0,0,0.0,0,,,,,,,
+dom1,dom1,dom4,dom4,39293,0.0,0.0,0,0.0,0,,,,,,,
+dom2,dom2,dom1,dom1,39965,0.0,0.0,0,0.0,0,,,,,,,
+dom2,dom2,dom3,dom3,39790,0.0,0.0,0,0.0,0,,,,,,,
+dom2,dom2,dom4,dom4,39313,0.0,0.0,0,0.0,0,,,,,,,
+dom3,dom3,dom1,dom1,39770,0.0,0.0,0,0.0,0,,,,,,,
+dom3,dom3,dom2,dom2,39790,0.0,0.0,0,0.0,0,,,,,,,
+dom3,dom3,dom4,dom4,39118,0.0,0.0,0,0.0,0,,,,,,,
+dom4,dom4,dom1,dom1,39293,0.0,0.0,0,0.0,0,,,,,,,
+dom4,dom4,dom2,dom2,39313,0.0,0.0,0,0.0,0,,,,,,,
+dom4,dom4,dom3,dom3,39118,0.0,0.0,0,0.0,0,,,,,,,

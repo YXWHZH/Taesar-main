@@ -1,0 +1,223 @@
+{
+  "protocol": {
+    "teacher": "5-fold OOF mask-fusion probes",
+    "router_train": "each user labeled only by a probe that excluded its fold",
+    "router_valid_test": "mean utility from all fold probes; neither split used for probe fitting/early stopping",
+    "candidate_embedding": "shared frozen target-expert item table",
+    "comparison": "P1 candidate-source prior versus P5 personalized interactions"
+  },
+  "args": {
+    "target_dom": "dom1",
+    "device": "cuda:0",
+    "folds": 5,
+    "seed": 2025,
+    "probe_epochs": 10,
+    "probe_patience": 3,
+    "probe_batch_size": 512,
+    "epochs": 40,
+    "patience": 6,
+    "batch_size": 512,
+    "eval_batch_size": 1024,
+    "hidden": 128,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "max_train_users": 20000,
+    "max_valid_users": 5000,
+    "max_test_users": 0,
+    "output_dir": null
+  },
+  "sources": [
+    "dom2",
+    "dom3",
+    "dom4"
+  ],
+  "folds": [
+    {
+      "fold": 0,
+      "seed": 3025,
+      "heldout_users": 4000,
+      "teacher_train_users": 14400,
+      "teacher_valid_users": 1600,
+      "best_valid_loss": 11.047811698913574
+    },
+    {
+      "fold": 1,
+      "seed": 3026,
+      "heldout_users": 4000,
+      "teacher_train_users": 14400,
+      "teacher_valid_users": 1600,
+      "best_valid_loss": 11.053392524719237
+    },
+    {
+      "fold": 2,
+      "seed": 3027,
+      "heldout_users": 4000,
+      "teacher_train_users": 14400,
+      "teacher_valid_users": 1600,
+      "best_valid_loss": 11.056802253723145
+    },
+    {
+      "fold": 3,
+      "seed": 3028,
+      "heldout_users": 4000,
+      "teacher_train_users": 14400,
+      "teacher_valid_users": 1600,
+      "best_valid_loss": 11.052201347351074
+    },
+    {
+      "fold": 4,
+      "seed": 3029,
+      "heldout_users": 4000,
+      "teacher_train_users": 14400,
+      "teacher_valid_users": 1600,
+      "best_valid_loss": 11.014718437194825
+    }
+  ],
+  "variants": {
+    "P1_candidate_prior": {
+      "input_dim": 131,
+      "parameters": 33666,
+      "best_valid_joint_huber": 0.07253019511699677,
+      "history": [
+        {
+          "epoch": 1,
+          "train_joint_huber": 0.11358909118175507,
+          "valid_joint_huber": 0.07325390726327896
+        },
+        {
+          "epoch": 2,
+          "train_joint_huber": 0.10399270030657451,
+          "valid_joint_huber": 0.07253019511699677
+        },
+        {
+          "epoch": 3,
+          "train_joint_huber": 0.10117171309789022,
+          "valid_joint_huber": 0.07266125828027725
+        },
+        {
+          "epoch": 4,
+          "train_joint_huber": 0.09859371565977733,
+          "valid_joint_huber": 0.07535776495933533
+        },
+        {
+          "epoch": 5,
+          "train_joint_huber": 0.09672093894084295,
+          "valid_joint_huber": 0.07386702299118042
+        },
+        {
+          "epoch": 6,
+          "train_joint_huber": 0.09430655947128931,
+          "valid_joint_huber": 0.07445212453603745
+        },
+        {
+          "epoch": 7,
+          "train_joint_huber": 0.09237891361316045,
+          "valid_joint_huber": 0.074379101395607
+        },
+        {
+          "epoch": 8,
+          "train_joint_huber": 0.09074184495608012,
+          "valid_joint_huber": 0.07377443462610245
+        }
+      ],
+      "ce_utility": {
+        "spearman": 0.7343669058317338,
+        "sign_auroc": 0.8472513027419336,
+        "best_source_accuracy": 0.38712333278445576
+      },
+      "rank_utility": {
+        "spearman": 0.5172035831943684,
+        "sign_auroc": 0.7146130041956873,
+        "best_source_accuracy": 0.37526757780339204
+      }
+    },
+    "P5_interactions": {
+      "input_dim": 643,
+      "parameters": 99202,
+      "best_valid_joint_huber": 0.04447336867451668,
+      "history": [
+        {
+          "epoch": 1,
+          "train_joint_huber": 0.0953642523487409,
+          "valid_joint_huber": 0.05281282961368561
+        },
+        {
+          "epoch": 2,
+          "train_joint_huber": 0.07099598249197006,
+          "valid_joint_huber": 0.04825718700885773
+        },
+        {
+          "epoch": 3,
+          "train_joint_huber": 0.060766592160860694,
+          "valid_joint_huber": 0.04546571895480156
+        },
+        {
+          "epoch": 4,
+          "train_joint_huber": 0.05271389263470968,
+          "valid_joint_huber": 0.04514038562774658
+        },
+        {
+          "epoch": 5,
+          "train_joint_huber": 0.046576786841948825,
+          "valid_joint_huber": 0.04467492550611496
+        },
+        {
+          "epoch": 6,
+          "train_joint_huber": 0.04224594461520513,
+          "valid_joint_huber": 0.04535394906997681
+        },
+        {
+          "epoch": 7,
+          "train_joint_huber": 0.03869753775000572,
+          "valid_joint_huber": 0.04492685943841934
+        },
+        {
+          "epoch": 8,
+          "train_joint_huber": 0.03557658370335897,
+          "valid_joint_huber": 0.04447336867451668
+        },
+        {
+          "epoch": 9,
+          "train_joint_huber": 0.033972987417380016,
+          "valid_joint_huber": 0.04548156261444092
+        },
+        {
+          "epoch": 10,
+          "train_joint_huber": 0.03195621280471484,
+          "valid_joint_huber": 0.045045334845781326
+        },
+        {
+          "epoch": 11,
+          "train_joint_huber": 0.03039447249174118,
+          "valid_joint_huber": 0.0450550839304924
+        },
+        {
+          "epoch": 12,
+          "train_joint_huber": 0.029587875680128734,
+          "valid_joint_huber": 0.04538602754473686
+        },
+        {
+          "epoch": 13,
+          "train_joint_huber": 0.028561093624432883,
+          "valid_joint_huber": 0.0446319617331028
+        },
+        {
+          "epoch": 14,
+          "train_joint_huber": 0.02791386016011238,
+          "valid_joint_huber": 0.04518131539225578
+        }
+      ],
+      "ce_utility": {
+        "spearman": 0.8129685301684016,
+        "sign_auroc": 0.8862191676856365,
+        "best_source_accuracy": 0.5102914539766178
+      },
+      "rank_utility": {
+        "spearman": 0.7040463646157701,
+        "sign_auroc": 0.8282897661136831,
+        "best_source_accuracy": 0.4610571381524782
+      }
+    }
+  }
+}
