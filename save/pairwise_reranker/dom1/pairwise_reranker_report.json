@@ -1,19 +1,32 @@
 {
   "protocol": {
-    "hard_negatives": "OOF fold-specific target Top-100, K=10",
+    "candidate_selection": "Target-only Top-5000 selected exclusively on validation coverage",
     "candidate_pool": "OOF ensemble target Top-5000",
+    "hard_negatives": {
+      "total": 10,
+      "strata": {
+        "Top100": 5,
+        "rank101_500": 3,
+        "rank501_5000": 2
+      }
+    },
+    "utility": "(source positive-negative margin) - (target positive-negative margin)",
     "threshold": "validation NDCG@10",
-    "test": "frozen"
+    "test": "frozen; no candidate-policy tuning"
   },
   "args": {
     "target_dom": "dom1",
     "device": "cuda:0",
     "seed": 2025,
     "hard_k": 10,
-    "hard_pool": 100,
+    "neg_strata": [
+      5,
+      3,
+      2
+    ],
     "candidate_m": 5000,
-    "batch_size": 512,
-    "score_batch_size": 32,
+    "batch_size": 256,
+    "score_batch_size": 64,
     "epochs": 25,
     "patience": 5,
     "hidden": 128,
@@ -28,355 +41,471 @@
     "dom3",
     "dom4"
   ],
-  "valid": {
+  "valid_threshold_sweep": {
     "target": {
-      "coverage": 0.1184,
+      "Recall@5000": 0.1184,
       "positive_users": 592,
       "Recall@10": 0.004,
       "NDCG@10": 0.0028751047169036053,
-      "MRR@M": 0.0027449308718194734,
+      "MRR": 0.0027449308718194734,
       "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.024282979027902073
+      "conditional_NDCG@10": 0.024282979027902073,
+      "conditional_MRR": 0.023183537768745557,
+      "RerankSuccess@10": 0.033783783783783786
     },
     "dense": {
-      "coverage": 0.1184,
+      "Recall@5000": 0.1184,
       "positive_users": 592,
       "Recall@10": 0.0036,
       "NDCG@10": 0.0025007153710668918,
-      "MRR@M": 0.002453929076358793,
+      "MRR": 0.002453929076358793,
       "conditional_Recall@10": 0.030405405405405407,
-      "conditional_NDCG@10": 0.021120906850227127
+      "conditional_NDCG@10": 0.021120906850227127,
+      "conditional_MRR": 0.02072575233411143,
+      "RerankSuccess@10": 0.030405405405405407
     },
     "oracle": {
-      "coverage": 0.1184,
+      "Recall@5000": 0.1184,
       "positive_users": 592,
-      "Recall@10": 0.0038,
-      "NDCG@10": 0.0027666494875183455,
-      "MRR@M": 0.0027203787993918755,
-      "conditional_Recall@10": 0.03209459459459459,
-      "conditional_NDCG@10": 0.023366972022959
+      "Recall@10": 0.005,
+      "NDCG@10": 0.003296243977233885,
+      "MRR": 0.0030757832643569538,
+      "conditional_Recall@10": 0.04222972972972973,
+      "conditional_NDCG@10": 0.02783989845636727,
+      "conditional_MRR": 0.025977899192204,
+      "RerankSuccess@10": 0.04222972972972973
     },
     "user": {
-      "coverage": 0.1184,
+      "Recall@5000": 0.1184,
       "positive_users": 592,
       "Recall@10": 0.0038,
       "NDCG@10": 0.0027828402812636226,
-      "MRR@M": 0.0027494107670821277,
+      "MRR": 0.0027494107670821277,
       "conditional_Recall@10": 0.03209459459459459,
-      "conditional_NDCG@10": 0.023503718591753573
+      "conditional_NDCG@10": 0.023503718591753573,
+      "conditional_MRR": 0.023221374721977432,
+      "RerankSuccess@10": 0.03209459459459459
     },
-    "P1:-0.514317": {
-      "coverage": 0.1184,
-      "positive_users": 592,
-      "Recall@10": 0.004,
-      "NDCG@10": 0.0028315569528508636,
-      "MRR@M": 0.0027401130273803976,
-      "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.023915176966645812
-    },
-    "P1:-0.411454": {
-      "coverage": 0.1184,
-      "positive_users": 592,
-      "Recall@10": 0.004,
-      "NDCG@10": 0.0028315569528508636,
-      "MRR@M": 0.0027376965099134756,
-      "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.023915176966645812
-    },
-    "P1:-0.30859": {
-      "coverage": 0.1184,
-      "positive_users": 592,
-      "Recall@10": 0.004,
-      "NDCG@10": 0.0028315569528508636,
-      "MRR@M": 0.002734171278312991,
-      "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.023915176966645812
-    },
-    "P1:-0.205727": {
-      "coverage": 0.1184,
-      "positive_users": 592,
-      "Recall@10": 0.004,
-      "NDCG@10": 0.0028603155154292596,
-      "MRR@M": 0.0027698908288048885,
-      "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.02415807023166604
-    },
-    "P1:-0.102863": {
-      "coverage": 0.1184,
-      "positive_users": 592,
-      "Recall@10": 0.004,
-      "NDCG@10": 0.0028541863914039556,
-      "MRR@M": 0.0027623774865235943,
-      "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.024106303981452328
-    },
-    "P1:0": {
-      "coverage": 0.1184,
-      "positive_users": 592,
-      "Recall@10": 0.0038,
-      "NDCG@10": 0.0027963734261403778,
-      "MRR@M": 0.002754776718315133,
-      "conditional_Recall@10": 0.03209459459459459,
-      "conditional_NDCG@10": 0.0236180188018613
-    },
-    "P1:0.102863": {
-      "coverage": 0.1184,
-      "positive_users": 592,
-      "Recall@10": 0.0038,
-      "NDCG@10": 0.0027963734261403778,
-      "MRR@M": 0.0027496408182480126,
-      "conditional_Recall@10": 0.03209459459459459,
-      "conditional_NDCG@10": 0.0236180188018613
-    },
-    "P1:0.205727": {
-      "coverage": 0.1184,
-      "positive_users": 592,
-      "Recall@10": 0.004,
-      "NDCG@10": 0.0028181694722451433,
-      "MRR@M": 0.0027045474396039017,
-      "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.02380210702909749
-    },
-    "P1:0.30859": {
-      "coverage": 0.1184,
+    "P1:-0.41578": {
+      "Recall@5000": 0.1184,
       "positive_users": 592,
       "Recall@10": 0.0042,
-      "NDCG@10": 0.002920003944138886,
-      "MRR@M": 0.0027504216345985563,
+      "NDCG@10": 0.0028972225400721134,
+      "MRR": 0.0027301238602721006,
       "conditional_Recall@10": 0.03547297297297297,
-      "conditional_NDCG@10": 0.024662195474145998
+      "conditional_NDCG@10": 0.024469784966825284,
+      "conditional_MRR": 0.023058478549595446,
+      "RerankSuccess@10": 0.03547297297297297
     },
-    "P1:0.411454": {
-      "coverage": 0.1184,
+    "P1:-0.332624": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.0042,
+      "NDCG@10": 0.0028972225400721134,
+      "MRR": 0.0027299599503581543,
+      "conditional_Recall@10": 0.03547297297297297,
+      "conditional_NDCG@10": 0.024469784966825284,
+      "conditional_MRR": 0.023057094175322247,
+      "RerankSuccess@10": 0.03547297297297297
+    },
+    "P1:-0.249468": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.0042,
+      "NDCG@10": 0.0028972225400721134,
+      "MRR": 0.0027293829640547564,
+      "conditional_Recall@10": 0.03547297297297297,
+      "conditional_NDCG@10": 0.024469784966825284,
+      "conditional_MRR": 0.0230522209801922,
+      "RerankSuccess@10": 0.03547297297297297
+    },
+    "P1:-0.166312": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.0042,
+      "NDCG@10": 0.002923408490786405,
+      "MRR": 0.0027637631251864084,
+      "conditional_Recall@10": 0.03547297297297297,
+      "conditional_NDCG@10": 0.024690950091101393,
+      "conditional_MRR": 0.023342593962723045,
+      "RerankSuccess@10": 0.03547297297297297
+    },
+    "P1:-0.0831559": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.0042,
+      "NDCG@10": 0.002923408490786405,
+      "MRR": 0.0027626710086215574,
+      "conditional_Recall@10": 0.03547297297297297,
+      "conditional_NDCG@10": 0.024690950091101393,
+      "conditional_MRR": 0.02333337000524964,
+      "RerankSuccess@10": 0.03547297297297297
+    },
+    "P1:0": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.0042,
+      "NDCG@10": 0.00289109341604681,
+      "MRR": 0.0027204576168947986,
+      "conditional_Recall@10": 0.03547297297297297,
+      "conditional_NDCG@10": 0.02441801871661157,
+      "conditional_MRR": 0.022976837980530396,
+      "RerankSuccess@10": 0.03547297297297297
+    },
+    "P1:0.0831559": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.004,
+      "NDCG@10": 0.002833280450783232,
+      "MRR": 0.002713467755975887,
+      "conditional_Recall@10": 0.033783783783783786,
+      "conditional_NDCG@10": 0.02392973353702054,
+      "conditional_MRR": 0.022917801993039586,
+      "RerankSuccess@10": 0.033783783783783786
+    },
+    "P1:0.166312": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.004,
+      "NDCG@10": 0.002833280450783232,
+      "MRR": 0.0027210576477400884,
+      "conditional_Recall@10": 0.033783783783783786,
+      "conditional_NDCG@10": 0.02392973353702054,
+      "conditional_MRR": 0.022981905808615612,
+      "RerankSuccess@10": 0.033783783783783786
+    },
+    "P1:0.249468": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.004,
+      "NDCG@10": 0.0028356734846524505,
+      "MRR": 0.00271750090534317,
+      "conditional_Recall@10": 0.033783783783783786,
+      "conditional_NDCG@10": 0.02394994497172678,
+      "conditional_MRR": 0.022951865754587582,
+      "RerankSuccess@10": 0.033783783783783786
+    },
+    "P1:0.332624": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.0044,
+      "NDCG@10": 0.00296806875281873,
+      "MRR": 0.00275042615902123,
+      "conditional_Recall@10": 0.037162162162162164,
+      "conditional_NDCG@10": 0.025068148250158188,
+      "conditional_MRR": 0.023229950667409037,
+      "RerankSuccess@10": 0.037162162162162164
+    },
+    "P1:0.41578": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.004,
+      "NDCG@10": 0.002849595899165608,
+      "MRR": 0.002745761930702244,
+      "conditional_Recall@10": 0.033783783783783786,
+      "conditional_NDCG@10": 0.024067532932141967,
+      "conditional_MRR": 0.023190556847147333,
+      "RerankSuccess@10": 0.033783783783783786
+    },
+    "P5:-0.41578": {
+      "Recall@5000": 0.1184,
       "positive_users": 592,
       "Recall@10": 0.0038,
-      "NDCG@10": 0.002797823106692016,
-      "MRR@M": 0.0027174554227101444,
+      "NDCG@10": 0.0027261502473125117,
+      "MRR": 0.002677471330242709,
       "conditional_Recall@10": 0.03209459459459459,
-      "conditional_NDCG@10": 0.023630262725439322
+      "conditional_NDCG@10": 0.023024917629328644,
+      "conditional_MRR": 0.022613778127049906,
+      "RerankSuccess@10": 0.03209459459459459
     },
-    "P1:0.514317": {
-      "coverage": 0.1184,
-      "positive_users": 592,
-      "Recall@10": 0.004,
-      "NDCG@10": 0.0028751047169036053,
-      "MRR@M": 0.0027449308718194734,
-      "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.024282979027902073
-    },
-    "P5:-0.514317": {
-      "coverage": 0.1184,
-      "positive_users": 592,
-      "Recall@10": 0.004,
-      "NDCG@10": 0.0027158420710883904,
-      "MRR@M": 0.0025874960335957663,
-      "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.022937855330138427
-    },
-    "P5:-0.411454": {
-      "coverage": 0.1184,
-      "positive_users": 592,
-      "Recall@10": 0.004,
-      "NDCG@10": 0.0027158420710883904,
-      "MRR@M": 0.002586712279648169,
-      "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.022937855330138427
-    },
-    "P5:-0.30859": {
-      "coverage": 0.1184,
-      "positive_users": 592,
-      "Recall@10": 0.004,
-      "NDCG@10": 0.0027297067594737115,
-      "MRR@M": 0.002601442793914934,
-      "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.023054955738798236
-    },
-    "P5:-0.205727": {
-      "coverage": 0.1184,
+    "P5:-0.332624": {
+      "Recall@5000": 0.1184,
       "positive_users": 592,
       "Recall@10": 0.0038,
-      "NDCG@10": 0.0027371856856013197,
-      "MRR@M": 0.0026900521367299937,
+      "NDCG@10": 0.0027261502473125117,
+      "MRR": 0.0026757517026147646,
       "conditional_Recall@10": 0.03209459459459459,
-      "conditional_NDCG@10": 0.02311812234460574
+      "conditional_NDCG@10": 0.023024917629328644,
+      "conditional_MRR": 0.02259925424505714,
+      "RerankSuccess@10": 0.03209459459459459
     },
-    "P5:-0.102863": {
-      "coverage": 0.1184,
+    "P5:-0.249468": {
+      "Recall@5000": 0.1184,
       "positive_users": 592,
-      "Recall@10": 0.0038,
-      "NDCG@10": 0.002765944248179715,
-      "MRR@M": 0.0027203089804981443,
-      "conditional_Recall@10": 0.03209459459459459,
-      "conditional_NDCG@10": 0.02336101560962597
+      "Recall@10": 0.0036,
+      "NDCG@10": 0.0026970958446273295,
+      "MRR": 0.002705860231767555,
+      "conditional_Recall@10": 0.030405405405405407,
+      "conditional_NDCG@10": 0.02277952571475785,
+      "conditional_MRR": 0.02285354925479354,
+      "RerankSuccess@10": 0.030405405405405407
+    },
+    "P5:-0.166312": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.0036,
+      "NDCG@10": 0.0026970958446273295,
+      "MRR": 0.0027038972659322105,
+      "conditional_Recall@10": 0.030405405405405407,
+      "conditional_NDCG@10": 0.02277952571475785,
+      "conditional_MRR": 0.022836970151454482,
+      "RerankSuccess@10": 0.030405405405405407
+    },
+    "P5:-0.0831559": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.0036,
+      "NDCG@10": 0.0026970958446273295,
+      "MRR": 0.002700190868523876,
+      "conditional_Recall@10": 0.030405405405405407,
+      "conditional_NDCG@10": 0.02277952571475785,
+      "conditional_MRR": 0.022805666119289494,
+      "RerankSuccess@10": 0.030405405405405407
     },
     "P5:0": {
-      "coverage": 0.1184,
+      "Recall@5000": 0.1184,
       "positive_users": 592,
-      "Recall@10": 0.0038,
-      "NDCG@10": 0.002765944248179715,
-      "MRR@M": 0.0027198190786838455,
-      "conditional_Recall@10": 0.03209459459459459,
-      "conditional_NDCG@10": 0.02336101560962597
+      "Recall@10": 0.0036,
+      "NDCG@10": 0.0026970958446273295,
+      "MRR": 0.0026980706963722328,
+      "conditional_Recall@10": 0.030405405405405407,
+      "conditional_NDCG@10": 0.02277952571475785,
+      "conditional_MRR": 0.022787759259900616,
+      "RerankSuccess@10": 0.030405405405405407
     },
-    "P5:0.102863": {
-      "coverage": 0.1184,
+    "P5:0.0831559": {
+      "Recall@5000": 0.1184,
       "positive_users": 592,
-      "Recall@10": 0.0038,
-      "NDCG@10": 0.002765944248179715,
-      "MRR@M": 0.002717931335494812,
-      "conditional_Recall@10": 0.03209459459459459,
-      "conditional_NDCG@10": 0.02336101560962597
+      "Recall@10": 0.0036,
+      "NDCG@10": 0.0026970958446273295,
+      "MRR": 0.0027006325003767198,
+      "conditional_Recall@10": 0.030405405405405407,
+      "conditional_NDCG@10": 0.02277952571475785,
+      "conditional_MRR": 0.022809396118046617,
+      "RerankSuccess@10": 0.030405405405405407
     },
-    "P5:0.205727": {
-      "coverage": 0.1184,
+    "P5:0.166312": {
+      "Recall@5000": 0.1184,
       "positive_users": 592,
-      "Recall@10": 0.0038,
-      "NDCG@10": 0.002765944248179715,
-      "MRR@M": 0.0027154230757334206,
-      "conditional_Recall@10": 0.03209459459459459,
-      "conditional_NDCG@10": 0.02336101560962597
+      "Recall@10": 0.0036,
+      "NDCG@10": 0.0026970958446273295,
+      "MRR": 0.0027038472331567336,
+      "conditional_Recall@10": 0.030405405405405407,
+      "conditional_NDCG@10": 0.02277952571475785,
+      "conditional_MRR": 0.022836547577337274,
+      "RerankSuccess@10": 0.030405405405405407
     },
-    "P5:0.30859": {
-      "coverage": 0.1184,
+    "P5:0.249468": {
+      "Recall@5000": 0.1184,
       "positive_users": 592,
-      "Recall@10": 0.0038,
-      "NDCG@10": 0.0027705190189346533,
-      "MRR@M": 0.0027284175800288218,
-      "conditional_Recall@10": 0.03209459459459459,
-      "conditional_NDCG@10": 0.02339965387613727
+      "Recall@10": 0.0036,
+      "NDCG@10": 0.002701670615382267,
+      "MRR": 0.0027105264597181936,
+      "conditional_Recall@10": 0.030405405405405407,
+      "conditional_NDCG@10": 0.022818163981269148,
+      "conditional_MRR": 0.022892959963836095,
+      "RerankSuccess@10": 0.030405405405405407
     },
-    "P5:0.411454": {
-      "coverage": 0.1184,
+    "P5:0.332624": {
+      "Recall@5000": 0.1184,
       "positive_users": 592,
       "Recall@10": 0.0034,
-      "NDCG@10": 0.002638740038871686,
-      "MRR@M": 0.0026925288278518843,
+      "NDCG@10": 0.0026350039487156008,
+      "MRR": 0.002707911598637064,
       "conditional_Recall@10": 0.028716216216216218,
-      "conditional_NDCG@10": 0.02228665573371356
+      "conditional_NDCG@10": 0.022255100918206084,
+      "conditional_MRR": 0.022870874988488717,
+      "RerankSuccess@10": 0.028716216216216218
     },
-    "P5:0.514317": {
-      "coverage": 0.1184,
+    "P5:0.41578": {
+      "Recall@5000": 0.1184,
       "positive_users": 592,
-      "Recall@10": 0.0038,
-      "NDCG@10": 0.002702017880374243,
-      "MRR@M": 0.0026506887926922586,
-      "conditional_Recall@10": 0.03209459459459459,
-      "conditional_NDCG@10": 0.022821096962620295
+      "Recall@10": 0.0034,
+      "NDCG@10": 0.002628036144091444,
+      "MRR": 0.002717693426788528,
+      "conditional_Recall@10": 0.028716216216216218,
+      "conditional_NDCG@10": 0.02219625121698855,
+      "conditional_MRR": 0.02295349178030851,
+      "RerankSuccess@10": 0.028716216216216218
     },
     "fixed0": {
-      "coverage": 0.1184,
+      "Recall@5000": 0.1184,
       "positive_users": 592,
       "Recall@10": 0.004,
       "NDCG@10": 0.0027627834545746353,
-      "MRR@M": 0.002629872139778675,
+      "MRR": 0.002629872139778675,
       "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.023334319717691177
+      "conditional_NDCG@10": 0.023334319717691177,
+      "conditional_MRR": 0.02221175793731989,
+      "RerankSuccess@10": 0.033783783783783786
     },
     "fixed1": {
-      "coverage": 0.1184,
+      "Recall@5000": 0.1184,
       "positive_users": 592,
       "Recall@10": 0.004,
       "NDCG@10": 0.002847710002386676,
-      "MRR@M": 0.00278829330124179,
+      "MRR": 0.00278829330124179,
       "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.024051604749887465
+      "conditional_NDCG@10": 0.024051604749887465,
+      "conditional_MRR": 0.023549774503731333,
+      "RerankSuccess@10": 0.033783783783783786
     },
     "fixed2": {
-      "coverage": 0.1184,
+      "Recall@5000": 0.1184,
       "positive_users": 592,
       "Recall@10": 0.004,
       "NDCG@10": 0.002839652167081784,
-      "MRR@M": 0.0027654086280654616,
+      "MRR": 0.0027654086280654616,
       "conditional_Recall@10": 0.033783783783783786,
-      "conditional_NDCG@10": 0.023983548708461012
+      "conditional_NDCG@10": 0.023983548708461012,
+      "conditional_MRR": 0.023356491791093427,
+      "RerankSuccess@10": 0.033783783783783786
     }
   },
   "chosen_thresholds": {
-    "P1": 0.30859040021896367,
-    "P5": 0.30859040021896367
+    "P1": 0.33262369632720945,
+    "P5": -0.41577962040901184
   },
   "fixed_source": "dom3",
   "test": {
-    "target": {
-      "coverage": 0.11987485591964432,
+    "Target-only": {
+      "Recall@5000": 0.11987485591964432,
       "positive_users": 728,
       "Recall@10": 0.002963938745265931,
       "NDCG@10": 0.0018839127056019273,
-      "MRR@M": 0.0018418244449349397,
+      "MRR": 0.0018418244449349397,
       "conditional_Recall@10": 0.024725274725274724,
-      "conditional_NDCG@10": 0.01571566189714355
+      "conditional_NDCG@10": 0.01571566189714355,
+      "conditional_MRR": 0.015364560239134463,
+      "RerankSuccess@10": 0.024725274725274724
     },
-    "dense": {
-      "coverage": 0.11987485591964432,
+    "Dense": {
+      "Recall@5000": 0.11987485591964432,
       "positive_users": 728,
       "Recall@10": 0.002140622427136506,
       "NDCG@10": 0.0011016258846805987,
-      "MRR@M": 0.001121834155186312,
+      "MRR": 0.001121834155186312,
       "conditional_Recall@10": 0.017857142857142856,
-      "conditional_NDCG@10": 0.009189799447342412
+      "conditional_NDCG@10": 0.009189799447342412,
+      "conditional_MRR": 0.009358377506107792,
+      "RerankSuccess@10": 0.017857142857142856
     },
-    "oracle": {
-      "coverage": 0.11987485591964432,
-      "positive_users": 728,
-      "Recall@10": 0.0034579285361435864,
-      "NDCG@10": 0.0019003457425472233,
-      "MRR@M": 0.0016985695689216616,
-      "conditional_Recall@10": 0.028846153846153848,
-      "conditional_NDCG@10": 0.01585274683308968
-    },
-    "user": {
-      "coverage": 0.11987485591964432,
-      "positive_users": 728,
-      "Recall@10": 0.002963938745265931,
-      "NDCG@10": 0.00154131809780849,
-      "MRR@M": 0.001418495463951523,
-      "conditional_Recall@10": 0.024725274725274724,
-      "conditional_NDCG@10": 0.012857726384602966
-    },
-    "P1:0.30859": {
-      "coverage": 0.11987485591964432,
-      "positive_users": 1456,
-      "Recall@10": 0.003293265272517701,
-      "NDCG@10": 0.0019778706560528827,
-      "MRR@M": 0.0018469206393993108,
-      "conditional_Recall@10": 0.027472527472527472,
-      "conditional_NDCG@10": 0.01649946221732027
-    },
-    "P5:0.30859": {
-      "coverage": 0.11987485591964432,
-      "positive_users": 1456,
-      "Recall@10": 0.003293265272517701,
-      "NDCG@10": 0.0018854291592469467,
-      "MRR@M": 0.001736087841481834,
-      "conditional_Recall@10": 0.027472527472527472,
-      "conditional_NDCG@10": 0.01572831220344328
-    },
-    "fixed0": {
-      "coverage": 0.11987485591964432,
-      "positive_users": 728,
-      "Recall@10": 0.002799275481640046,
-      "NDCG@10": 0.0015627381587769481,
-      "MRR@M": 0.0015078014537350474,
-      "conditional_Recall@10": 0.023351648351648352,
-      "conditional_NDCG@10": 0.0130364132393577
-    },
-    "fixed1": {
-      "coverage": 0.11987485591964432,
+    "Fixed-source": {
+      "Recall@5000": 0.11987485591964432,
       "positive_users": 728,
       "Recall@10": 0.002963938745265931,
       "NDCG@10": 0.001671157828096108,
-      "MRR@M": 0.0015539270787389497,
+      "MRR": 0.0015539270787389497,
       "conditional_Recall@10": 0.024725274725274724,
-      "conditional_NDCG@10": 0.013940853695092945
+      "conditional_NDCG@10": 0.013940853695092945,
+      "conditional_MRR": 0.012962910919205551,
+      "RerankSuccess@10": 0.024725274725274724
     },
-    "fixed2": {
-      "coverage": 0.11987485591964432,
+    "User-level Router": {
+      "Recall@5000": 0.11987485591964432,
       "positive_users": 728,
-      "Recall@10": 0.0036225917997694712,
-      "NDCG@10": 0.0016753547895061466,
-      "MRR@M": 0.0013566422111427221,
-      "conditional_Recall@10": 0.03021978021978022,
-      "conditional_NDCG@10": 0.013975864885536851
+      "Recall@10": 0.002963938745265931,
+      "NDCG@10": 0.00154131809780849,
+      "MRR": 0.001418495463951523,
+      "conditional_Recall@10": 0.024725274725274724,
+      "conditional_NDCG@10": 0.012857726384602966,
+      "conditional_MRR": 0.011833135923870329,
+      "RerankSuccess@10": 0.024725274725274724
+    },
+    "P1": {
+      "Recall@5000": 0.11987485591964432,
+      "positive_users": 728,
+      "Recall@10": 0.0031286020088918164,
+      "NDCG@10": 0.001905213204823108,
+      "MRR": 0.0018040521654888086,
+      "conditional_Recall@10": 0.0260989010989011,
+      "conditional_NDCG@10": 0.0158933513638609,
+      "conditional_MRR": 0.015049462638754856,
+      "RerankSuccess@10": 0.0260989010989011
+    },
+    "P5": {
+      "Recall@5000": 0.11987485591964432,
+      "positive_users": 728,
+      "Recall@10": 0.003293265272517701,
+      "NDCG@10": 0.0017177645261195645,
+      "MRR": 0.0015151345435405453,
+      "conditional_Recall@10": 0.027472527472527472,
+      "conditional_NDCG@10": 0.01432964830648917,
+      "conditional_MRR": 0.012639302311705675,
+      "RerankSuccess@10": 0.027472527472527472
+    },
+    "Candidate Oracle": {
+      "Recall@5000": 0.11987485591964432,
+      "positive_users": 728,
+      "Recall@10": 0.004116581590647127,
+      "NDCG@10": 0.002363853002352502,
+      "MRR": 0.0021986337979759503,
+      "conditional_Recall@10": 0.034340659340659344,
+      "conditional_NDCG@10": 0.01971933967484443,
+      "conditional_MRR": 0.01834107562514828,
+      "RerankSuccess@10": 0.034340659340659344
+    }
+  },
+  "paired_significance": {
+    "P5:-0.41578_vs_P1:0.332624": {
+      "end_to_end": {
+        "delta_NDCG@10": -0.00018744867870354342,
+        "permutation_p_two_sided": 0.28674265146970607,
+        "bootstrap_95ci": [
+          -0.0005264012721725183,
+          0.00014974103875876521
+        ],
+        "n": 6073
+      },
+      "conditional": {
+        "delta_NDCG@10": -0.0015637030573717296,
+        "permutation_p_two_sided": 0.27294541091781643,
+        "bootstrap_95ci": [
+          -0.004409950405065462,
+          0.0011997795886692355
+        ],
+        "n": 728
+      }
+    },
+    "P5:-0.41578_vs_user": {
+      "end_to_end": {
+        "delta_NDCG@10": 0.00017644642831107424,
+        "permutation_p_two_sided": 0.33673265346930614,
+        "bootstrap_95ci": [
+          -0.00016223160483255658,
+          0.0005329668005545692
+        ],
+        "n": 6073
+      },
+      "conditional": {
+        "delta_NDCG@10": 0.0014719219218862001,
+        "permutation_p_two_sided": 0.3285342931413717,
+        "bootstrap_95ci": [
+          -0.0013302158292118613,
+          0.004466953489943511
+        ],
+        "n": 728
+      }
+    },
+    "P5:-0.41578_vs_dense": {
+      "end_to_end": {
+        "delta_NDCG@10": 0.0006161386414389655,
+        "permutation_p_two_sided": 0.038792241551689664,
+        "bootstrap_95ci": [
+          6.214625587600361e-05,
+          0.0012725608051600815
+        ],
+        "n": 6073
+      },
+      "conditional": {
+        "delta_NDCG@10": 0.005139848859146755,
+        "permutation_p_two_sided": 0.03179364127174565,
+        "bootstrap_95ci": [
+          0.000686128176766482,
+          0.010330418916714592
+        ],
+        "n": 728
+      }
     }
   }
 }
