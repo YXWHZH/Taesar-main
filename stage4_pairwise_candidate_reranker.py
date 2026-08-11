@@ -61,7 +61,7 @@ def stratified_negatives(order,y,k,counts,rng):
 def make_pair_cache(data,teacher_spec,device,batch,k,counts,seed):
  if sum(counts)!=k:raise ValueError(f"neg-strata must sum to hard-k ({counts} vs {k})")
  rng=np.random.default_rng(seed)
- n=len(data.users); s=data.h_sources.shape[1]; neg=np.empty((n,k),np.int64); uy=np.empty((n,s),np.float32); uj=np.empty((n,s,k),np.float32)
+ n=len(data.users); s=data.h_sources.shape[1]; neg=np.empty((n,k),np.int64); uy=np.empty((n,s),np.float32); uj=np.empty((n,s,k),np.float32); by=np.empty(n,np.float32); bj=np.empty((n,k),np.float32)
  if isinstance(teacher_spec,tuple):
   ids,all_probes=teacher_spec; groups=[(np.flatnonzero(ids==f),[all_probes[f]]) for f in range(5)]
  else: groups=[(np.arange(n),teacher_spec)]
@@ -70,10 +70,11 @@ def make_pair_cache(data,teacher_spec,device,batch,k,counts,seed):
    ii=idx[st:st+batch]; d=take(data,ii); ht,hs,av,y,_=next(iter(DataLoader(ProbeDataset(d),batch_size=len(ii))))
    ht,hs,av,y=[x.to(device) for x in (ht,hs,av,y)]; z=mask_logits(probes,ht,hs,av); top=torch.topk(z[0],min(5001,z[0].shape[1]),1).indices.cpu().numpy();yn=y.cpu().numpy()
    jj=torch.as_tensor(np.asarray([stratified_negatives(top[r],yn[r],k,counts,rng) for r in range(len(y))]),device=device); base_y=z[0].gather(1,y[:,None]); base_j=z[0].gather(1,jj)
+   by[ii]=base_y.squeeze(1).cpu();bj[ii]=base_j.cpu()
    for q in range(s):
     uy[ii,q]=(z[1+q].gather(1,y[:,None])-base_y).squeeze(1).cpu(); uj[ii,q]=(z[1+q].gather(1,jj)-base_j).cpu()
    neg[ii]=jj.cpu()
- return {"neg":neg,"uy":uy,"uj":uj,"pair":uy[:,:,None]-uj}
+ return {"neg":neg,"uy":uy,"uj":uj,"pair":uy[:,:,None]-uj,"base_y":by,"base_j":bj}
 class Pairs(Dataset):
  def __init__(self,c): self.c=c; self.n,self.s,self.k=c["pair"].shape
  def __len__(self): return self.n*self.s*self.k

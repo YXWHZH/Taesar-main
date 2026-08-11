@@ -1,0 +1,325 @@
+{
+  "protocol": {
+    "candidate_pool": "Target-only Top-5000 frozen from validation coverage",
+    "experts": "frozen OOF probe ensemble",
+    "hard_negatives": {
+      "total": 10,
+      "strata": [
+        5,
+        3,
+        2
+      ]
+    },
+    "integration": "s0 + sum_d softmax([no-transfer, source gates])_d * (sd-s0)",
+    "primary_loss": "sampled softmax ranking",
+    "utility_auxiliary": "OOF pairwise Huber",
+    "test": "single frozen evaluation"
+  },
+  "args": {
+    "target_dom": "dom1",
+    "device": "cuda:0",
+    "seed": 2025,
+    "candidate_m": 5000,
+    "hard_k": 10,
+    "neg_strata": [
+      5,
+      3,
+      2
+    ],
+    "batch_size": 256,
+    "score_batch_size": 32,
+    "candidate_chunk": 512,
+    "epochs": 25,
+    "patience": 5,
+    "hidden": 128,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "utility_weight": 0.5,
+    "reuse_checkpoints": true,
+    "output_dir": null
+  },
+  "sources": [
+    "dom2",
+    "dom3",
+    "dom4"
+  ],
+  "history": {
+    "P1-soft": [
+      {
+        "reused_checkpoint": "/root/autodl-tmp/Taesar-main/save/soft_candidate_gate/dom1/P1-soft_best.pt"
+      }
+    ],
+    "P5-soft": [
+      {
+        "reused_checkpoint": "/root/autodl-tmp/Taesar-main/save/soft_candidate_gate/dom1/P5-soft_best.pt"
+      }
+    ],
+    "P5-soft+utility": [
+      {
+        "reused_checkpoint": "/root/autodl-tmp/Taesar-main/save/soft_candidate_gate/dom1/P5-soft+utility_best.pt"
+      }
+    ]
+  },
+  "valid": {
+    "Target": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.004,
+      "NDCG@10": 0.0028751047169036053,
+      "MRR": 0.0027449308718194734,
+      "conditional_Recall@10": 0.033783783783783786,
+      "conditional_NDCG@10": 0.024282979027902073,
+      "conditional_MRR": 0.023183537768745557,
+      "RerankSuccess@10": 0.033783783783783786
+    },
+    "Dense": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.0036,
+      "NDCG@10": 0.0025007153710668918,
+      "MRR": 0.002453929076358793,
+      "conditional_Recall@10": 0.030405405405405407,
+      "conditional_NDCG@10": 0.021120906850227127,
+      "conditional_MRR": 0.02072575233411143,
+      "RerankSuccess@10": 0.030405405405405407
+    },
+    "Oracle": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.005,
+      "NDCG@10": 0.003296243977233885,
+      "MRR": 0.0030757832643569538,
+      "conditional_Recall@10": 0.04222972972972973,
+      "conditional_NDCG@10": 0.02783989845636727,
+      "conditional_MRR": 0.025977899192204,
+      "RerankSuccess@10": 0.04222972972972973
+    },
+    "P1-soft": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.004,
+      "NDCG@10": 0.002891937735709151,
+      "MRR": 0.002766336929548043,
+      "conditional_Recall@10": 0.033783783783783786,
+      "conditional_NDCG@10": 0.0244251497948408,
+      "conditional_MRR": 0.023364332175236847,
+      "RerankSuccess@10": 0.033783783783783786
+    },
+    "P5-soft": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.0042,
+      "NDCG@10": 0.003135054077803993,
+      "MRR": 0.003033576995287651,
+      "conditional_Recall@10": 0.03547297297297297,
+      "conditional_NDCG@10": 0.02647849727874994,
+      "conditional_MRR": 0.02562142732506462,
+      "RerankSuccess@10": 0.03547297297297297
+    },
+    "P5-soft+utility": {
+      "Recall@5000": 0.1184,
+      "positive_users": 592,
+      "Recall@10": 0.004,
+      "NDCG@10": 0.0029012906676178967,
+      "MRR": 0.0027945624672209525,
+      "conditional_Recall@10": 0.033783783783783786,
+      "conditional_NDCG@10": 0.024504144152178185,
+      "conditional_MRR": 0.023602723540717505,
+      "RerankSuccess@10": 0.033783783783783786
+    }
+  },
+  "test": {
+    "Target": {
+      "Recall@5000": 0.11987485591964432,
+      "positive_users": 728,
+      "Recall@10": 0.002963938745265931,
+      "NDCG@10": 0.0018839127056019273,
+      "MRR": 0.0018418244449349397,
+      "conditional_Recall@10": 0.024725274725274724,
+      "conditional_NDCG@10": 0.01571566189714355,
+      "conditional_MRR": 0.015364560239134463,
+      "RerankSuccess@10": 0.024725274725274724
+    },
+    "Dense": {
+      "Recall@5000": 0.11987485591964432,
+      "positive_users": 728,
+      "Recall@10": 0.002140622427136506,
+      "NDCG@10": 0.0011016258846805987,
+      "MRR": 0.001121834155186312,
+      "conditional_Recall@10": 0.017857142857142856,
+      "conditional_NDCG@10": 0.009189799447342412,
+      "conditional_MRR": 0.009358377506107792,
+      "RerankSuccess@10": 0.017857142857142856
+    },
+    "Oracle": {
+      "Recall@5000": 0.11987485591964432,
+      "positive_users": 728,
+      "Recall@10": 0.004116581590647127,
+      "NDCG@10": 0.002363853002352502,
+      "MRR": 0.0021986337979759503,
+      "conditional_Recall@10": 0.034340659340659344,
+      "conditional_NDCG@10": 0.01971933967484443,
+      "conditional_MRR": 0.01834107562514828,
+      "RerankSuccess@10": 0.034340659340659344
+    },
+    "P1-soft": {
+      "Recall@5000": 0.11987485591964432,
+      "positive_users": 728,
+      "Recall@10": 0.0031286020088918164,
+      "NDCG@10": 0.0020217707106959144,
+      "MRR": 0.0019504808635076266,
+      "conditional_Recall@10": 0.0260989010989011,
+      "conditional_NDCG@10": 0.01686567792040699,
+      "conditional_MRR": 0.016270975664947545,
+      "RerankSuccess@10": 0.0260989010989011
+    },
+    "P5-soft": {
+      "Recall@5000": 0.11987485591964432,
+      "positive_users": 728,
+      "Recall@10": 0.0031286020088918164,
+      "NDCG@10": 0.0021845358780439813,
+      "MRR": 0.002188171342681575,
+      "conditional_Recall@10": 0.0260989010989011,
+      "conditional_NDCG@10": 0.0182234703123092,
+      "conditional_MRR": 0.018253797478166488,
+      "RerankSuccess@10": 0.0260989010989011
+    },
+    "P5-soft+utility": {
+      "Recall@5000": 0.11987485591964432,
+      "positive_users": 728,
+      "Recall@10": 0.002799275481640046,
+      "NDCG@10": 0.0018363143479009742,
+      "MRR": 0.0018516540575244235,
+      "conditional_Recall@10": 0.023351648351648352,
+      "conditional_NDCG@10": 0.015318594828025571,
+      "conditional_MRR": 0.015446559191409099,
+      "RerankSuccess@10": 0.023351648351648352
+    }
+  },
+  "paired_significance": {
+    "P5-soft": {
+      "P5-soft_vs_Target": {
+        "end_to_end": {
+          "delta_NDCG@10": 0.00030062317244205426,
+          "permutation_p_two_sided": 0.0655868826234753,
+          "bootstrap_95ci": [
+            1.3364064391030991e-05,
+            0.0006277168212188724
+          ],
+          "n": 6073
+        },
+        "conditional": {
+          "delta_NDCG@10": 0.002507808415165653,
+          "permutation_p_two_sided": 0.0629874025194961,
+          "bootstrap_95ci": [
+            2.1853863506409825e-05,
+            0.005271097651220692
+          ],
+          "n": 728
+        }
+      },
+      "P5-soft_vs_P1-soft": {
+        "end_to_end": {
+          "delta_NDCG@10": 0.00016276516734806704,
+          "permutation_p_two_sided": 0.2481503699260148,
+          "bootstrap_95ci": [
+            -7.416854582376617e-05,
+            0.0004433486494998654
+          ],
+          "n": 6073
+        },
+        "conditional": {
+          "delta_NDCG@10": 0.001357792391902213,
+          "permutation_p_two_sided": 0.23595280943811237,
+          "bootstrap_95ci": [
+            -0.0006671122804197079,
+            0.003636908293801703
+          ],
+          "n": 728
+        }
+      },
+      "P5-soft_vs_Dense": {
+        "end_to_end": {
+          "delta_NDCG@10": 0.0010829099933633828,
+          "permutation_p_two_sided": 0.02499500099980004,
+          "bootstrap_95ci": [
+            0.00016016495302188568,
+            0.0020977632220907107
+          ],
+          "n": 6073
+        },
+        "conditional": {
+          "delta_NDCG@10": 0.00903367086496679,
+          "permutation_p_two_sided": 0.026194761047790442,
+          "bootstrap_95ci": [
+            0.0015397183986690923,
+            0.017211879127842274
+          ],
+          "n": 728
+        }
+      }
+    },
+    "P5-soft+utility": {
+      "P5-soft+utility_vs_P5-soft": {
+        "end_to_end": {
+          "delta_NDCG@10": -0.0003482215301430073,
+          "permutation_p_two_sided": 0.04459108178364327,
+          "bootstrap_95ci": [
+            -0.0006887231395589959,
+            -5.2912913994673374e-05
+          ],
+          "n": 6073
+        },
+        "conditional": {
+          "delta_NDCG@10": -0.0029048754842836305,
+          "permutation_p_two_sided": 0.03979204159168166,
+          "bootstrap_95ci": [
+            -0.005702033776250907,
+            -0.0004046715322296313
+          ],
+          "n": 728
+        }
+      },
+      "P5-soft+utility_vs_Target": {
+        "end_to_end": {
+          "delta_NDCG@10": -4.759835770095305e-05,
+          "permutation_p_two_sided": 1.0,
+          "bootstrap_95ci": [
+            -0.00014279507310285917,
+            0.0
+          ],
+          "n": 6073
+        },
+        "conditional": {
+          "delta_NDCG@10": -0.00039706706911797786,
+          "permutation_p_two_sided": 1.0,
+          "bootstrap_95ci": [
+            -0.0011912012073539335,
+            0.0
+          ],
+          "n": 728
+        }
+      },
+      "P5-soft+utility_vs_P1-soft": {
+        "end_to_end": {
+          "delta_NDCG@10": -0.00018545636279494027,
+          "permutation_p_two_sided": 0.15976804639072187,
+          "bootstrap_95ci": [
+            -0.0004569758532390804,
+            5.5301619795607325e-05
+          ],
+          "n": 6073
+        },
+        "conditional": {
+          "delta_NDCG@10": -0.001547083092381418,
+          "permutation_p_two_sided": 0.16376724655068986,
+          "bootstrap_95ci": [
+            -0.003790442951201357,
+            0.00048253802970129575
+          ],
+          "n": 728
+        }
+      }
+    }
+  }
+}
